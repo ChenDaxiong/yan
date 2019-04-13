@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:dubbo="http://code.alibabatech.com/schema/dubbo"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://code.alibabatech.com/schema/dubbo http://code.alibabatech.com/schema/dubbo/dubbo.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+
+    <dubbo:application name="gateway-consumer"/>
+
+    <!--从注册中心获取服务列表进行服务调用，-->
+    <dubbo:registry address="zookeeper://127.0.0.1:2181"/>
+
+    <dubbo:reference id="authUserService" interface="com.hfut.bs.user.service.IAuthUserService"/>
+
+
+
+
+
+    <!--interface的路径和服务提供者者接口的路径必须一致，否则无法获取到对应的服务，bean名称可以自定义-->
+    <!--<dubbo:reference id="la"-->
+                     <!--interface="DemoService"/>-->
+
+    <!--跳过zookeeper,直连服务提供者，测试用-->
+    <!--<dubbo:reference id="la"-->
+                     <!--interface="DemoService"-->
+                     <!--url="dubbo://localhost:20880"/>-->
+
+
+</beans>
