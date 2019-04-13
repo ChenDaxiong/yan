@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Encoding" addBOMForNewFiles="with NO BOM">
+    <file url="file://$PROJECT_DIR$" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/yan-api" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/yan-common" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/yan-course" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/yan-gateway" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/yan-post" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/yan-user" charset="UTF-8" />
+  </component>
+</project>
