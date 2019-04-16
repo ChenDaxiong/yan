@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+    <beans xmlns="http://www.springframework.org/schema/beans"
+           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           xmlns:dubbo="http://code.alibabatech.com/schema/dubbo"
+           xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://code.alibabatech.com/schema/dubbo http://code.alibabatech.com/schema/dubbo/dubbo.xsd">
+
+        <!-- provider's application name, used for tracing dependency relationship -->
+        <dubbo:application name="yan-post-provider"/>
+        <!-- use multicast registry center to export service -->
+
+        <!--使用zookeeper 进行注册中心化-->
+        <dubbo:registry address="zookeeper://127.0.0.1:2181"/>
+
+        <!-- use dubbo protocol to export service on port 20880 -->
+        <dubbo:protocol name="dubbo" port="20881"/>
+
+        <!-- 声明需要暴露的服务接口 -->
+        <dubbo:service interface="com.hfut.bs.post.service.IPostService " ref = "postService" />
+
+
+        <!--<bean id="authUserService" class="com.hfut.bs.user.service.AuthUserServiceImpl"/>-->
+
+
+
+</beans>

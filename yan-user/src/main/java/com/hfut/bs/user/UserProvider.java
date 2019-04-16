@@ -11,7 +11,7 @@ import java.io.IOException;
  * Hello world!
  *
  */
-public class App 
+public class UserProvider
 {
     public static void main( String[] args ) throws IOException {
         ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("applicationContext.xml");

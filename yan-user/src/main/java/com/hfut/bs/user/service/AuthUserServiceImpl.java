@@ -1,6 +1,5 @@
 package com.hfut.bs.user.service;
 
-import com.alibaba.dubbo.rpc.RpcContext;
 import com.hfut.bs.user.model.UserInfoModel;
 import com.hfut.bs.user.model.UserModel;
 import com.hfut.bs.common.redis.keys.AuthUserKey;

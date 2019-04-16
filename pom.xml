@@ -10,7 +10,7 @@
     <module>yan-user</module>
     <module>yan-course</module>
     <module>yan-common</module>
-      <module>yan-api</module>
+    <module>yan-api</module>
     <module>yan-post</module>
   </modules>
 

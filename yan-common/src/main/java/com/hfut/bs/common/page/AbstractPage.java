@@ -7,12 +7,13 @@ import java.util.*;
 
 public abstract class AbstractPage<E> implements Page<E> {
 
+//	默认的起始页为1
     public static final int DEFAULT_FIRST_PAGE_NUM = 1;
+//    默认每页大小为10
     public static final int DEFAULT_PAGE_SIZE = 10;
 
     protected int pageSize = DEFAULT_PAGE_SIZE;
 
-    // 第一页默认的页数
     protected int pageNum = DEFAULT_FIRST_PAGE_NUM;
     
     protected int itemsTotalCount = 0;//总记录数
@@ -91,18 +92,21 @@ public abstract class AbstractPage<E> implements Page<E> {
         return items.isEmpty();
     }
 
+
 	public void setItemsTotalCount(int itemsTotalCount) {
 		this.itemsTotalCount = itemsTotalCount;
-		if(itemsTotalCount % this.pageSize == 0){
-			this.pageTotalCount = itemsTotalCount/this.pageSize;
-		}else{
-			this.pageTotalCount = itemsTotalCount/this.pageSize + 1;
+		if (itemsTotalCount % this.pageSize == 0) {
+			this.pageTotalCount = itemsTotalCount / this.pageSize;
+		} else {
+			this.pageTotalCount = itemsTotalCount / this.pageSize + 1;
 		}
-		if(this.pageNum > this.pageTotalCount){
+		if (this.pageNum > this.pageTotalCount) {
 			this.pageNum = DEFAULT_FIRST_PAGE_NUM;
 		}
-		if(this.itemsTotalCount <= this.pageSize){
-			this.firstPage = true;
+		if (pageNum == DEFAULT_FIRST_PAGE_NUM) {
+			firstPage = true;
+		}
+		if (this.itemsTotalCount <= this.pageSize || pageNum == pageTotalCount) {
 			this.lastPage = true;
 		}
 	}

@@ -1,5 +1,6 @@
 package com.hfut.bs.common.page;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
@@ -7,7 +8,7 @@ import java.util.List;
 /**
  * 分页
  */
-public class TailPage<E> extends AbstractPage<E> {
+public class TailPage<E> extends AbstractPage<E> implements Serializable {
 	
     protected int showPage = 10;//显示10个页码
 	protected List<Integer> showNums = new ArrayList<Integer>();
@@ -46,29 +47,32 @@ public class TailPage<E> extends AbstractPage<E> {
 		super.setItemsTotalCount(itemsTotalCount);
 		initShowNum();
 	}
-	
-	private void initShowNum(){
+
+	/**
+	 * 根据总页数，当前页数来初始化页码数组
+	 */
+	private void initShowNum() {
 		int startIndex;
 		int endIndex;
-		if(pageNum - showPage/2 > 1){
-			startIndex = pageNum-showPage/2;
-			endIndex = pageNum + showPage/2 - 1;
-			if(endIndex > pageTotalCount){
+		if (pageNum - showPage / 2 > 1) {
+			startIndex = pageNum - showPage / 2;
+			endIndex = pageNum + showPage / 2 - 1;
+			if (endIndex > pageTotalCount) {
 				endIndex = pageTotalCount;
-				startIndex = endIndex - showPage + 1;
+				startIndex = (endIndex - showPage + 1) < 1 ? 1 : (endIndex - showPage + 1);
 			}
-		}else{
+		} else {
 			startIndex = 1;
-			endIndex = pageTotalCount<=showPage?pageTotalCount:showPage;
+			endIndex = pageTotalCount <= showPage ? pageTotalCount : showPage;
 		}
-		for(int i = startIndex; i <= endIndex ; i++){
+		for (int i = startIndex; i <= endIndex; i++) {
 			this.showNums.add(Integer.valueOf(i));
 		}
-		if(this.firstPage||this.lastPage){
+		if (this.firstPage || this.lastPage) {
 			showDot = false;
-		}else{
-			if(showNums.size() > 0){
-				if(showNums.get(showNums.size()-1) == this.pageTotalCount){
+		} else {
+			if (showNums.size() > 0) {
+				if (showNums.get(showNums.size() - 1) == this.pageTotalCount) {
 					showDot = false;
 				}
 			}

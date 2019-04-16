@@ -5,7 +5,6 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
 
 
-     <context:property-placeholder location="classpath:/redis.properties" ignore-unresolvable="true"/>
 
     <bean id="jedisPoolConfig" class="redis.clients.jedis.JedisPoolConfig">
         <property name="maxIdle" value="${redis.maxIdle}"/> <!--最大能够保持idel状态的对象数-->
@@ -17,8 +16,7 @@
         <constructor-arg index="1" value="${redis.host}"/>
         <constructor-arg index="2" value="${redis.port}" type="int"/>
         <constructor-arg index="3" value="${redis.timeout}" type="int"/>
-         <!--若不设置密码不需要加上这行参数，否则将无法从连接池中获取redis连接-->
-        <!--<constructor-arg index="4" value="${redis.password}"/>-->
+        <constructor-arg index="4" value=""/>
     </bean>
 
 </beans>

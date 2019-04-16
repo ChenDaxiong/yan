@@ -14,5 +14,13 @@
         <module name="yan-user" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="yan-post1" target="1.8" />
+    </bytecodeTargetLevel>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="yan-post1" options="-parameters" />
+    </option>
   </component>
 </project>
