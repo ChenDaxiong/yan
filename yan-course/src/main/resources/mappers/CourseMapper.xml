@@ -1,0 +1,473 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.hfut.bs.course.dao.CourseMapper" >
+  <resultMap id="BaseResultMap" type="com.hfut.bs.course.domain.Course" >
+    <constructor >
+      <idArg column="id" jdbcType="INTEGER" javaType="java.lang.Integer" />
+      <arg column="name" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="type" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="classify" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="classify_name" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="sub_classify" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="sub_classify_name" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="direction" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="username" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="level" jdbcType="INTEGER" javaType="java.lang.Integer" />
+      <arg column="free" jdbcType="INTEGER" javaType="java.lang.Integer" />
+      <arg column="price" jdbcType="DECIMAL" javaType="java.math.BigDecimal" />
+      <arg column="time" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="onsale" jdbcType="INTEGER" javaType="java.lang.Integer" />
+      <arg column="picture" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="recommend" jdbcType="INTEGER" javaType="java.lang.Integer" />
+      <arg column="weight" jdbcType="INTEGER" javaType="java.lang.Integer" />
+      <arg column="study_count" jdbcType="INTEGER" javaType="java.lang.Integer" />
+      <arg column="create_time" jdbcType="TIMESTAMP" javaType="java.util.Date" />
+      <arg column="create_user" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="update_time" jdbcType="TIMESTAMP" javaType="java.util.Date" />
+      <arg column="update_user" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="del" jdbcType="INTEGER" javaType="java.lang.Integer" />
+    </constructor>
+  </resultMap>
+  <resultMap id="ResultMapWithBLOBs" type="com.hfut.bs.course.domain.Course" >
+    <constructor >
+      <idArg column="id" jdbcType="INTEGER" javaType="java.lang.Integer" />
+      <arg column="name" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="type" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="classify" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="classify_name" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="sub_classify" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="sub_classify_name" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="direction" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="username" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="level" jdbcType="INTEGER" javaType="java.lang.Integer" />
+      <arg column="free" jdbcType="INTEGER" javaType="java.lang.Integer" />
+      <arg column="price" jdbcType="DECIMAL" javaType="java.math.BigDecimal" />
+      <arg column="time" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="onsale" jdbcType="INTEGER" javaType="java.lang.Integer" />
+      <arg column="picture" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="recommend" jdbcType="INTEGER" javaType="java.lang.Integer" />
+      <arg column="weight" jdbcType="INTEGER" javaType="java.lang.Integer" />
+      <arg column="study_count" jdbcType="INTEGER" javaType="java.lang.Integer" />
+      <arg column="create_time" jdbcType="TIMESTAMP" javaType="java.util.Date" />
+      <arg column="create_user" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="update_time" jdbcType="TIMESTAMP" javaType="java.util.Date" />
+      <arg column="update_user" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="del" jdbcType="INTEGER" javaType="java.lang.Integer" />
+      <arg column="brief" jdbcType="LONGVARCHAR" javaType="java.lang.String" />
+    </constructor>
+  </resultMap>
+  <sql id="Base_Column_List" >
+    id, name, type, classify, classify_name, sub_classify, sub_classify_name, direction, 
+    username, level, free, price, time, onsale, picture, recommend, weight, study_count, 
+    create_time, create_user, update_time, update_user, del
+  </sql>
+  <sql id="Blob_Column_List" >
+    brief
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="ResultMapWithBLOBs" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    ,
+    <include refid="Blob_Column_List" />
+    from course_t
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from course_t
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.hfut.bs.course.domain.Course" >
+    insert into course_t (id, name, type, 
+      classify, classify_name, sub_classify, 
+      sub_classify_name, direction, username, 
+      level, free, price, 
+      time, onsale, picture, 
+      recommend, weight, study_count, 
+      create_time, create_user, update_time, 
+      update_user, del, brief
+      )
+    values (#{id,jdbcType=INTEGER}, #{name,jdbcType=VARCHAR}, #{type,jdbcType=VARCHAR}, 
+      #{classify,jdbcType=VARCHAR}, #{classifyName,jdbcType=VARCHAR}, #{subClassify,jdbcType=VARCHAR}, 
+      #{subClassifyName,jdbcType=VARCHAR}, #{direction,jdbcType=VARCHAR}, #{username,jdbcType=VARCHAR}, 
+      #{level,jdbcType=INTEGER}, #{free,jdbcType=INTEGER}, #{price,jdbcType=DECIMAL}, 
+      #{time,jdbcType=VARCHAR}, #{onsale,jdbcType=INTEGER}, #{picture,jdbcType=VARCHAR}, 
+      #{recommend,jdbcType=INTEGER}, #{weight,jdbcType=INTEGER}, #{studyCount,jdbcType=INTEGER}, 
+      #{createTime,jdbcType=TIMESTAMP}, #{createUser,jdbcType=VARCHAR}, #{updateTime,jdbcType=TIMESTAMP}, 
+      #{updateUser,jdbcType=VARCHAR}, #{del,jdbcType=INTEGER}, #{brief,jdbcType=LONGVARCHAR}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.hfut.bs.course.domain.Course" >
+    insert into course_t
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        id,
+      </if>
+      <if test="name != null" >
+        name,
+      </if>
+      <if test="type != null" >
+        type,
+      </if>
+      <if test="classify != null" >
+        classify,
+      </if>
+      <if test="classifyName != null" >
+        classify_name,
+      </if>
+      <if test="subClassify != null" >
+        sub_classify,
+      </if>
+      <if test="subClassifyName != null" >
+        sub_classify_name,
+      </if>
+      <if test="direction != null" >
+        direction,
+      </if>
+      <if test="username != null" >
+        username,
+      </if>
+      <if test="level != null" >
+        level,
+      </if>
+      <if test="free != null" >
+        free,
+      </if>
+      <if test="price != null" >
+        price,
+      </if>
+      <if test="time != null" >
+        time,
+      </if>
+      <if test="onsale != null" >
+        onsale,
+      </if>
+      <if test="picture != null" >
+        picture,
+      </if>
+      <if test="recommend != null" >
+        recommend,
+      </if>
+      <if test="weight != null" >
+        weight,
+      </if>
+      <if test="studyCount != null" >
+        study_count,
+      </if>
+      <if test="createTime != null" >
+        create_time,
+      </if>
+      <if test="createUser != null" >
+        create_user,
+      </if>
+      <if test="updateTime != null" >
+        update_time,
+      </if>
+      <if test="updateUser != null" >
+        update_user,
+      </if>
+      <if test="del != null" >
+        del,
+      </if>
+      <if test="brief != null" >
+        brief,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="name != null" >
+        #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="type != null" >
+        #{type,jdbcType=VARCHAR},
+      </if>
+      <if test="classify != null" >
+        #{classify,jdbcType=VARCHAR},
+      </if>
+      <if test="classifyName != null" >
+        #{classifyName,jdbcType=VARCHAR},
+      </if>
+      <if test="subClassify != null" >
+        #{subClassify,jdbcType=VARCHAR},
+      </if>
+      <if test="subClassifyName != null" >
+        #{subClassifyName,jdbcType=VARCHAR},
+      </if>
+      <if test="direction != null" >
+        #{direction,jdbcType=VARCHAR},
+      </if>
+      <if test="username != null" >
+        #{username,jdbcType=VARCHAR},
+      </if>
+      <if test="level != null" >
+        #{level,jdbcType=INTEGER},
+      </if>
+      <if test="free != null" >
+        #{free,jdbcType=INTEGER},
+      </if>
+      <if test="price != null" >
+        #{price,jdbcType=DECIMAL},
+      </if>
+      <if test="time != null" >
+        #{time,jdbcType=VARCHAR},
+      </if>
+      <if test="onsale != null" >
+        #{onsale,jdbcType=INTEGER},
+      </if>
+      <if test="picture != null" >
+        #{picture,jdbcType=VARCHAR},
+      </if>
+      <if test="recommend != null" >
+        #{recommend,jdbcType=INTEGER},
+      </if>
+      <if test="weight != null" >
+        #{weight,jdbcType=INTEGER},
+      </if>
+      <if test="studyCount != null" >
+        #{studyCount,jdbcType=INTEGER},
+      </if>
+      <if test="createTime != null" >
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="createUser != null" >
+        #{createUser,jdbcType=VARCHAR},
+      </if>
+      <if test="updateTime != null" >
+        #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateUser != null" >
+        #{updateUser,jdbcType=VARCHAR},
+      </if>
+      <if test="del != null" >
+        #{del,jdbcType=INTEGER},
+      </if>
+      <if test="brief != null" >
+        #{brief,jdbcType=LONGVARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.hfut.bs.course.domain.Course" >
+    update course_t
+    <set >
+      <if test="name != null" >
+        name = #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="type != null" >
+        type = #{type,jdbcType=VARCHAR},
+      </if>
+      <if test="classify != null" >
+        classify = #{classify,jdbcType=VARCHAR},
+      </if>
+      <if test="classifyName != null" >
+        classify_name = #{classifyName,jdbcType=VARCHAR},
+      </if>
+      <if test="subClassify != null" >
+        sub_classify = #{subClassify,jdbcType=VARCHAR},
+      </if>
+      <if test="subClassifyName != null" >
+        sub_classify_name = #{subClassifyName,jdbcType=VARCHAR},
+      </if>
+      <if test="direction != null" >
+        direction = #{direction,jdbcType=VARCHAR},
+      </if>
+      <if test="username != null" >
+        username = #{username,jdbcType=VARCHAR},
+      </if>
+      <if test="level != null" >
+        level = #{level,jdbcType=INTEGER},
+      </if>
+      <if test="free != null" >
+        free = #{free,jdbcType=INTEGER},
+      </if>
+      <if test="price != null" >
+        price = #{price,jdbcType=DECIMAL},
+      </if>
+      <if test="time != null" >
+        time = #{time,jdbcType=VARCHAR},
+      </if>
+      <if test="onsale != null" >
+        onsale = #{onsale,jdbcType=INTEGER},
+      </if>
+      <if test="picture != null" >
+        picture = #{picture,jdbcType=VARCHAR},
+      </if>
+      <if test="recommend != null" >
+        recommend = #{recommend,jdbcType=INTEGER},
+      </if>
+      <if test="weight != null" >
+        weight = #{weight,jdbcType=INTEGER},
+      </if>
+      <if test="studyCount != null" >
+        study_count = #{studyCount,jdbcType=INTEGER},
+      </if>
+      <if test="createTime != null" >
+        create_time = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="createUser != null" >
+        create_user = #{createUser,jdbcType=VARCHAR},
+      </if>
+      <if test="updateTime != null" >
+        update_time = #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateUser != null" >
+        update_user = #{updateUser,jdbcType=VARCHAR},
+      </if>
+      <if test="del != null" >
+        del = #{del,jdbcType=INTEGER},
+      </if>
+      <if test="brief != null" >
+        brief = #{brief,jdbcType=LONGVARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKeyWithBLOBs" parameterType="com.hfut.bs.course.domain.Course" >
+    update course_t
+    set name = #{name,jdbcType=VARCHAR},
+      type = #{type,jdbcType=VARCHAR},
+      classify = #{classify,jdbcType=VARCHAR},
+      classify_name = #{classifyName,jdbcType=VARCHAR},
+      sub_classify = #{subClassify,jdbcType=VARCHAR},
+      sub_classify_name = #{subClassifyName,jdbcType=VARCHAR},
+      direction = #{direction,jdbcType=VARCHAR},
+      username = #{username,jdbcType=VARCHAR},
+      level = #{level,jdbcType=INTEGER},
+      free = #{free,jdbcType=INTEGER},
+      price = #{price,jdbcType=DECIMAL},
+      time = #{time,jdbcType=VARCHAR},
+      onsale = #{onsale,jdbcType=INTEGER},
+      picture = #{picture,jdbcType=VARCHAR},
+      recommend = #{recommend,jdbcType=INTEGER},
+      weight = #{weight,jdbcType=INTEGER},
+      study_count = #{studyCount,jdbcType=INTEGER},
+      create_time = #{createTime,jdbcType=TIMESTAMP},
+      create_user = #{createUser,jdbcType=VARCHAR},
+      update_time = #{updateTime,jdbcType=TIMESTAMP},
+      update_user = #{updateUser,jdbcType=VARCHAR},
+      del = #{del,jdbcType=INTEGER},
+      brief = #{brief,jdbcType=LONGVARCHAR}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.hfut.bs.course.domain.Course" >
+    update course_t
+    set name = #{name,jdbcType=VARCHAR},
+      type = #{type,jdbcType=VARCHAR},
+      classify = #{classify,jdbcType=VARCHAR},
+      classify_name = #{classifyName,jdbcType=VARCHAR},
+      sub_classify = #{subClassify,jdbcType=VARCHAR},
+      sub_classify_name = #{subClassifyName,jdbcType=VARCHAR},
+      direction = #{direction,jdbcType=VARCHAR},
+      username = #{username,jdbcType=VARCHAR},
+      level = #{level,jdbcType=INTEGER},
+      free = #{free,jdbcType=INTEGER},
+      price = #{price,jdbcType=DECIMAL},
+      time = #{time,jdbcType=VARCHAR},
+      onsale = #{onsale,jdbcType=INTEGER},
+      picture = #{picture,jdbcType=VARCHAR},
+      recommend = #{recommend,jdbcType=INTEGER},
+      weight = #{weight,jdbcType=INTEGER},
+      study_count = #{studyCount,jdbcType=INTEGER},
+      create_time = #{createTime,jdbcType=TIMESTAMP},
+      create_user = #{createUser,jdbcType=VARCHAR},
+      update_time = #{updateTime,jdbcType=TIMESTAMP},
+      update_user = #{updateUser,jdbcType=VARCHAR},
+      del = #{del,jdbcType=INTEGER}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+
+  <select id="selectList"  parameterType="com.hfut.bs.course.model.CourseQueryParam"  resultMap="ResultMapWithBLOBs">
+    SELECT
+    <include refid="Base_Column_List" />
+    ,
+    <include refid="Blob_Column_List" />
+    FROM course_t
+    <trim prefix="WHERE " prefixOverrides="AND |OR ">
+      <if test="type != null">
+        AND type = #{type, jdbcType=INTEGER}
+      </if>
+      <if test="classify != null">
+        AND classify = #{classify, jdbcType=INTEGER}
+      </if>
+      <if test="subClassify != null">
+        AND sub_classify = #{subClassify, jdbcType=INTEGER}
+      </if>
+      <if test="direction != null">
+        AND direction = #{direction, jdbcType=INTEGER}
+      </if>
+      <if test="username != null">
+        AND username = #{username, jdbcType=INTEGER}
+      </if>
+      <if test="free != null">
+        AND free = #{free, jdbcType=INTEGER}
+      </if>
+      <if test="onsale != null">
+        AND onsale = #{onsale, jdbcType=INTEGER}
+      </if>
+    </trim>
+    <if test="sortField != null">
+      ORDER BY #{sortField}  #{sortDirection}
+    </if>
+    <if test="start != null and end != null">
+      LIMIT #{start, jdbcType=INTEGER} , #{end, jdbcType=INTEGER}
+    </if>
+  </select>
+
+  <select id="selectTotalItemsCount" parameterType="com.hfut.bs.course.domain.Course" resultType="java.lang.Integer">
+    SELECT COUNT(*) FROM course_t
+    <trim prefix="WHERE " prefixOverrides="AND |OR ">
+      AND del = 0
+      <if test="type != null">
+        AND type = #{type, jdbcType=INTEGER}
+      </if>
+      <if test="classify != null">
+        AND classify = #{classify, jdbcType=INTEGER}
+      </if>
+      <if test="subClassify != null">
+        AND sub_classify = #{subClassify, jdbcType=INTEGER}
+      </if>
+      <if test="onsale != null">
+        AND onsale = #{onsale, jdbcType=INTEGER}
+      </if>
+      <if test="name != null">
+        AND name like CONCAT('%',#{name},'%' )
+      </if>
+    </trim>
+  </select>
+
+  <select id="selectPage" resultMap="ResultMapWithBLOBs">
+    SELECT
+    <include refid="Base_Column_List" />
+    ,
+    <include refid="Blob_Column_List" />
+    FROM course_t
+    <trim prefix="WHERE " prefixOverrides="AND |OR ">
+      AND del = 0
+      <if test="param1.type != null">
+        AND type = #{param1.type, jdbcType=INTEGER}
+      </if>
+      <if test="param1.classify != null">
+        AND classify = #{param1.classify, jdbcType=INTEGER}
+      </if>
+      <if test="param1.subClassify != null">
+        AND sub_classify = #{param1.subClassify, jdbcType=INTEGER}
+      </if>
+      <if test="param1.onsale != null">
+        AND onsale = #{param1.onsale, jdbcType=INTEGER}
+      </if>
+      <if test="param1.name != null">
+        AND name like CONCAT('%',#{param1.name},'%' )
+      </if>
+    </trim>
+    <if test="param2.sortField != null and param2.sortField != ''">
+      ORDER BY ${param2.sortField}  ${param2.sortDirection}
+    </if>
+    LIMIT #{param2.startIndex, jdbcType=INTEGER} , #{param2.pageSize, jdbcType=INTEGER}
+  </select>
+
+  <update id="deleteLogic" parameterType="java.lang.Integer" flushCache="true">
+		UPDATE t_course
+		SET del = 1
+		WHERE id = #{id, jdbcType=INTEGER}
+	</update>
+</mapper>

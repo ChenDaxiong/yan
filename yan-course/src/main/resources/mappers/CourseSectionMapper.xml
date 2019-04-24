@@ -1,0 +1,267 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.hfut.bs.course.dao.CourseSectionMapper" >
+  <resultMap id="BaseResultMap" type="com.hfut.bs.course.domain.CourseSection" >
+    <constructor >
+      <idArg column="id" jdbcType="INTEGER" javaType="java.lang.Integer" />
+      <arg column="course_id" jdbcType="INTEGER" javaType="java.lang.Integer" />
+      <arg column="parent_id" jdbcType="INTEGER" javaType="java.lang.Integer" />
+      <arg column="name" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="sort" jdbcType="INTEGER" javaType="java.lang.Integer" />
+      <arg column="time" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="onsale" jdbcType="BIT" javaType="java.lang.Boolean" />
+      <arg column="video_url" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="create_time" jdbcType="TIMESTAMP" javaType="java.util.Date" />
+      <arg column="create_user" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="update_time" jdbcType="TIMESTAMP" javaType="java.util.Date" />
+      <arg column="update_user" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="del" jdbcType="BIT" javaType="java.lang.Boolean" />
+    </constructor>
+  </resultMap>
+  <sql id="Base_Column_List" >
+    id, course_id, parent_id, name, sort, time, onsale, video_url, create_time, create_user, 
+    update_time, update_user, del
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from course_section_t
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from course_section_t
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.hfut.bs.course.domain.CourseSection" >
+    insert into course_section_t (id, course_id, parent_id, 
+      name, sort, time, onsale, 
+      video_url, create_time, create_user, 
+      update_time, update_user, del
+      )
+    values (#{id,jdbcType=INTEGER}, #{courseId,jdbcType=INTEGER}, #{parentId,jdbcType=INTEGER}, 
+      #{name,jdbcType=VARCHAR}, #{sort,jdbcType=INTEGER}, #{time,jdbcType=VARCHAR}, #{onsale,jdbcType=BIT}, 
+      #{videoUrl,jdbcType=VARCHAR}, #{createTime,jdbcType=TIMESTAMP}, #{createUser,jdbcType=VARCHAR}, 
+      #{updateTime,jdbcType=TIMESTAMP}, #{updateUser,jdbcType=VARCHAR}, #{del,jdbcType=BIT}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.hfut.bs.course.domain.CourseSection" >
+    insert into course_section_t
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        id,
+      </if>
+      <if test="courseId != null" >
+        course_id,
+      </if>
+      <if test="parentId != null" >
+        parent_id,
+      </if>
+      <if test="name != null" >
+        name,
+      </if>
+      <if test="sort != null" >
+        sort,
+      </if>
+      <if test="time != null" >
+        time,
+      </if>
+      <if test="onsale != null" >
+        onsale,
+      </if>
+      <if test="videoUrl != null" >
+        video_url,
+      </if>
+      <if test="createTime != null" >
+        create_time,
+      </if>
+      <if test="createUser != null" >
+        create_user,
+      </if>
+      <if test="updateTime != null" >
+        update_time,
+      </if>
+      <if test="updateUser != null" >
+        update_user,
+      </if>
+      <if test="del != null" >
+        del,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="courseId != null" >
+        #{courseId,jdbcType=INTEGER},
+      </if>
+      <if test="parentId != null" >
+        #{parentId,jdbcType=INTEGER},
+      </if>
+      <if test="name != null" >
+        #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="sort != null" >
+        #{sort,jdbcType=INTEGER},
+      </if>
+      <if test="time != null" >
+        #{time,jdbcType=VARCHAR},
+      </if>
+      <if test="onsale != null" >
+        #{onsale,jdbcType=BIT},
+      </if>
+      <if test="videoUrl != null" >
+        #{videoUrl,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null" >
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="createUser != null" >
+        #{createUser,jdbcType=VARCHAR},
+      </if>
+      <if test="updateTime != null" >
+        #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateUser != null" >
+        #{updateUser,jdbcType=VARCHAR},
+      </if>
+      <if test="del != null" >
+        #{del,jdbcType=BIT},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.hfut.bs.course.domain.CourseSection" >
+    update course_section_t
+    <set >
+      <if test="courseId != null" >
+        course_id = #{courseId,jdbcType=INTEGER},
+      </if>
+      <if test="parentId != null" >
+        parent_id = #{parentId,jdbcType=INTEGER},
+      </if>
+      <if test="name != null" >
+        name = #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="sort != null" >
+        sort = #{sort,jdbcType=INTEGER},
+      </if>
+      <if test="time != null" >
+        time = #{time,jdbcType=VARCHAR},
+      </if>
+      <if test="onsale != null" >
+        onsale = #{onsale,jdbcType=BIT},
+      </if>
+      <if test="videoUrl != null" >
+        video_url = #{videoUrl,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null" >
+        create_time = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="createUser != null" >
+        create_user = #{createUser,jdbcType=VARCHAR},
+      </if>
+      <if test="updateTime != null" >
+        update_time = #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateUser != null" >
+        update_user = #{updateUser,jdbcType=VARCHAR},
+      </if>
+      <if test="del != null" >
+        del = #{del,jdbcType=BIT},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.hfut.bs.course.domain.CourseSection" >
+    update course_section_t
+    set course_id = #{courseId,jdbcType=INTEGER},
+      parent_id = #{parentId,jdbcType=INTEGER},
+      name = #{name,jdbcType=VARCHAR},
+      sort = #{sort,jdbcType=INTEGER},
+      time = #{time,jdbcType=VARCHAR},
+      onsale = #{onsale,jdbcType=BIT},
+      video_url = #{videoUrl,jdbcType=VARCHAR},
+      create_time = #{createTime,jdbcType=TIMESTAMP},
+      create_user = #{createUser,jdbcType=VARCHAR},
+      update_time = #{updateTime,jdbcType=TIMESTAMP},
+      update_user = #{updateUser,jdbcType=VARCHAR},
+      del = #{del,jdbcType=BIT}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+
+    <select id="selectAll" parameterType="com.hfut.bs.course.domain.CourseSection" resultMap="BaseResultMap">
+        SELECT
+        <include refid="Base_Column_List" />
+        FROM course_section_t
+        <trim prefix="WHERE " prefixOverrides="AND |OR ">
+            del = 0
+            <if test="courseId != null">
+                AND course_id = #{courseId, jdbcType=INTEGER}
+            </if>
+            <if test="onsale != null">
+                AND onsale = #{onsale, jdbcType=INTEGER}
+            </if>
+        </trim>
+        ORDER BY parent_id , sort
+    </select>
+
+    <select id="selectMaxSort" parameterType="java.lang.Long" resultType="java.lang.Integer">
+		SELECT MAX(sort)
+		FROM course_section_t
+		WHERE course_id = #{courseId, jdbcType=INTEGER}
+		AND parent_id = 0
+		ORDER BY sort DESC
+	</select>
+
+    <select id="selectTotalItemsCount" parameterType="com.hfut.bs.course.domain.CourseSection" resultType="java.lang.Integer">
+		SELECT COUNT(*) FROM course_section_t
+		WHERE del = 0
+	</select>
+
+    <select id="selectPage" resultType="com.hfut.bs.course.domain.CourseSection">
+        SELECT
+        <include refid="Base_Column_List" />
+        FROM course_section_t
+        WHERE del = 0
+        ORDER BY id
+        LIMIT #{param2.startIndex, jdbcType=INTEGER} , #{param2.pageSize, jdbcType=INTEGER}
+    </select>
+
+    <insert id="insertList" parameterType="list">
+        INSERT INTO course_section_t
+        ( course_id, parent_id, name, sort, time, onsale, video_url,
+        CREATE_TIME, CREATE_USER, update_time, update_user, del )
+        VALUES
+        <foreach  collection="list" item="item" index="index" separator="," >
+            ( #{item.courseId, jdbcType=VARCHAR}, #{item.parentId, jdbcType=VARCHAR}, #{item.name, jdbcType=VARCHAR}, #{item.sort, jdbcType=INTEGER}, #{item.time, jdbcType=VARCHAR}, #{item.onsale, jdbcType=INTEGER}, #{item.videoUrl, jdbcType=VARCHAR},
+            #{item.createTime, jdbcType=DATE}, #{item.createUser, jdbcType=VARCHAR}, #{item.updateTime, jdbcType=TIMESTAMP}, #{item.updateUser, jdbcType=VARCHAR}, #{item.del, jdbcType=TINYINT})
+        </foreach>
+    </insert>
+
+    <update id="deleteLogic" parameterType="java.lang.Integer" flushCache="true">
+		UPDATE course_section_t
+		SET del = 1
+		WHERE id = #{id, jdbcType=INTEGER}
+	</update>
+
+    <select id="selectSortSectionMax" parameterType="com.hfut.bs.course.domain.CourseSection" resultMap="BaseResultMap">
+        SELECT
+        <include refid="Base_Column_List"  />
+        FROM course_section_t
+        WHERE course_id = #{courseId}
+        AND parent_id = #{parentId}
+        <![CDATA[ AND sort > #{sort} ]]>
+        ORDER BY sort ASC
+        LIMIT 0,1;
+    </select>
+
+    <select id="selectSortSectionMin" parameterType="com.hfut.bs.course.domain.CourseSection" resultMap="BaseResultMap">
+        SELECT
+        <include refid="Base_Column_List"  />
+        FROM course_section_t
+        WHERE course_id = #{courseId}
+        AND parent_id = #{parentId}
+        <![CDATA[ AND sort < #{sort} ]]>
+        ORDER BY sort DESC
+        LIMIT 0,1;
+    </select>
+</mapper>

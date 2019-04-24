@@ -15,9 +15,9 @@
     <!-- use dubbo protocol to export service on port 20880 -->
     <dubbo:protocol name="dubbo" port="20880"/>
 
-    <!-- 声明需要暴露的服务接口 -->
-    <dubbo:service interface="DemoService " ref = "demoService" />
+    <!--&lt;!&ndash; 声明需要暴露的服务接口 &ndash;&gt;-->
+    <!--<dubbo:service interface="DemoService " ref = "demoService" />-->
 
-    <bean id="demoService" class="com.hfut.bs.gateway.course.DemoServiceImpl"/>
+    <!--<bean id="demoService" class="com.hfut.bs.gateway.course.DemoServiceImpl"/>-->
 
 </beans>

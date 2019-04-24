@@ -272,6 +272,77 @@ public class JedisUtils {
         }
     }
 
+    /**
+     * 将元素加入到集合中，已经存在将被忽略
+     * 值是String 类型
+     * @param key
+     * @param value
+     * @return
+     */
+    public <T> long sadd(BasePrefix prefix, String key,String value) {
+        Jedis jedis = null;
+        Long result = null;
+        try {
+            jedis = jedisPool.getResource();
+            String realKey = prefix.getPrefix() + key;
+            return jedis.sadd(realKey, value);
+        } catch (Exception e) {
+            log.error("发生异常" + e.getMessage());
+        } finally {
+            if (jedis != null) {
+                jedis.close();
+            }
+        }
+        return 0;
+    }
+
+    /**
+     * 移除集合中的元素
+     *
+     * @param prefix
+     * @param key
+     * @return
+     */
+    public long srem(BasePrefix prefix, String key,String value) {
+        Jedis jedis = null;
+        Long result = null;
+        try {
+            jedis = jedisPool.getResource();
+            String realKey = prefix.getPrefix() + key;
+            return jedis.srem(realKey, value);
+        } catch (Exception e) {
+            log.error("发生异常" + e.getMessage());
+        } finally {
+            if (jedis != null) {
+                jedis.close();
+            }
+        }
+        return 0;
+    }
+
+    /**
+     * 返回集合中元素的数量
+     *
+     * @param key
+     * @return
+     */
+    public long scard(BasePrefix prefix, String key) {
+        Jedis jedis = null;
+        Long result = null;
+        try {
+            jedis = jedisPool.getResource();
+            String realKey = prefix.getPrefix() + key;
+            return jedis.scard(realKey);
+        } catch (Exception e) {
+            log.error("发生异常" + e.getMessage());
+        } finally {
+            if (jedis != null) {
+                jedis.close();
+            }
+        }
+        return 0;
+    }
+
     public static <T> String beanToString(T value) {
         if (value == null) {
             return null;

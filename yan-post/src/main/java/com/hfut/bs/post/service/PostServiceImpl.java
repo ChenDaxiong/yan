@@ -28,6 +28,16 @@ public class PostServiceImpl implements IPostService {
         return true;
     }
 
+
+    public List<PostInfoModel> getPostsByKeyword(String keyword,String classifyId) throws Exception {
+        if (keyword == null){
+            throw  new Exception("关键字不能为空");
+        }
+        String dbKeyword = "%"+keyword+"%";
+        return null;
+
+    }
+
     @Override
     public PostInfoModel getById(Integer id) {
         Post post  =  postMapper.selectByPrimaryKey(id);

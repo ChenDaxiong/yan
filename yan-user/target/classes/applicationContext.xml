@@ -41,6 +41,7 @@
 				<list>
 					<value>classpath:/datasource.properties</value>
 					<value>classpath:/application.properties</value>
+					<value>classpath:/redis.properties</value>
 				</list>
 			</property>
 		</bean>

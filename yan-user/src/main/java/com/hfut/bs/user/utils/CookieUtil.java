@@ -21,8 +21,8 @@ public class CookieUtil {
 
     private final static Logger log = LoggerFactory.getLogger(CookieUtil.class);
 
-    private final static String COOKIE_DOMAIN = ".happymmall.com";
-    public final static String COOKIE_NAME = "miaosha_login_token";
+    private final static String COOKIE_DOMAIN = ".yan.com";
+    public final static String COOKIE_NAME = "yan_login_token";
 
     @Autowired
     private JedisUtils jedisUtils;

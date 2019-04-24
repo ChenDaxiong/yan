@@ -12,7 +12,7 @@ public class CommentKey extends BasePrefix {
         super(prefix);
     }
 
-    public static final CommentKey LIKE_COMMENT = new CommentKey("usersLikeComment");
+    public static final CommentKey LIKE_COMMENT = new CommentKey("usersLikeComment_");
 
 //    public static final CommentKey
 

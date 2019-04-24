@@ -1,8 +1,6 @@
 package com.hfut.bs.post.common;
 
-import lombok.Data;
-
-public enum  EntityType {
+public enum EntityTypeEnum {
 
     POST(1,"post"),
 
@@ -15,9 +13,18 @@ public enum  EntityType {
     public final static int ENTITY_POST = 1;
     public final static int ENTITY_COMMENT = 2;
 
-    EntityType(int entityCode, String entityDesc) {
+    EntityTypeEnum(int entityCode, String entityDesc) {
         this.entityCode = entityCode;
         this.entityDesc = entityDesc;
+    }
+
+    public static String getValueByCode(int entityCode){
+        for (EntityTypeEnum type : EntityTypeEnum.values()){
+            if (type.entityCode == entityCode){
+                return type.entityDesc;
+            }
+        }
+        return null;
     }
 
     public String getEntityDesc(){
