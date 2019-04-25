@@ -23,14 +23,12 @@ public class CourseServiceImpl implements ICourseService{
     @Autowired
     private CourseMapper courseMapper;
 
-//    @Override
+    @Override
     public CourseInfoModel getById(Integer id){
         Course course = courseMapper.selectByPrimaryKey(id);
         prepareCoursePicture(course);
         return toCourseInfoModel(course);
     }
-
-
 
     @Override
     public List<CourseInfoModel> queryList(CourseQueryParam queryEntity){

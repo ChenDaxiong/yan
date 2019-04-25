@@ -13,6 +13,22 @@
 
     <dubbo:reference id="authUserService" interface="com.hfut.bs.user.service.IAuthUserService"/>
 
+    <dubbo:reference id="userCourseSectionService" interface="com.hfut.bs.user.service.IUserCourseSectionService"/>
+
+    <dubbo:reference id="userMessageService" interface="com.hfut.bs.user.service.IUserMessageService"/>
+
+    <dubbo:reference id="courseService" interface="com.hfut.bs.course.service.ICourseService"/>
+
+    <dubbo:reference id="courseSectionService" interface="com.hfut.bs.course.service.ICourseSectionService"/>
+
+    <dubbo:reference id="classifyService" interface="com.hfut.bs.course.service.IClassifyService"/>
+
+    <dubbo:reference id="siteCarouseService" interface="com.hfut.bs.course.service.ISiteCarouseService"/>
+
+    <dubbo:reference id="collegeService" interface="com.hfut.bs.course.service.ICollegeService"/>
+
+
+
 
 
 

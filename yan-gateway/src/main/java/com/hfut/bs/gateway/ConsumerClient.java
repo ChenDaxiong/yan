@@ -1,6 +1,6 @@
 package com.hfut.bs.gateway;
 
-import com.hfut.bs.gateway.course.DemoService;
+import com.hfut.bs.course.service.ICourseService;
 import com.hfut.bs.gateway.redis.JedisUtils;
 import com.hfut.bs.gateway.user.AuthController;
 import com.hfut.bs.user.model.UserModel;
@@ -18,6 +18,8 @@ public class ConsumerClient {
 
         context.start();
 
+        ICourseService courseService = (ICourseService) context.getBean("courseService ");
+
         JedisUtils jedisUtils = (JedisUtils) context.getBean("jedisUtils");
 
         IAuthUserService authUserService = (IAuthUserService) context.getBean("authUserService");
@@ -29,9 +31,9 @@ public class ConsumerClient {
             Scanner scanner = new Scanner(System.in);
             String msg = scanner.next();
 
-            //  获取接口
-            DemoService demoService = (DemoService) context.getBean("la");
-            demoService.helloDubbo(msg);
+//            //  获取接口
+//            DemoService demoService = (DemoService) context.getBean("la");
+//            demoService.helloDubbo(msg);
         }
     }
 }

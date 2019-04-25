@@ -1,11 +1,13 @@
 package com.hfut.bs.gateway.user;
 
+import com.hfut.bs.common.page.TailPage;
 import com.hfut.bs.common.storage.QiniuStorage;
 import com.hfut.bs.gateway.access.NeedLogin;
 import com.hfut.bs.gateway.access.UserContext;
 import com.hfut.bs.user.model.UserInfoModel;
 import com.hfut.bs.user.service.IAuthUserService;
 import com.hfut.bs.gateway.result.Result;
+import org.apache.commons.lang.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -23,6 +25,31 @@ public class UserController {
 
     @Autowired
     private IAuthUserService authUserService;
+
+
+    /**
+     * 首页
+     */
+    @RequestMapping("/home")
+    public ModelAndView index(TailPage page){
+        ModelAndView mv = new ModelAndView("user/home");
+        mv.addObject("curNav","home");
+
+        //加载关注用户的动态
+//        UserFollowStudyRecord queryEntity = new UserFollowStudyRecord();
+//        queryEntity.setUserId(SessionContext.getUserId());
+//        page = userFollowsService.queryUserFollowStudyRecordPage(queryEntity, page);
+
+        //处理用户头像
+//        for(UserFollowStudyRecord item : page.getItems()){
+//            if(StringUtils.isNotEmpty(item.getHeader())){
+//                item.setHeader(QiniuStorage.getUrl(item.getHeader()));
+//            }
+//        }
+        mv.addObject("page", page);
+
+        return mv;
+    }
 
     @RequestMapping(value = "uploadHead",method = RequestMethod.POST)
     @NeedLogin

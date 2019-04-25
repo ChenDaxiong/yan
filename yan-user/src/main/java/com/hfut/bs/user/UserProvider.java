@@ -16,7 +16,6 @@ public class UserProvider
     public static void main( String[] args ) throws IOException {
         ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("applicationContext.xml");
         context.start();
-        CookieUtil cookieUtil = (CookieUtil) context.getBean("cookieUtil");
         System.in.read();
     }
 }

@@ -212,7 +212,7 @@
     <include refid="Base_Column_List" />, count(id) as count
     from user_message_t
     where user_id = #{userId}
-    OR send_user_id = #{userId}  group by conversation_id order by create_time limit #{}
+    OR send_user_id = #{userId}  group by conversation_id order by create_time limit #{limit}
   </select>
 
 </mapper>

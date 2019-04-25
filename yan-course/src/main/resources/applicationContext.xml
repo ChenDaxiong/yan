@@ -24,7 +24,7 @@
 
     <!--导入其它spring配置文件-->
     <import resource="classpath:/application-redis.xml"/>
-    <!--<import resource="classpath:/application-provider.xml"/>-->
+    <import resource="classpath:/application-provider.xml"/>
 
 
     <!--xml针对 Responsebody 转码 -->

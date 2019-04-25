@@ -47,24 +47,32 @@ public class LoginInterceptor extends HandlerInterceptorAdapter {
         HandlerMethod method = (HandlerMethod) handler;
         // 获取controller方法上的注解
         NeedLogin needLogin = method.getMethodAnnotation(NeedLogin.class);
-        if (needLogin == null) {
-            return true;
-        }
-
         String paramToken = request.getParameter(Const.COOKIE_NAME);
         String cookieToken = getLoginToken(request);
-        if (StringUtils.isEmpty(paramToken) && StringUtils.isEmpty(cookieToken)) {
-            return false;
+        if (needLogin == null) {
+            if (StringUtils.isNotEmpty(paramToken) || StringUtils.isNotEmpty(cookieToken)){
+                String token = paramToken == null ? cookieToken : paramToken;
+                UserInfoModel user = getUserByToken(token, response);
+                if (user != null) {
+                    // 将User对象存放到本地线程变量中，方便解析器直接获取
+                    UserContext.setUserId(user.getId());
+                }
+            }
+            return true;
+        }else {
+            if (StringUtils.isEmpty(paramToken) && StringUtils.isEmpty(cookieToken)) {
+                return false;
+            }
+            String token = paramToken == null ? cookieToken : paramToken;
+            UserInfoModel user = getUserByToken(token, response);
+            if (user == null) {
+                WebUtil.render(response, CodeMsg.SERVER_ERROR);
+                return false;
+            }
+            // 将User对象存放到本地线程变量中，方便解析器直接获取
+            UserContext.setUserId(user.getId());
+            return true;
         }
-        String token = paramToken == null ? cookieToken : paramToken;
-        UserInfoModel user = getUserByToken(token, response);
-        if (user == null) {
-            WebUtil.render(response, CodeMsg.SERVER_ERROR);
-            return false;
-        }
-        // 将User对象存放到本地线程变量中，方便解析器直接获取
-        UserContext.setUserId(user.getId());
-        return true;
     }
 
     /**

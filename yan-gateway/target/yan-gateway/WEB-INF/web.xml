@@ -54,7 +54,7 @@
   <servlet-mapping>
     <servlet-name>springMvc</servlet-name>
     <!--通过该url找到Servlet，/相当与项目名称，一定要加上-->
-    <url-pattern>/</url-pattern>
+    <url-pattern>*.html</url-pattern>
   </servlet-mapping>
 
 

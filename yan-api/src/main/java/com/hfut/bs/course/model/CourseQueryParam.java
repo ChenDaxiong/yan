@@ -3,10 +3,12 @@ package com.hfut.bs.course.model;
 import com.hfut.bs.common.utils.BeanUtil;
 import org.apache.commons.lang.StringUtils;
 
+import java.io.Serializable;
+
 /**
  * 课程查询实体类
  */
-public class CourseQueryParam extends CourseInfoModel{
+public class CourseQueryParam extends CourseInfoModel implements Serializable {
 	
 	private static final long serialVersionUID = 6928526481007198051L;
 	

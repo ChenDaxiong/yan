@@ -20,12 +20,6 @@ public class CourseProvider
     public static void main( String[] args ) throws IOException {
         ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("applicationContext.xml");
         context.start();
-        CourseServiceImpl courseService = (CourseServiceImpl) context.getBean("courseService");
-        CourseSectionServiceImpl courseSectionService = (CourseSectionServiceImpl) context.getBean("courseSectionService");
-        CourseQueryParam param = new CourseQueryParam();
-//        CourseInfoModel course = courseService.getById(1);
-        List<Course> result = courseService.queryList(param);
-//        CourseSection courseSection = courseSectionService.getById(1);
-        System.in.read();
+         System.in.read();
     }
 }

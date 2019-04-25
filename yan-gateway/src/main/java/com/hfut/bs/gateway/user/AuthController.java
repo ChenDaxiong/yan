@@ -2,7 +2,9 @@ package com.hfut.bs.gateway.user;
 
 import com.alibaba.dubbo.rpc.RpcContext;
 import com.hfut.bs.common.redis.keys.AuthUserKey;
+import com.hfut.bs.common.utils.JsonView;
 import com.hfut.bs.common.utils.UUIDUtil;
+import com.hfut.bs.gateway.access.UserContext;
 import com.hfut.bs.gateway.redis.JedisUtils;
 import com.hfut.bs.gateway.utils.CookieUtil;
 import com.hfut.bs.user.model.UserInfoModel;
@@ -14,6 +16,10 @@ import com.hfut.bs.gateway.result.CodeMsg;
 import com.hfut.bs.gateway.result.ResponseVo;
 import com.hfut.bs.gateway.result.Result;
 import org.apache.commons.lang.StringUtils;
+import org.apache.shiro.SecurityUtils;
+import org.apache.shiro.authc.AuthenticationException;
+import org.apache.shiro.authc.UsernamePasswordToken;
+import org.apache.shiro.subject.Subject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -38,8 +44,8 @@ public class AuthController {
     CookieUtil cookieUtil;
 
     @RequestMapping(value="index")
-    public ModelAndView index(HttpServletRequest request, HttpServletResponse response){
-        return new ModelAndView("index");
+    public String index(HttpServletRequest request, HttpServletResponse response){
+        return "index";
     }
 
 
@@ -49,8 +55,8 @@ public class AuthController {
     }
 
 
-    @RequestMapping("register")
-    @ResponseBody
+//    @RequestMapping("register")
+//    @ResponseBody
     public Result register(UserInfoModel userInfoModel) {
         UserModel user = authUserService.getByUsername(userInfoModel.getUsername());
         if (user != null) {
@@ -64,9 +70,9 @@ public class AuthController {
         return Result.success("注册成功");
     }
 
-
-    @RequestMapping("login")
-    @ResponseBody
+//
+//    @RequestMapping("login")
+//    @ResponseBody
     public Result do_login(UserInfoModel userInfoModel,HttpServletResponse response) {
         if (StringUtils.isEmpty(userInfoModel.getPassword()) || StringUtils.isEmpty(userInfoModel.getUsername())) {
             //  用户名和密码不能为空
@@ -106,6 +112,107 @@ public class AuthController {
     @RequestMapping("hello")
     public String testFreemarker(){
         return "hello";
+    }
+
+    /**
+     * 注册页面
+     */
+    @RequestMapping(value = "/register")
+    public  ModelAndView register(){
+        if(UserContext.getUserId() != null){
+            return new ModelAndView("redirect:/index.html");
+        }
+        return new ModelAndView("auth/register");
+    }
+
+    /**
+     * 实现注册
+     */
+    @RequestMapping(value = "/doRegister")
+    @ResponseBody
+    public String doRegister(UserInfoModel authUser, HttpServletRequest request) {
+        //验证码判断
+//        if(identiryCode!=null && !identiryCode.equalsIgnoreCase(SessionContext.getIdentifyCode(request))){
+//            return JsonView.render(2);
+//        }
+
+        UserModel tmpUser = authUserService.getByUsername(authUser.getUsername());
+        if(tmpUser != null){
+            return JsonView.render(1);
+        }else{
+            String dbSalt = CommonUtil.getUID();
+            String formPassword = MD5Utils.inputPassToFormPass(authUser.getPassword());
+            authUser.setPassword(MD5Utils.formPassToDbPass(formPassword,dbSalt));
+            authUser.setSalt(dbSalt);
+            authUserService.createSelectivity(authUser);
+            return JsonView.render(0);
+        }
+    }
+
+    /**
+     * 登录页面
+     */
+    @RequestMapping(value = "/login")
+    public  ModelAndView login(){
+        if(UserContext.getUserId() != null){
+            return new ModelAndView("redirect:/index.html");
+        }
+        return new ModelAndView("auth/login");
+    }
+
+    /**
+     * ajax登录
+     */
+    @RequestMapping(value = "/ajaxlogin")
+    @ResponseBody
+    public String ajaxLogin(UserInfoModel user, String identiryCode, Integer rememberMe, HttpServletResponse response){
+//        //验证码判断
+//        if(identiryCode!=null && !identiryCode.equalsIgnoreCase(SessionContext.getIdentifyCode(request))){
+//            return JsonView.render(2, "验证码不正确！");
+//        }
+        if (StringUtils.isEmpty(user.getPassword()) || StringUtils.isEmpty(user.getUsername())) {
+            //  用户名和密码不能为空
+            return JsonView.render(1,"用户名和密码不能为空");
+        }
+
+        try {
+            // 转化成表单密码
+            user.setPassword(MD5Utils.inputPassToFormPass(user.getPassword()));
+            UserInfoModel userDetail = authUserService.getByUsernameAndPassword(user);
+            // 将登陆的用户cookie种到客户端浏览器
+            addCookie(response, userDetail);
+            return new JsonView().toString();
+        }catch(AuthenticationException e){ //登录失败
+            return JsonView.render(1, "用户名或密码不正确");
+        }
+    }
+
+    @RequestMapping(value = "/doLogin")
+    public ModelAndView doLogin(UserInfoModel user, String identiryCode, HttpServletResponse response){
+
+        //如果已经登录过
+        if(UserContext.getUserId() != null){
+            return new ModelAndView("redirect:/user/home.html");
+        }
+
+        //验证码判断
+//        if(identiryCode!=null && !identiryCode.equalsIgnoreCase(SessionContext.getIdentifyCode(request))){
+//            ModelAndView mv = new ModelAndView("auth/login");
+//            mv.addObject("errcode", 1);
+//            return mv;
+//        }
+//        UsernamePasswordToken token = new UsernamePasswordToken(user.getUsername(),EncryptUtil.encodedByMD5(user.getPassword()));
+        try {
+            user.setPassword(MD5Utils.inputPassToFormPass(user.getPassword()));
+            UserInfoModel userDetail = authUserService.getByUsernameAndPassword(user);
+            // 将登陆的用户cookie种到客户端浏览器
+            addCookie(response, userDetail);
+            return new ModelAndView("redirect:/user/home.html");
+        }catch(AuthenticationException e){ //登录失败
+            ModelAndView mv = new ModelAndView("auth/login");
+            mv.addObject("errcode", 2);
+            return mv;
+        }
     }
 
     /**

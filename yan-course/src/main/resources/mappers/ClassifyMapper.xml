@@ -152,4 +152,48 @@
       del = #{del,jdbcType=BIT}
     where id = #{id,jdbcType=INTEGER}
   </update>
+
+  <select id="selectAll"  resultMap="BaseResultMap">
+    SELECT
+    <include refid="Base_Column_List" />
+    FROM consts_classify_t
+    WHERE del = 0
+    ORDER BY parent_code , sort
+  </select>
+
+  <select id="selectByCondition"  parameterType="com.hfut.bs.course.domain.Classify" resultMap="BaseResultMap"  >
+    SELECT
+    <include refid="Base_Column_List" />
+    FROM consts_classify_t
+    <trim prefix="WHERE" prefixOverrides="AND |OR ">
+      del = 0
+      <if test="code != null">
+        AND code = #{code}
+      </if>
+      <if test="parentCode != null">
+        AND parent_code = #{parentCode}
+      </if>
+    </trim>
+    ORDER BY parent_code , sort
+  </select>
+
+  <select id="selectTotalItemsCount" parameterType="com.hfut.bs.course.domain.Classify" resultType="java.lang.Integer">
+		SELECT COUNT(*) FROM consts_classify_t
+		WHERE del = 0
+	</select>
+
+  <select id="selectPage" resultType="com.hfut.bs.course.domain.Classify">
+    SELECT
+    <include refid="Base_Column_List" />
+    FROM consts_classify_t
+    WHERE del = 0
+    ORDER BY id
+    LIMIT #{param.startIndex, jdbcType=INTEGER} , #{param.pageSize, jdbcType=INTEGER}
+  </select>
+
+  <update id="deleteLogic" parameterType="java.lang.Integer" flushCache="true">
+		UPDATE consts_classify_t
+		SET del = 1
+		WHERE id = #{id, jdbcType=INTEGER}
+	</update>
 </mapper>

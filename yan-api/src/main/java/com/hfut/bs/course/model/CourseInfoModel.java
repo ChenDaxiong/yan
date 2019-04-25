@@ -2,11 +2,12 @@ package com.hfut.bs.course.model;
 
 import lombok.Data;
 
+import java.io.Serializable;
 import java.math.BigDecimal;
 import java.util.Date;
 
 @Data
-public class CourseInfoModel {
+public class CourseInfoModel implements Serializable {
 
     private Integer id;
 

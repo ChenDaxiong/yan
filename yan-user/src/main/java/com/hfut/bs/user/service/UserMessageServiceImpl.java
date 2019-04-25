@@ -5,24 +5,24 @@ import com.hfut.bs.user.domain.UserMessage;
 import com.hfut.bs.user.model.UserMessageInfoModel;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
-import java.util.ArrayList;
 import java.util.List;
-import java.util.stream.Collector;
 import java.util.stream.Collectors;
 
-public class UserMessageServiceImpl {
+@Service("userMessageService")
+public class UserMessageServiceImpl implements IUserMessageService  {
 
     @Autowired
-    UserMessageMapper messageMapper;
+    UserMessageMapper userMessageMapper;
 
 
     public void addMessage(UserMessageInfoModel messageInfoModel) {
-        messageMapper.insert(toUserMessage(messageInfoModel));
+        userMessageMapper.insert(toUserMessage(messageInfoModel));
     }
 
     public List<UserMessageInfoModel> getConversationDetail(String conversationId, int offset, int limit) {
-        List<UserMessage> messageList = messageMapper.selectByConversationId(conversationId, offset, limit);
+        List<UserMessage> messageList = userMessageMapper.selectByConversationId(conversationId, offset, limit);
         if (messageList == null){
             return null;
         }
@@ -32,7 +32,7 @@ public class UserMessageServiceImpl {
 
 
     public List<UserMessageInfoModel> getConversationList(int userId, int offset, int limit) {
-        List<UserMessage> messageList = messageMapper.selectConversationList(userId, offset, limit);
+        List<UserMessage> messageList = userMessageMapper.selectConversationList(userId, offset, limit);
         if (messageList == null){
             return null;
         }

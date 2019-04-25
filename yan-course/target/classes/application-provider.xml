@@ -6,18 +6,21 @@
        http://code.alibabatech.com/schema/dubbo http://code.alibabatech.com/schema/dubbo/dubbo.xsd">
 
     <!-- provider's application name, used for tracing dependency relationship -->
-    <dubbo:application name="demo-provider"/>
+    <dubbo:application name="course-provider"/>
     <!-- use multicast registry center to export service -->
 
     <!--使用zookeeper 进行注册中心化-->
     <dubbo:registry address="zookeeper://127.0.0.1:2181"/>
 
     <!-- use dubbo protocol to export service on port 20880 -->
-    <dubbo:protocol name="dubbo" port="20880"/>
+    <dubbo:protocol name="dubbo" port="20882"/>
 
-    <!--&lt;!&ndash; 声明需要暴露的服务接口 &ndash;&gt;-->
-    <!--<dubbo:service interface="DemoService " ref = "demoService" />-->
+    <!-- 声明需要暴露的服务接口 -->
+    <dubbo:service interface="com.hfut.bs.course.service.ICourseService " ref = "courseService" />
+    <dubbo:service interface="com.hfut.bs.course.service.ICourseSectionService " ref = "courseSectionService" />
+    <dubbo:service interface="com.hfut.bs.course.service.ICollegeService " ref = "collegeService" />
+    <dubbo:service interface="com.hfut.bs.course.service.ISiteCarouseService" ref="siteCarouseService"/>
+    <dubbo:service interface="com.hfut.bs.course.service.IClassifyService" ref="classifyService"/>
 
-    <!--<bean id="demoService" class="com.hfut.bs.gateway.course.DemoServiceImpl"/>-->
 
 </beans>

@@ -2,10 +2,11 @@ package com.hfut.bs.course.model;
 
 import lombok.Data;
 
+import java.io.Serializable;
 import java.util.Date;
 
 @Data
-public class CourseSectionInfoModel {
+public class CourseSectionInfoModel implements Serializable {
     private Integer id;
 
     private Integer courseId;

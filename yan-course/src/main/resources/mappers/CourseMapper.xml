@@ -466,7 +466,7 @@
   </select>
 
   <update id="deleteLogic" parameterType="java.lang.Integer" flushCache="true">
-		UPDATE t_course
+		UPDATE course_t
 		SET del = 1
 		WHERE id = #{id, jdbcType=INTEGER}
 	</update>

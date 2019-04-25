@@ -2,10 +2,11 @@ package com.hfut.bs.user.model;
 
 import lombok.Data;
 
+import java.io.Serializable;
 import java.util.Date;
 
 @Data
-public class UserMessageInfoModel {
+public class UserMessageInfoModel implements Serializable {
 
     private Integer id;
 

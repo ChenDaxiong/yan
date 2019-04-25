@@ -24,7 +24,6 @@ public class UserModel  implements Serializable {
 
     private Boolean status;
 
-    // 学历
     private Date birthday;
 
     private String education;

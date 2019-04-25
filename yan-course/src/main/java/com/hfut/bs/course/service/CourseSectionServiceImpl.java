@@ -46,7 +46,7 @@ public class CourseSectionServiceImpl implements ICourseSectionService {
         return sectionMapper.selectMaxSort(courseId);
     }
 
-    public TailPage<CourseSection> queryPage(CourseSectionInfoModel sectionInfoModel , TailPage page){
+    public TailPage<CourseSectionInfoModel> queryPage(CourseSectionInfoModel sectionInfoModel , TailPage page){
         CourseSection queryEntity = toCourseSection(sectionInfoModel);
         Integer itemsTotalCount = sectionMapper.selectTotalItemsCount();
         List<CourseSection> items = sectionMapper.selectPage(queryEntity,page);
@@ -123,5 +123,6 @@ public class CourseSectionServiceImpl implements ICourseSectionService {
         BeanUtils.copyProperties(section,sectionInfoModel);
         return sectionInfoModel;
     }
+
 
 }
