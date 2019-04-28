@@ -212,6 +212,7 @@
     <include refid="Base_Column_List" />
     FROM user_course_section_t
     WHERE del = 0
+    And user_id = #{param1.userId}
     ORDER BY id
     LIMIT #{param2.startIndex, jdbcType=INTEGER} , #{param2.pageSize, jdbcType=INTEGER}
 	</select>

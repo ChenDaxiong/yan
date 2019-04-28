@@ -2,6 +2,7 @@ package com.hfut.bs.course.dao;
 
 import com.hfut.bs.common.page.TailPage;
 import com.hfut.bs.course.domain.Course;
+import com.hfut.bs.course.model.CourseInfoModel;
 import com.hfut.bs.course.model.CourseQueryParam;
 
 import java.util.List;
@@ -25,7 +26,7 @@ public interface CourseMapper {
 
     int selectTotalItemsCount(Course param);
 
-    List<Course> selectPage(Course queryEntity , TailPage<Course> page);
+    List<Course> selectPage(Course queryEntity , TailPage<CourseInfoModel> page);
 
     int deleteLogic(Integer id);
 

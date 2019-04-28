@@ -7,106 +7,128 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="70fa3870-4cfb-4f12-90dc-20e27431bc87" name="Default Changelist" comment="评论优化，将帖子评论数缓存到redis">
-      <change afterPath="$PROJECT_DIR$/yan-api/src/main/java/com/hfut/bs/course/model/ClassifyInfoModel.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/yan-api/src/main/java/com/hfut/bs/course/model/CollegeInfoModel.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/yan-api/src/main/java/com/hfut/bs/course/model/DictionaryInfoModel.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/yan-api/src/main/java/com/hfut/bs/course/model/SiteCarouseInfoModel.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/yan-api/src/main/java/com/hfut/bs/course/service/IClassifyService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/yan-api/src/main/java/com/hfut/bs/course/service/ICollegeService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/yan-api/src/main/java/com/hfut/bs/course/service/ISiteCarouseService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/yan-api/src/main/java/com/hfut/bs/user/model/UserCourseSectionInfoModel.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/yan-api/src/main/java/com/hfut/bs/user/service/IUserCourseSectionService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/yan-api/src/main/java/com/hfut/bs/user/service/IUserMessageService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/yan-common/src/main/java/com/hfut/bs/common/utils/JsonView.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/yan-course/src/main/java/com/hfut/bs/course/dao/CollegeMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/yan-course/src/main/java/com/hfut/bs/course/domain/College.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/yan-course/src/main/java/com/hfut/bs/course/service/ClassifyServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/yan-course/src/main/java/com/hfut/bs/course/service/CollegeServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/yan-course/src/main/java/com/hfut/bs/course/service/DictionaryServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/yan-course/src/main/java/com/hfut/bs/course/service/SiteCarouseServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/yan-course/src/main/resources/mappers/CollegeMapper.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/yan-gateway/src/main/java/com/hfut/bs/gateway/course/controller/CourseController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/yan-gateway/src/main/java/com/hfut/bs/gateway/course/controller/CourseListController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/yan-gateway/src/main/java/com/hfut/bs/gateway/course/vo/ConstsClassifyVO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/yan-gateway/src/main/java/com/hfut/bs/gateway/course/vo/CourseSectionVO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/yan-user/src/main/java/com/hfut/bs/user/dao/UserCourseSectionMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/yan-user/src/main/java/com/hfut/bs/user/domain/UserCourseSection.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/yan-user/src/main/java/com/hfut/bs/user/service/UserCourseSectionServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/yan-user/src/main/resources/mappers/UserCourseSectionMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
+    <list default="true" id="70fa3870-4cfb-4f12-90dc-20e27431bc87" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/yan-gateway/src/main/java/com/hfut/bs/gateway/course/controller/YanController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/yan-gateway/src/main/java/com/hfut/bs/gateway/error/ErrorController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/yan-gateway/src/main/java/com/hfut/bs/gateway/filter/DisableUrlSessionFilter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/yan-gateway/src/main/java/com/hfut/bs/gateway/user/controller/AuthController1.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/yan-gateway/src/main/java/com/hfut/bs/gateway/user/controller/UserController1.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/yan-gateway/src/main/java/com/hfut/bs/gateway/user/shiro/AuthFilter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/yan-gateway/src/main/java/com/hfut/bs/gateway/user/shiro/AuthRealm.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/yan-gateway/src/main/java/com/hfut/bs/gateway/user/shiro/ShiroFreeMarkerConfigurer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/yan-gateway/src/main/java/com/hfut/bs/gateway/user/shiro/freemarker/AuthenticatedTag.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/yan-gateway/src/main/java/com/hfut/bs/gateway/user/shiro/freemarker/GuestTag.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/yan-gateway/src/main/java/com/hfut/bs/gateway/user/shiro/freemarker/HasAnyRolesTag.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/yan-gateway/src/main/java/com/hfut/bs/gateway/user/shiro/freemarker/HasPermissionTag.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/yan-gateway/src/main/java/com/hfut/bs/gateway/user/shiro/freemarker/HasRoleTag.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/yan-gateway/src/main/java/com/hfut/bs/gateway/user/shiro/freemarker/LacksPermissionTag.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/yan-gateway/src/main/java/com/hfut/bs/gateway/user/shiro/freemarker/LacksRoleTag.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/yan-gateway/src/main/java/com/hfut/bs/gateway/user/shiro/freemarker/NotAuthenticatedTag.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/yan-gateway/src/main/java/com/hfut/bs/gateway/user/shiro/freemarker/PermissionTag.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/yan-gateway/src/main/java/com/hfut/bs/gateway/user/shiro/freemarker/PrincipalTag.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/yan-gateway/src/main/java/com/hfut/bs/gateway/user/shiro/freemarker/RoleTag.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/yan-gateway/src/main/java/com/hfut/bs/gateway/user/shiro/freemarker/SecureTag.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/yan-gateway/src/main/java/com/hfut/bs/gateway/user/shiro/freemarker/ShiroTags.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/yan-gateway/src/main/java/com/hfut/bs/gateway/user/shiro/freemarker/UserTag.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/yan-gateway/src/main/java/com/hfut/bs/gateway/utils/EncryptUtil.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/yan-gateway/src/main/java/com/hfut/bs/gateway/utils/HttpHelper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/yan-gateway/src/main/java/com/hfut/bs/gateway/utils/SessionContext.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/yan-gateway/src/main/java/com/hfut/bs/gateway/utils/SessionTimeObj.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/yan-gateway/src/main/resource/shiro.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yan-api/src/main/java/com/hfut/bs/course/model/CourseInfoModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/yan-api/src/main/java/com/hfut/bs/course/model/CourseInfoModel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yan-api/src/main/java/com/hfut/bs/course/model/CourseQueryParam.java" beforeDir="false" afterPath="$PROJECT_DIR$/yan-api/src/main/java/com/hfut/bs/course/model/CourseQueryParam.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yan-api/src/main/java/com/hfut/bs/course/model/CourseSectionInfoModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/yan-api/src/main/java/com/hfut/bs/course/model/CourseSectionInfoModel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yan-api/src/main/java/com/hfut/bs/user/model/UserMessageInfoModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/yan-api/src/main/java/com/hfut/bs/user/model/UserMessageInfoModel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yan-api/src/main/java/com/hfut/bs/user/model/UserModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/yan-api/src/main/java/com/hfut/bs/user/model/UserModel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yan-api/target/classes/com/hfut/bs/user/model/UserModel.class" beforeDir="false" afterPath="$PROJECT_DIR$/yan-api/target/classes/com/hfut/bs/user/model/UserModel.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yan-course/src/main/java/com/hfut/bs/course/CourseProvider.java" beforeDir="false" afterPath="$PROJECT_DIR$/yan-course/src/main/java/com/hfut/bs/course/CourseProvider.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yan-course/src/main/java/com/hfut/bs/course/dao/ClassifyMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/yan-course/src/main/java/com/hfut/bs/course/dao/ClassifyMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yan-course/src/main/java/com/hfut/bs/course/dao/SiteCarouselMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/yan-course/src/main/java/com/hfut/bs/course/dao/SiteCarouselMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yan-course/src/main/java/com/hfut/bs/course/service/CourseSectionServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/yan-course/src/main/java/com/hfut/bs/course/service/CourseSectionServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yan-api/src/main/java/com/hfut/bs/course/service/ICourseService.java" beforeDir="false" afterPath="$PROJECT_DIR$/yan-api/src/main/java/com/hfut/bs/course/service/ICourseService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yan-api/src/main/java/com/hfut/bs/user/model/UserCourseSectionInfoModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/yan-api/src/main/java/com/hfut/bs/user/model/UserCourseSectionInfoModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yan-api/src/main/java/com/hfut/bs/user/model/UserInfoModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/yan-api/src/main/java/com/hfut/bs/user/model/UserInfoModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yan-api/src/main/java/com/hfut/bs/user/service/IUserCourseSectionService.java" beforeDir="false" afterPath="$PROJECT_DIR$/yan-api/src/main/java/com/hfut/bs/user/service/IUserCourseSectionService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yan-api/target/classes/com/hfut/bs/user/model/UserInfoModel.class" beforeDir="false" afterPath="$PROJECT_DIR$/yan-api/target/classes/com/hfut/bs/user/model/UserInfoModel.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yan-common/src/main/java/com/hfut/bs/common/storage/QiniuStorage.java" beforeDir="false" afterPath="$PROJECT_DIR$/yan-common/src/main/java/com/hfut/bs/common/storage/QiniuStorage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yan-common/src/main/java/com/hfut/bs/common/storage/QiniuWrapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/yan-common/src/main/java/com/hfut/bs/common/storage/QiniuWrapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yan-common/src/main/java/com/hfut/bs/common/utils/JsonUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/yan-common/src/main/java/com/hfut/bs/common/utils/JsonUtil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yan-common/target/classes/com/hfut/bs/common/storage/QiniuStorage.class" beforeDir="false" afterPath="$PROJECT_DIR$/yan-common/target/classes/com/hfut/bs/common/storage/QiniuStorage.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yan-common/target/classes/com/hfut/bs/common/storage/QiniuWrapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/yan-common/target/classes/com/hfut/bs/common/storage/QiniuWrapper.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yan-common/target/classes/com/hfut/bs/common/utils/JsonUtil.class" beforeDir="false" afterPath="$PROJECT_DIR$/yan-common/target/classes/com/hfut/bs/common/utils/JsonUtil.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yan-course/src/main/java/com/hfut/bs/course/dao/CourseMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/yan-course/src/main/java/com/hfut/bs/course/dao/CourseMapper.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/yan-course/src/main/java/com/hfut/bs/course/service/CourseServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/yan-course/src/main/java/com/hfut/bs/course/service/CourseServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yan-course/src/main/resources/application-provider.xml" beforeDir="false" afterPath="$PROJECT_DIR$/yan-course/src/main/resources/application-provider.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yan-course/src/main/resources/applicationContext.xml" beforeDir="false" afterPath="$PROJECT_DIR$/yan-course/src/main/resources/applicationContext.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yan-course/src/main/resources/generatorConfig.xml" beforeDir="false" afterPath="$PROJECT_DIR$/yan-course/src/main/resources/generatorConfig.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yan-course/src/main/resources/mappers/ClassifyMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/yan-course/src/main/resources/mappers/ClassifyMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yan-course/src/main/resources/mappers/CourseMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/yan-course/src/main/resources/mappers/CourseMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yan-course/src/main/resources/mappers/SiteCarouselMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/yan-course/src/main/resources/mappers/SiteCarouselMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yan-course/target/classes/application-provider.xml" beforeDir="false" afterPath="$PROJECT_DIR$/yan-course/target/classes/application-provider.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yan-course/src/main/java/com/hfut/bs/course/service/SiteCarouseServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/yan-course/src/main/java/com/hfut/bs/course/service/SiteCarouseServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/yan-gateway/src/main/java/com/hfut/bs/gateway/ConsumerClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/yan-gateway/src/main/java/com/hfut/bs/gateway/ConsumerClient.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yan-gateway/src/main/java/com/hfut/bs/gateway/access/LoginInterceptor.java" beforeDir="false" afterPath="$PROJECT_DIR$/yan-gateway/src/main/java/com/hfut/bs/gateway/access/LoginInterceptor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yan-gateway/src/main/java/com/hfut/bs/gateway/course/DemoService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/yan-gateway/src/main/java/com/hfut/bs/gateway/user/AuthController.java" beforeDir="false" afterPath="$PROJECT_DIR$/yan-gateway/src/main/java/com/hfut/bs/gateway/user/AuthController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yan-gateway/src/main/java/com/hfut/bs/gateway/user/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/yan-gateway/src/main/java/com/hfut/bs/gateway/user/UserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yan-gateway/src/main/resource/application-consumer.xml" beforeDir="false" afterPath="$PROJECT_DIR$/yan-gateway/src/main/resource/application-consumer.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yan-gateway/src/main/java/com/hfut/bs/gateway/course/controller/CourseController.java" beforeDir="false" afterPath="$PROJECT_DIR$/yan-gateway/src/main/java/com/hfut/bs/gateway/course/controller/CourseController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yan-gateway/src/main/java/com/hfut/bs/gateway/course/controller/CourseListController.java" beforeDir="false" afterPath="$PROJECT_DIR$/yan-gateway/src/main/java/com/hfut/bs/gateway/course/controller/CourseListController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yan-gateway/src/main/java/com/hfut/bs/gateway/user/AuthController.java" beforeDir="false" afterPath="$PROJECT_DIR$/yan-gateway/src/main/java/com/hfut/bs/gateway/user/controller/AuthController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yan-gateway/src/main/java/com/hfut/bs/gateway/user/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/yan-gateway/src/main/java/com/hfut/bs/gateway/user/controller/UserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yan-gateway/src/main/resource/app-servlet.xml" beforeDir="false" afterPath="$PROJECT_DIR$/yan-gateway/src/main/resource/app-servlet.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/yan-gateway/src/main/resource/applicationContext.xml" beforeDir="false" afterPath="$PROJECT_DIR$/yan-gateway/src/main/resource/applicationContext.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yan-gateway/src/main/webapp/WEB-INF/ftl/spring.ftl" beforeDir="false" afterPath="$PROJECT_DIR$/yan-gateway/src/main/webapp/WEB-INF/ftl/spring.ftl" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/yan-gateway/src/main/webapp/WEB-INF/pages/auth/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/yan-gateway/src/main/webapp/WEB-INF/pages/auth/login.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/yan-gateway/src/main/webapp/WEB-INF/pages/auth/register.html" beforeDir="false" afterPath="$PROJECT_DIR$/yan-gateway/src/main/webapp/WEB-INF/pages/auth/register.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/yan-gateway/src/main/webapp/WEB-INF/pages/common/header.html" beforeDir="false" afterPath="$PROJECT_DIR$/yan-gateway/src/main/webapp/WEB-INF/pages/common/header.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yan-gateway/src/main/webapp/WEB-INF/pages/common/header2.html" beforeDir="false" afterPath="$PROJECT_DIR$/yan-gateway/src/main/webapp/WEB-INF/pages/common/header2.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yan-gateway/src/main/webapp/WEB-INF/pages/common/res.html" beforeDir="false" afterPath="$PROJECT_DIR$/yan-gateway/src/main/webapp/WEB-INF/pages/common/res.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yan-gateway/src/main/webapp/WEB-INF/pages/error/403.html" beforeDir="false" afterPath="$PROJECT_DIR$/yan-gateway/src/main/webapp/WEB-INF/pages/error/403.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yan-gateway/src/main/webapp/WEB-INF/pages/error/404.html" beforeDir="false" afterPath="$PROJECT_DIR$/yan-gateway/src/main/webapp/WEB-INF/pages/error/404.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yan-gateway/src/main/webapp/WEB-INF/pages/error/500.html" beforeDir="false" afterPath="$PROJECT_DIR$/yan-gateway/src/main/webapp/WEB-INF/pages/error/500.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yan-gateway/src/main/webapp/WEB-INF/pages/forTestUpload.html" beforeDir="false" afterPath="$PROJECT_DIR$/yan-gateway/src/main/webapp/WEB-INF/forTestUpload.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yan-gateway/src/main/webapp/WEB-INF/pages/hello.html" beforeDir="false" afterPath="$PROJECT_DIR$/yan-gateway/src/main/webapp/WEB-INF/hello.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yan-gateway/src/main/webapp/WEB-INF/pages/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/yan-gateway/src/main/webapp/WEB-INF/pages/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yan-gateway/src/main/webapp/WEB-INF/pages/learn.html" beforeDir="false" afterPath="$PROJECT_DIR$/yan-gateway/src/main/webapp/WEB-INF/pages/learn.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yan-gateway/src/main/webapp/WEB-INF/pages/list.html" beforeDir="false" afterPath="$PROJECT_DIR$/yan-gateway/src/main/webapp/WEB-INF/pages/list.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yan-gateway/src/main/webapp/WEB-INF/pages/user/info.html" beforeDir="false" afterPath="$PROJECT_DIR$/yan-gateway/src/main/webapp/WEB-INF/pages/user/info.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yan-gateway/src/main/webapp/WEB-INF/pages/video.html" beforeDir="false" afterPath="$PROJECT_DIR$/yan-gateway/src/main/webapp/WEB-INF/pages/video.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/yan-gateway/src/main/webapp/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/yan-gateway/src/main/webapp/WEB-INF/web.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yan-gateway/target/classes/application-consumer.xml" beforeDir="false" afterPath="$PROJECT_DIR$/yan-gateway/target/classes/application-consumer.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yan-gateway/src/main/webapp/res/css/reset.css" beforeDir="false" afterPath="$PROJECT_DIR$/yan-gateway/src/main/webapp/res/css/reset.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yan-gateway/src/main/webapp/res/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/yan-gateway/src/main/webapp/res/css/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yan-gateway/src/main/webapp/res/i/ico.png" beforeDir="false" afterPath="$PROJECT_DIR$/yan-gateway/src/main/webapp/res/i/ico.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yan-gateway/src/main/webapp/res/i/logo.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/yan-gateway/src/main/webapp/static/comment.html" beforeDir="false" afterPath="$PROJECT_DIR$/yan-gateway/src/main/webapp/static/comment.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yan-gateway/src/main/webapp/static/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/yan-gateway/src/main/webapp/static/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yan-gateway/src/main/webapp/static/learn.html" beforeDir="false" afterPath="$PROJECT_DIR$/yan-gateway/src/main/webapp/static/learn.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yan-gateway/src/main/webapp/static/list.html" beforeDir="false" afterPath="$PROJECT_DIR$/yan-gateway/src/main/webapp/static/list.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yan-gateway/src/main/webapp/static/video.html" beforeDir="false" afterPath="$PROJECT_DIR$/yan-gateway/src/main/webapp/static/video.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yan-gateway/target/classes/app-servlet.xml" beforeDir="false" afterPath="$PROJECT_DIR$/yan-gateway/target/classes/app-servlet.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/yan-gateway/target/classes/applicationContext.xml" beforeDir="false" afterPath="$PROJECT_DIR$/yan-gateway/target/classes/applicationContext.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/yan-gateway/target/classes/com/hfut/bs/gateway/ConsumerClient.class" beforeDir="false" afterPath="$PROJECT_DIR$/yan-gateway/target/classes/com/hfut/bs/gateway/ConsumerClient.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yan-gateway/target/classes/com/hfut/bs/gateway/access/LoginInterceptor.class" beforeDir="false" afterPath="$PROJECT_DIR$/yan-gateway/target/classes/com/hfut/bs/gateway/access/LoginInterceptor.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yan-gateway/target/classes/com/hfut/bs/gateway/course/DemoService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/yan-gateway/target/classes/com/hfut/bs/gateway/user/AuthController.class" beforeDir="false" afterPath="$PROJECT_DIR$/yan-gateway/target/classes/com/hfut/bs/gateway/user/AuthController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yan-gateway/target/classes/com/hfut/bs/gateway/user/UserController.class" beforeDir="false" afterPath="$PROJECT_DIR$/yan-gateway/target/classes/com/hfut/bs/gateway/user/UserController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yan-gateway/target/classes/com/hfut/bs/gateway/user/AuthController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/yan-gateway/target/classes/com/hfut/bs/gateway/user/UserController.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/yan-gateway/target/yan-gateway.war" beforeDir="false" afterPath="$PROJECT_DIR$/yan-gateway/target/yan-gateway.war" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yan-gateway/target/yan-gateway/WEB-INF/classes/application-consumer.xml" beforeDir="false" afterPath="$PROJECT_DIR$/yan-gateway/target/yan-gateway/WEB-INF/classes/application-consumer.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yan-gateway/target/yan-gateway/WEB-INF/classes/app-servlet.xml" beforeDir="false" afterPath="$PROJECT_DIR$/yan-gateway/target/yan-gateway/WEB-INF/classes/app-servlet.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/yan-gateway/target/yan-gateway/WEB-INF/classes/applicationContext.xml" beforeDir="false" afterPath="$PROJECT_DIR$/yan-gateway/target/yan-gateway/WEB-INF/classes/applicationContext.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/yan-gateway/target/yan-gateway/WEB-INF/classes/com/hfut/bs/gateway/ConsumerClient.class" beforeDir="false" afterPath="$PROJECT_DIR$/yan-gateway/target/yan-gateway/WEB-INF/classes/com/hfut/bs/gateway/ConsumerClient.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yan-gateway/target/yan-gateway/WEB-INF/classes/com/hfut/bs/gateway/access/LoginInterceptor.class" beforeDir="false" afterPath="$PROJECT_DIR$/yan-gateway/target/yan-gateway/WEB-INF/classes/com/hfut/bs/gateway/access/LoginInterceptor.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yan-gateway/target/yan-gateway/WEB-INF/classes/com/hfut/bs/gateway/course/DemoService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/yan-gateway/target/yan-gateway/WEB-INF/classes/com/hfut/bs/gateway/user/AuthController.class" beforeDir="false" afterPath="$PROJECT_DIR$/yan-gateway/target/yan-gateway/WEB-INF/classes/com/hfut/bs/gateway/user/AuthController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yan-gateway/target/yan-gateway/WEB-INF/classes/com/hfut/bs/gateway/user/UserController.class" beforeDir="false" afterPath="$PROJECT_DIR$/yan-gateway/target/yan-gateway/WEB-INF/classes/com/hfut/bs/gateway/user/UserController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yan-gateway/target/yan-gateway/WEB-INF/classes/com/hfut/bs/gateway/user/AuthController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/yan-gateway/target/yan-gateway/WEB-INF/classes/com/hfut/bs/gateway/user/UserController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/yan-gateway/target/yan-gateway/WEB-INF/ftl/spring.ftl" beforeDir="false" afterPath="$PROJECT_DIR$/yan-gateway/target/yan-gateway/WEB-INF/ftl/spring.ftl" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/yan-gateway/target/yan-gateway/WEB-INF/lib/yan-api-1.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/yan-gateway/target/yan-gateway/WEB-INF/lib/yan-api-1.0-SNAPSHOT.jar" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/yan-gateway/target/yan-gateway/WEB-INF/lib/yan-common-1.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/yan-gateway/target/yan-gateway/WEB-INF/lib/yan-common-1.0-SNAPSHOT.jar" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/yan-gateway/target/yan-gateway/WEB-INF/pages/auth/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/yan-gateway/target/yan-gateway/WEB-INF/pages/auth/login.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/yan-gateway/target/yan-gateway/WEB-INF/pages/auth/register.html" beforeDir="false" afterPath="$PROJECT_DIR$/yan-gateway/target/yan-gateway/WEB-INF/pages/auth/register.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/yan-gateway/target/yan-gateway/WEB-INF/pages/common/header.html" beforeDir="false" afterPath="$PROJECT_DIR$/yan-gateway/target/yan-gateway/WEB-INF/pages/common/header.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yan-gateway/target/yan-gateway/WEB-INF/pages/common/header2.html" beforeDir="false" afterPath="$PROJECT_DIR$/yan-gateway/target/yan-gateway/WEB-INF/pages/common/header2.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yan-gateway/target/yan-gateway/WEB-INF/pages/common/res.html" beforeDir="false" afterPath="$PROJECT_DIR$/yan-gateway/target/yan-gateway/WEB-INF/pages/common/res.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yan-gateway/target/yan-gateway/WEB-INF/pages/error/403.html" beforeDir="false" afterPath="$PROJECT_DIR$/yan-gateway/target/yan-gateway/WEB-INF/pages/error/403.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yan-gateway/target/yan-gateway/WEB-INF/pages/error/404.html" beforeDir="false" afterPath="$PROJECT_DIR$/yan-gateway/target/yan-gateway/WEB-INF/pages/error/404.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yan-gateway/target/yan-gateway/WEB-INF/pages/error/500.html" beforeDir="false" afterPath="$PROJECT_DIR$/yan-gateway/target/yan-gateway/WEB-INF/pages/error/500.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yan-gateway/target/yan-gateway/WEB-INF/pages/forTestUpload.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/yan-gateway/target/yan-gateway/WEB-INF/pages/hello.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/yan-gateway/target/yan-gateway/WEB-INF/pages/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/yan-gateway/target/yan-gateway/WEB-INF/pages/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yan-gateway/target/yan-gateway/WEB-INF/pages/learn.html" beforeDir="false" afterPath="$PROJECT_DIR$/yan-gateway/target/yan-gateway/WEB-INF/pages/learn.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yan-gateway/target/yan-gateway/WEB-INF/pages/list.html" beforeDir="false" afterPath="$PROJECT_DIR$/yan-gateway/target/yan-gateway/WEB-INF/pages/list.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yan-gateway/target/yan-gateway/WEB-INF/pages/user/info.html" beforeDir="false" afterPath="$PROJECT_DIR$/yan-gateway/target/yan-gateway/WEB-INF/pages/user/info.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yan-gateway/target/yan-gateway/WEB-INF/pages/video.html" beforeDir="false" afterPath="$PROJECT_DIR$/yan-gateway/target/yan-gateway/WEB-INF/pages/video.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/yan-gateway/target/yan-gateway/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/yan-gateway/target/yan-gateway/WEB-INF/web.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yan-post/src/main/resources/application-provider.xml" beforeDir="false" afterPath="$PROJECT_DIR$/yan-post/src/main/resources/application-provider.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yan-post/src/main/resources/datasource.properties" beforeDir="false" afterPath="$PROJECT_DIR$/yan-post/src/main/resources/datasource.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yan-user/src/main/java/com/hfut/bs/user/UserProvider.java" beforeDir="false" afterPath="$PROJECT_DIR$/yan-user/src/main/java/com/hfut/bs/user/UserProvider.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yan-user/src/main/java/com/hfut/bs/user/service/UserMessageServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/yan-user/src/main/java/com/hfut/bs/user/service/UserMessageServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yan-user/src/main/resources/application-provider.xml" beforeDir="false" afterPath="$PROJECT_DIR$/yan-user/src/main/resources/application-provider.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yan-user/src/main/resources/datasource.properties" beforeDir="false" afterPath="$PROJECT_DIR$/yan-user/src/main/resources/datasource.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yan-user/src/main/resources/generatorConfig.xml" beforeDir="false" afterPath="$PROJECT_DIR$/yan-user/src/main/resources/generatorConfig.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yan-user/src/main/resources/mappers/UserMessageMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/yan-user/src/main/resources/mappers/UserMessageMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yan-user/target/classes/application-provider.xml" beforeDir="false" afterPath="$PROJECT_DIR$/yan-user/target/classes/application-provider.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yan-user/target/classes/com/hfut/bs/user/common/CodeMsg.class" beforeDir="false" afterPath="$PROJECT_DIR$/yan-user/target/classes/com/hfut/bs/user/common/CodeMsg.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yan-user/target/classes/com/hfut/bs/user/common/Const.class" beforeDir="false" afterPath="$PROJECT_DIR$/yan-user/target/classes/com/hfut/bs/user/common/Const.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yan-user/target/classes/com/hfut/bs/user/dao/AuthUserMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/yan-user/target/classes/com/hfut/bs/user/dao/AuthUserMapper.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yan-user/target/classes/com/hfut/bs/user/domain/AuthUser.class" beforeDir="false" afterPath="$PROJECT_DIR$/yan-user/target/classes/com/hfut/bs/user/domain/AuthUser.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yan-user/target/classes/com/hfut/bs/user/exception/GlobalException.class" beforeDir="false" afterPath="$PROJECT_DIR$/yan-user/target/classes/com/hfut/bs/user/exception/GlobalException.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yan-user/target/classes/com/hfut/bs/user/redis/JedisUtils.class" beforeDir="false" afterPath="$PROJECT_DIR$/yan-user/target/classes/com/hfut/bs/user/redis/JedisUtils.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yan-gateway/target/yan-gateway/res/css/reset.css" beforeDir="false" afterPath="$PROJECT_DIR$/yan-gateway/target/yan-gateway/res/css/reset.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yan-gateway/target/yan-gateway/res/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/yan-gateway/target/yan-gateway/res/css/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yan-gateway/target/yan-gateway/res/i/ico.png" beforeDir="false" afterPath="$PROJECT_DIR$/yan-gateway/target/yan-gateway/res/i/ico.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yan-gateway/target/yan-gateway/res/i/logo.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/yan-gateway/target/yan-gateway/static/comment.html" beforeDir="false" afterPath="$PROJECT_DIR$/yan-gateway/target/yan-gateway/static/comment.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yan-gateway/target/yan-gateway/static/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/yan-gateway/target/yan-gateway/static/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yan-gateway/target/yan-gateway/static/learn.html" beforeDir="false" afterPath="$PROJECT_DIR$/yan-gateway/target/yan-gateway/static/learn.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yan-gateway/target/yan-gateway/static/list.html" beforeDir="false" afterPath="$PROJECT_DIR$/yan-gateway/target/yan-gateway/static/list.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yan-gateway/target/yan-gateway/static/video.html" beforeDir="false" afterPath="$PROJECT_DIR$/yan-gateway/target/yan-gateway/static/video.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yan-user/src/main/java/com/hfut/bs/user/dao/UserCourseSectionMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/yan-user/src/main/java/com/hfut/bs/user/dao/UserCourseSectionMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yan-user/src/main/java/com/hfut/bs/user/service/AuthUserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/yan-user/src/main/java/com/hfut/bs/user/service/AuthUserServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yan-user/src/main/java/com/hfut/bs/user/service/UserCourseSectionServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/yan-user/src/main/java/com/hfut/bs/user/service/UserCourseSectionServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yan-user/src/main/resources/mappers/AuthUserMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/yan-user/src/main/resources/mappers/AuthUserMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yan-user/src/main/resources/mappers/UserCourseSectionMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/yan-user/src/main/resources/mappers/UserCourseSectionMapper.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/yan-user/target/classes/com/hfut/bs/user/service/AuthUserServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/yan-user/target/classes/com/hfut/bs/user/service/AuthUserServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yan-user/target/classes/com/hfut/bs/user/utils/CookieUtil.class" beforeDir="false" afterPath="$PROJECT_DIR$/yan-user/target/classes/com/hfut/bs/user/utils/CookieUtil.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yan-user/target/classes/datasource.properties" beforeDir="false" afterPath="$PROJECT_DIR$/yan-user/target/classes/datasource.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yan-user/target/classes/generatorConfig.xml" beforeDir="false" afterPath="$PROJECT_DIR$/yan-user/target/classes/generatorConfig.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yan-user/target/test-classes/com/hfut/bs/gateway/AppTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/yan-user/target/test-classes/com/hfut/bs/gateway/AppTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yan-user/target/test-classes/com/hfut/bs/user/service/IAuthUserServiceTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/yan-user/target/test-classes/com/hfut/bs/user/service/IAuthUserServiceTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yan-user/target/classes/mappers/AuthUserMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/yan-user/target/classes/mappers/AuthUserMapper.xml" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -126,96 +148,13 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/yan-gateway/src/main/java/com/hfut/bs/gateway/course/controller/CourseController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="180">
-              <caret line="37" column="22" selection-start-line="37" selection-start-column="22" selection-end-line="37" selection-end-column="22" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/yan-gateway/src/main/java/com/hfut/bs/gateway/user/AuthController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="19">
-              <caret line="47" column="8" selection-start-line="47" selection-start-column="8" selection-end-line="47" selection-end-column="8" />
-              <folding>
-                <element signature="e#1717#1718#0" expanded="true" />
-                <element signature="e#1747#1748#0" expanded="true" />
-                <element signature="e#3919#3920#0" expanded="true" />
-                <element signature="e#3949#3950#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/yan-gateway/src/main/java/com/hfut/bs/gateway/redis/JedisUtils.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="114">
-              <caret line="129" selection-start-line="129" selection-end-line="129" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/yan-gateway/src/main/java/com/hfut/bs/gateway/user/UserController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-198">
-              <caret line="33" column="34" selection-start-line="33" selection-start-column="34" selection-end-line="33" selection-end-column="34" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/yan-user/src/main/java/com/hfut/bs/user/service/AuthUserServiceImpl.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="271">
-              <caret line="61" column="76" selection-start-line="61" selection-start-column="76" selection-end-line="61" selection-end-column="76" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/yan-gateway/src/main/webapp/WEB-INF/web.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="297">
-              <caret line="56" column="23" selection-start-line="56" selection-start-column="23" selection-end-line="56" selection-end-column="23" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/yan-gateway/src/main/resource/app-servlet.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-431">
-              <caret line="28" column="26" lean-forward="true" selection-start-line="28" selection-start-column="26" selection-end-line="28" selection-end-column="26" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/yan-gateway/src/main/webapp/WEB-INF/pages/index.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="390">
-              <caret line="26" column="62" lean-forward="true" selection-start-line="26" selection-start-column="62" selection-end-line="26" selection-end-column="62" />
-              <folding>
-                <element signature="e#778#829#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/yan-gateway/src/main/webapp/WEB-INF/pages/common/header.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="375">
-              <caret line="25" column="20" lean-forward="true" selection-start-line="25" selection-start-column="20" selection-end-line="25" selection-end-column="20" />
+            <state relative-caret-position="1333">
+              <caret line="105" column="28" lean-forward="true" selection-start-line="105" selection-start-column="28" selection-end-line="105" selection-end-column="28" />
               <folding>
-                <element signature="n#style#0;n#form#0;n#div#1;n#div#0;n#div#0;n#div#1;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#a#1;n#div#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#a#0;n#div#1;n#div#0;n#div#1;n#div#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
               </folding>
             </state>
@@ -223,10 +162,82 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/yan-course/src/main/java/com/hfut/bs/course/CourseProvider.java">
+        <entry file="file://$PROJECT_DIR$/yan-gateway/src/main/webapp/WEB-INF/pages/index.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-572">
+              <caret line="267" column="59" selection-start-line="267" selection-start-column="59" selection-end-line="267" selection-end-column="59" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/yan-gateway/src/main/webapp/WEB-INF/pages/auth/login.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="132">
+              <caret line="19" column="47" lean-forward="true" selection-start-line="19" selection-start-column="47" selection-end-line="19" selection-end-column="47" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/yan-gateway/src/main/webapp/WEB-INF/pages/auth/register.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="90">
+              <caret line="6" column="41" lean-forward="true" selection-start-line="6" selection-start-column="41" selection-end-line="6" selection-end-column="41" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/yan-course/pom.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="167">
+              <caret line="87" column="44" lean-forward="true" selection-start-line="87" selection-start-column="44" selection-end-line="87" selection-end-column="44" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/yan-gateway/src/main/resource/application.properties">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/yan-gateway/src/main/resource/application-consumer.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="285">
+              <caret line="19" column="27" lean-forward="true" selection-start-line="19" selection-start-column="27" selection-end-line="19" selection-end-column="27" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/yan-gateway/src/main/webapp/WEB-INF/pages/list.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="528">
+              <caret line="97" column="69" selection-start-line="97" selection-start-column="64" selection-end-line="97" selection-end-column="69" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/yan-gateway/src/main/webapp/WEB-INF/pages/user/info.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="195">
-              <caret line="22" selection-start-line="22" selection-end-line="22" />
+              <caret line="13" column="32" lean-forward="true" selection-start-line="13" selection-start-column="32" selection-end-line="13" selection-end-column="32" />
+              <folding>
+                <element signature="n#style#0;n#div#1;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#img#0;n#div#0;n#form#0;n#div#2;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/yan-gateway/src/main/webapp/WEB-INF/pages/common/res.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="90">
+              <caret line="6" lean-forward="true" selection-start-line="6" selection-end-line="6" />
             </state>
           </provider>
         </entry>
@@ -246,8 +257,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>SecondKillUser</find>
-      <find>tomcat</find>
       <find>destinationQueue</find>
       <find>oodsKey</find>
       <find>ClassifyInfoModel</find>
@@ -255,6 +264,29 @@
       <find>/doRegister</find>
       <find>/ajaxlogin</find>
       <find>/doLogin</find>
+      <find>saveInfo</find>
+      <find>SHIRO_LOGIN</find>
+      <find>doLogin</find>
+      <find>CacheManager</find>
+      <find>UTF8HttpMessageConverter</find>
+      <find>2.3</find>
+      <find>java开发</find>
+      <find>在线网校</find>
+      <find>yan-考研学习交流平台</find>
+      <find>在线网校学习平台</find>
+      <find>be</find>
+      <find>fe</find>
+      <find>price</find>
+      <find>header.</find>
+      <find>ico</find>
+      <find>ico.</find>
+      <find>logo1.png</find>
+      <find>code.htm</find>
+      <find>运营</find>
+      <find>在线</find>
+      <find>/saveI</find>
+      <find>/saveInfo</find>
+      <find>header.j</find>
     </findStrings>
     <replaceStrings>
       <replace>AuthUser</replace>
@@ -272,57 +304,57 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/yan-course/src/main/java/com/hfut/bs/course/domain/Dictionary.java" />
-        <option value="$PROJECT_DIR$/yan-api/src/main/java/com/hfut/bs/consts/SiteCarouseIndoModel.java" />
-        <option value="$PROJECT_DIR$/yan-api/src/main/java/com/hfut/bs/consts/DictionaryInfoModel.java" />
-        <option value="$PROJECT_DIR$/yan-course/src/main/resources/mappers/ClassifyMapper.xml" />
-        <option value="$PROJECT_DIR$/yan-course/src/main/java/com/hfut/bs/course/dao/ClassifyMapper.java" />
-        <option value="$PROJECT_DIR$/yan-api/src/main/java/com/hfut/bs/course/service/IClassifyService.java" />
-        <option value="$PROJECT_DIR$/yan-course/src/main/resources/mappers/SiteCarouselMapper.xml" />
-        <option value="$PROJECT_DIR$/yan-course/src/main/java/com/hfut/bs/course/dao/SiteCarouselMapper.java" />
-        <option value="$PROJECT_DIR$/yan-api/src/main/java/com/hfut/bs/course/service/ISiteCarouseService.java" />
-        <option value="$PROJECT_DIR$/yan-course/src/main/resources/generatorConfig.xml" />
-        <option value="$PROJECT_DIR$/yan-api/src/main/java/com/hfut/bs/course/model/CollegeInfoModel.java" />
-        <option value="$PROJECT_DIR$/yan-api/src/main/java/com/hfut/bs/course/service/ICollegeService.java" />
-        <option value="$PROJECT_DIR$/yan-course/src/main/resources/mappers/CollegeMapper.xml" />
-        <option value="$PROJECT_DIR$/yan-course/src/main/java/com/hfut/bs/course/dao/CollegeMapper.java" />
-        <option value="$PROJECT_DIR$/yan-gateway/src/main/java/com/hfut/bs/gateway/course/vo/CourseSectionVO.java" />
-        <option value="$PROJECT_DIR$/yan-user/src/main/resources/generatorConfig.xml" />
-        <option value="$PROJECT_DIR$/yan-api/src/main/java/com/hfut/bs/user/model/UserCourseSectionInfoModel.java" />
-        <option value="$PROJECT_DIR$/yan-api/src/main/java/com/hfut/bs/user/service/IUserCourseSection.java" />
+        <option value="$PROJECT_DIR$/yan-common/src/main/java/com/hfut/bs/common/utils/JsonUtil.java" />
+        <option value="$PROJECT_DIR$/yan-gateway/src/main/java/com/hfut/bs/gateway/user/shiro/AuthRealm.java" />
+        <option value="$PROJECT_DIR$/yan-gateway/src/main/java/com/hfut/bs/gateway/user/shiro/AuthFilter.java" />
+        <option value="$PROJECT_DIR$/yan-gateway/src/main/resource/shiro.xml" />
+        <option value="$PROJECT_DIR$/yan-gateway/src/main/java/com/hfut/bs/gateway/error/ErrorController.java" />
+        <option value="$PROJECT_DIR$/yan-gateway/src/main/java/com/hfut/bs/gateway/filter/DisableUrlSessionFilter.java" />
+        <option value="$PROJECT_DIR$/yan-gateway/src/main/java/com/hfut/bs/gateway/user/controller/UserController.java" />
+        <option value="$PROJECT_DIR$/yan-gateway/src/main/java/com/hfut/bs/gateway/user/shiro/freemarker/AuthenticatedTag.java" />
+        <option value="$PROJECT_DIR$/yan-gateway/src/main/webapp/WEB-INF/web.xml" />
+        <option value="$PROJECT_DIR$/yan-gateway/src/main/resource/applicationContext.xml" />
+        <option value="$PROJECT_DIR$/yan-gateway/src/main/resource/app-servlet.xml" />
+        <option value="$PROJECT_DIR$/yan-gateway/src/main/java/com/hfut/bs/gateway/user/shiro/ShiroFreeMarkerConfigurer.java" />
+        <option value="$PROJECT_DIR$/yan-gateway/src/main/java/com/hfut/bs/gateway/user/shiro/freemarker/GuestTag.java" />
+        <option value="$PROJECT_DIR$/yan-gateway/src/main/java/com/hfut/bs/gateway/user/controller/AuthController.java" />
+        <option value="$PROJECT_DIR$/yan-gateway/src/main/java/com/hfut/bs/gateway/course/controller/YanController.java" />
+        <option value="$PROJECT_DIR$/yan-user/src/main/resources/mappers/AuthUserMapper.xml" />
+        <option value="$PROJECT_DIR$/yan-common/src/main/java/com/hfut/bs/common/storage/QiniuWrapper.java" />
+        <option value="$PROJECT_DIR$/yan-common/src/main/java/com/hfut/bs/common/storage/QiniuStorage.java" />
+        <option value="$PROJECT_DIR$/yan-gateway/src/main/java/com/hfut/bs/gateway/user/controller/AuthController1.java" />
+        <option value="$PROJECT_DIR$/yan-gateway/src/main/webapp/WEB-INF/pages/user/info.html" />
+        <option value="$PROJECT_DIR$/yan-user/src/main/java/com/hfut/bs/user/service/AuthUserServiceImpl.java" />
+        <option value="$PROJECT_DIR$/yan-api/src/main/java/com/hfut/bs/course/service/ICourseService.java" />
+        <option value="$PROJECT_DIR$/yan-course/src/main/java/com/hfut/bs/course/dao/CourseMapper.java" />
+        <option value="$PROJECT_DIR$/yan-course/src/main/java/com/hfut/bs/course/service/CourseServiceImpl.java" />
+        <option value="$PROJECT_DIR$/yan-gateway/src/main/webapp/WEB-INF/pages/error/403.html" />
+        <option value="$PROJECT_DIR$/yan-gateway/src/main/webapp/WEB-INF/pages/error/404.html" />
+        <option value="$PROJECT_DIR$/yan-gateway/src/main/webapp/WEB-INF/pages/error/500.html" />
+        <option value="$PROJECT_DIR$/yan-gateway/src/main/webapp/WEB-INF/pages/auth/register.html" />
+        <option value="$PROJECT_DIR$/yan-gateway/src/main/webapp/WEB-INF/pages/common/header.html" />
+        <option value="$PROJECT_DIR$/yan-gateway/src/main/webapp/WEB-INF/pages/video.html" />
+        <option value="$PROJECT_DIR$/yan-gateway/src/main/java/com/hfut/bs/gateway/course/controller/CourseListController.java" />
+        <option value="$PROJECT_DIR$/yan-gateway/src/main/webapp/WEB-INF/pages/list.html" />
+        <option value="$PROJECT_DIR$/yan-gateway/src/main/webapp/WEB-INF/pages/common/res.html" />
+        <option value="$PROJECT_DIR$/yan-gateway/src/main/webapp/static/index.html" />
+        <option value="$PROJECT_DIR$/yan-gateway/src/main/webapp/res/css/reset.css" />
+        <option value="$PROJECT_DIR$/yan-gateway/src/main/webapp/res/css/style.css" />
+        <option value="$PROJECT_DIR$/yan-course/src/main/java/com/hfut/bs/course/service/SiteCarouseServiceImpl.java" />
+        <option value="$PROJECT_DIR$/yan-gateway/src/main/webapp/WEB-INF/pages/learn.html" />
+        <option value="$PROJECT_DIR$/yan-gateway/src/main/java/com/hfut/bs/gateway/course/controller/CourseController.java" />
         <option value="$PROJECT_DIR$/yan-user/src/main/resources/mappers/UserCourseSectionMapper.xml" />
         <option value="$PROJECT_DIR$/yan-user/src/main/java/com/hfut/bs/user/dao/UserCourseSectionMapper.java" />
-        <option value="$PROJECT_DIR$/yan-common/src/main/java/com/hfut/bs/common/utils/JsonView.java" />
-        <option value="$PROJECT_DIR$/yan-gateway/src/main/java/com/hfut/bs/gateway/course/vo/ConstsClassifyVO.java" />
-        <option value="$PROJECT_DIR$/yan-gateway/src/main/java/com/hfut/bs/gateway/course/controller/CourseController.java" />
-        <option value="$PROJECT_DIR$/yan-gateway/src/main/java/com/hfut/bs/gateway/course/controller/CourseListController.java" />
-        <option value="$PROJECT_DIR$/yan-gateway/src/main/webapp/WEB-INF/pages/auth/register.html" />
-        <option value="$PROJECT_DIR$/yan-gateway/src/main/java/com/hfut/bs/gateway/access/LoginInterceptor.java" />
-        <option value="$PROJECT_DIR$/yan-gateway/src/main/webapp/WEB-INF/pages/auth/login.html" />
+        <option value="$PROJECT_DIR$/yan-api/src/main/java/com/hfut/bs/user/service/IUserCourseSectionService.java" />
         <option value="$PROJECT_DIR$/yan-user/src/main/java/com/hfut/bs/user/service/UserCourseSectionServiceImpl.java" />
-        <option value="$PROJECT_DIR$/yan-api/src/main/java/com/hfut/bs/user/service/IUserMessageService.java" />
-        <option value="$PROJECT_DIR$/yan-user/src/main/resources/application-provider.xml" />
-        <option value="$PROJECT_DIR$/yan-user/src/main/java/com/hfut/bs/user/UserProvider.java" />
-        <option value="$PROJECT_DIR$/yan-user/src/main/resources/datasource.properties" />
-        <option value="$PROJECT_DIR$/yan-gateway/src/main/resource/applicationContext.xml" />
-        <option value="$PROJECT_DIR$/yan-post/src/main/resources/datasource.properties" />
-        <option value="$PROJECT_DIR$/yan-user/src/main/java/com/hfut/bs/user/service/UserMessageServiceImpl.java" />
-        <option value="$PROJECT_DIR$/yan-user/src/main/resources/mappers/UserMessageMapper.xml" />
-        <option value="$PROJECT_DIR$/yan-user/src/main/resources/applicationContext.xml" />
-        <option value="$PROJECT_DIR$/yan-course/src/main/resources/mappers/CourseMapper.xml" />
-        <option value="$PROJECT_DIR$/yan-gateway/src/main/java/com/hfut/bs/gateway/ConsumerClient.java" />
-        <option value="$PROJECT_DIR$/yan-course/src/main/resources/applicationContext.xml" />
-        <option value="$PROJECT_DIR$/yan-gateway/src/main/resource/application-consumer.xml" />
-        <option value="$PROJECT_DIR$/yan-course/src/main/resources/application-provider.xml" />
-        <option value="$PROJECT_DIR$/yan-course/src/main/java/com/hfut/bs/course/CourseProvider.java" />
-        <option value="$PROJECT_DIR$/yan-course/src/main/java/com/hfut/bs/course/service/CollegeServiceImpl.java" />
-        <option value="$PROJECT_DIR$/yan-course/src/main/java/com/hfut/bs/course/service/SiteCarouseServiceImpl.java" />
-        <option value="$PROJECT_DIR$/yan-course/src/main/java/com/hfut/bs/course/service/ClassifyServiceImpl.java" />
-        <option value="$PROJECT_DIR$/yan-gateway/src/main/java/com/hfut/bs/gateway/user/UserController.java" />
-        <option value="$PROJECT_DIR$/yan-gateway/src/main/webapp/WEB-INF/web.xml" />
-        <option value="$PROJECT_DIR$/yan-gateway/src/main/java/com/hfut/bs/gateway/user/AuthController.java" />
-        <option value="$PROJECT_DIR$/yan-gateway/src/main/webapp/WEB-INF/pages/common/header.html" />
-        <option value="$PROJECT_DIR$/yan-user/src/main/java/com/hfut/bs/user/service/AuthUserServiceImpl.java" />
+        <option value="$PROJECT_DIR$/yan-gateway/src/main/java/com/hfut/bs/gateway/user/controller/UserController1.java" />
+        <option value="$PROJECT_DIR$/yan-gateway/src/main/webapp/WEB-INF/pages/common/header2.html" />
+        <option value="$PROJECT_DIR$/yan-gateway/src/main/webapp/static/comment.html" />
+        <option value="$PROJECT_DIR$/yan-gateway/src/main/webapp/static/learn.html" />
+        <option value="$PROJECT_DIR$/yan-gateway/src/main/webapp/static/video.html" />
+        <option value="$PROJECT_DIR$/yan-gateway/src/main/webapp/static/list.html" />
+        <option value="$PROJECT_DIR$/yan-gateway/src/main/webapp/WEB-INF/pages/index.html" />
+        <option value="$PROJECT_DIR$/yan-gateway/src/main/webapp/WEB-INF/pages/auth/login.html" />
       </list>
     </option>
   </component>
@@ -347,9 +379,9 @@
       </MavenImportingSettings>
     </option>
   </component>
-  <component name="ProjectFrameBounds">
+  <component name="ProjectFrameBounds" fullScreen="true">
     <option name="y" value="23" />
-    <option name="width" value="1242" />
+    <option name="width" value="1280" />
     <option name="height" value="709" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -375,57 +407,6 @@
             <path>
               <item name="yan" type="b2602c69:ProjectViewProjectNode" />
               <item name="yan" type="462c0819:PsiDirectoryNode" />
-              <item name="yan-api" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="yan" type="b2602c69:ProjectViewProjectNode" />
-              <item name="yan" type="462c0819:PsiDirectoryNode" />
-              <item name="yan-api" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="yan" type="b2602c69:ProjectViewProjectNode" />
-              <item name="yan" type="462c0819:PsiDirectoryNode" />
-              <item name="yan-api" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="yan" type="b2602c69:ProjectViewProjectNode" />
-              <item name="yan" type="462c0819:PsiDirectoryNode" />
-              <item name="yan-api" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="bs" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="yan" type="b2602c69:ProjectViewProjectNode" />
-              <item name="yan" type="462c0819:PsiDirectoryNode" />
-              <item name="yan-api" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="bs" type="462c0819:PsiDirectoryNode" />
-              <item name="course" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="yan" type="b2602c69:ProjectViewProjectNode" />
-              <item name="yan" type="462c0819:PsiDirectoryNode" />
-              <item name="yan-api" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="bs" type="462c0819:PsiDirectoryNode" />
-              <item name="course" type="462c0819:PsiDirectoryNode" />
-              <item name="service" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="yan" type="b2602c69:ProjectViewProjectNode" />
-              <item name="yan" type="462c0819:PsiDirectoryNode" />
               <item name="yan-course" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -457,14 +438,6 @@
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="course" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="yan" type="b2602c69:ProjectViewProjectNode" />
-              <item name="yan" type="462c0819:PsiDirectoryNode" />
-              <item name="yan-course" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="yan" type="b2602c69:ProjectViewProjectNode" />
@@ -500,16 +473,6 @@
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="gateway" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="yan" type="b2602c69:ProjectViewProjectNode" />
-              <item name="yan" type="462c0819:PsiDirectoryNode" />
-              <item name="yan-gateway" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="gateway" type="462c0819:PsiDirectoryNode" />
-              <item name="user" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="yan" type="b2602c69:ProjectViewProjectNode" />
@@ -523,175 +486,14 @@
               <item name="yan" type="b2602c69:ProjectViewProjectNode" />
               <item name="yan" type="462c0819:PsiDirectoryNode" />
               <item name="yan-gateway" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="webapp" type="462c0819:PsiDirectoryNode" />
+              <item name="target" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="yan" type="b2602c69:ProjectViewProjectNode" />
               <item name="yan" type="462c0819:PsiDirectoryNode" />
               <item name="yan-gateway" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="webapp" type="462c0819:PsiDirectoryNode" />
-              <item name="WEB-INF" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="yan" type="b2602c69:ProjectViewProjectNode" />
-              <item name="yan" type="462c0819:PsiDirectoryNode" />
+              <item name="target" type="462c0819:PsiDirectoryNode" />
               <item name="yan-gateway" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="webapp" type="462c0819:PsiDirectoryNode" />
-              <item name="WEB-INF" type="462c0819:PsiDirectoryNode" />
-              <item name="pages" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="yan" type="b2602c69:ProjectViewProjectNode" />
-              <item name="yan" type="462c0819:PsiDirectoryNode" />
-              <item name="yan-gateway" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="webapp" type="462c0819:PsiDirectoryNode" />
-              <item name="WEB-INF" type="462c0819:PsiDirectoryNode" />
-              <item name="pages" type="462c0819:PsiDirectoryNode" />
-              <item name="common" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="yan" type="b2602c69:ProjectViewProjectNode" />
-              <item name="yan" type="462c0819:PsiDirectoryNode" />
-              <item name="yan-post" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="yan" type="b2602c69:ProjectViewProjectNode" />
-              <item name="yan" type="462c0819:PsiDirectoryNode" />
-              <item name="yan-post" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="yan" type="b2602c69:ProjectViewProjectNode" />
-              <item name="yan" type="462c0819:PsiDirectoryNode" />
-              <item name="yan-post" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="yan" type="b2602c69:ProjectViewProjectNode" />
-              <item name="yan" type="462c0819:PsiDirectoryNode" />
-              <item name="yan-post" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="yan" type="b2602c69:ProjectViewProjectNode" />
-              <item name="yan" type="462c0819:PsiDirectoryNode" />
-              <item name="yan-post" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="post" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="yan" type="b2602c69:ProjectViewProjectNode" />
-              <item name="yan" type="462c0819:PsiDirectoryNode" />
-              <item name="yan-post" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="yan" type="b2602c69:ProjectViewProjectNode" />
-              <item name="yan" type="462c0819:PsiDirectoryNode" />
-              <item name="yan-user" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="yan" type="b2602c69:ProjectViewProjectNode" />
-              <item name="yan" type="462c0819:PsiDirectoryNode" />
-              <item name="yan-user" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="yan" type="b2602c69:ProjectViewProjectNode" />
-              <item name="yan" type="462c0819:PsiDirectoryNode" />
-              <item name="yan-user" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="yan" type="b2602c69:ProjectViewProjectNode" />
-              <item name="yan" type="462c0819:PsiDirectoryNode" />
-              <item name="yan-user" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="yan" type="b2602c69:ProjectViewProjectNode" />
-              <item name="yan" type="462c0819:PsiDirectoryNode" />
-              <item name="yan-user" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="user" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="yan" type="b2602c69:ProjectViewProjectNode" />
-              <item name="yan" type="462c0819:PsiDirectoryNode" />
-              <item name="yan-user" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="user" type="462c0819:PsiDirectoryNode" />
-              <item name="common" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="yan" type="b2602c69:ProjectViewProjectNode" />
-              <item name="yan" type="462c0819:PsiDirectoryNode" />
-              <item name="yan-user" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="user" type="462c0819:PsiDirectoryNode" />
-              <item name="dao" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="yan" type="b2602c69:ProjectViewProjectNode" />
-              <item name="yan" type="462c0819:PsiDirectoryNode" />
-              <item name="yan-user" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="user" type="462c0819:PsiDirectoryNode" />
-              <item name="domain" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="yan" type="b2602c69:ProjectViewProjectNode" />
-              <item name="yan" type="462c0819:PsiDirectoryNode" />
-              <item name="yan-user" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="user" type="462c0819:PsiDirectoryNode" />
-              <item name="service" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="yan" type="b2602c69:ProjectViewProjectNode" />
-              <item name="yan" type="462c0819:PsiDirectoryNode" />
-              <item name="yan-user" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="user" type="462c0819:PsiDirectoryNode" />
-              <item name="utils" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="yan" type="b2602c69:ProjectViewProjectNode" />
-              <item name="yan" type="462c0819:PsiDirectoryNode" />
-              <item name="yan-user" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="yan" type="b2602c69:ProjectViewProjectNode" />
@@ -707,7 +509,7 @@
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1556176553470" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1556441767154" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit4" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit4" value="" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
@@ -721,26 +523,28 @@
     <key name="CreateTestDialog.RecentsKey">
       <recent name="com.hfut.bs.user.service" />
     </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/yan-gateway/src/main/webapp/WEB-INF/pages" />
-      <recent name="$PROJECT_DIR$/yan-gateway/src/main/webapp/WEB-INF/pages/auth" />
-    </key>
-    <key name="CopyClassDialog.RECENTS_KEY">
-      <recent name="com.hfut.bs.common.utils" />
-      <recent name="com.hfut.bs.course.model" />
-      <recent name="com.hfut.bs.post.redis" />
-      <recent name="com.hfut.bs.gateway.utils" />
-      <recent name="com.hfut.bs.gateway.redis" />
-    </key>
     <key name="CreateTestDialog.Recents.Supers">
       <recent name="" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/yan-gateway/src/main/java/com/hfut/bs/gateway/course/vo" />
-      <recent name="$PROJECT_DIR$/yan-gateway/src/main/java/com/hfut/bs/gateway/course" />
-      <recent name="$PROJECT_DIR$/yan-course/src/main/resource" />
-      <recent name="$PROJECT_DIR$/yan-post/src/main/resources" />
+      <recent name="$PROJECT_DIR$/yan-gateway/src/main/webapp/res/i" />
+      <recent name="$PROJECT_DIR$/yan-gateway/src/main/java/com/hfut/bs/gateway/user/shiro" />
+      <recent name="$PROJECT_DIR$/yan-gateway/src/main/resource" />
+      <recent name="$PROJECT_DIR$/yan-gateway/src/main/java/com/hfut/bs/gateway/utils" />
+      <recent name="$PROJECT_DIR$/yan-common/src/main/java/com/hfut/bs/common/utils" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.hfut.bs.gateway.user.controller" />
+      <recent name="com.hfut.bs.gateway.filter" />
+      <recent name="com.hfut.bs.gateway.error" />
+      <recent name="com.hfut.bs.gateway.utils" />
+      <recent name="com.hfut.bs.common.utils" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/yan-gateway/src/main/webapp/res/i" />
       <recent name="$PROJECT_DIR$/yan-gateway/src/main/webapp/WEB-INF" />
+      <recent name="$PROJECT_DIR$/yan-gateway/src/main/webapp/WEB-INF/pages" />
+      <recent name="$PROJECT_DIR$/yan-gateway/src/main/webapp/WEB-INF/pages/auth" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -919,6 +723,7 @@
       <server-settings>
         <option name="BASE_DIRECTORY_NAME" value="Tomcat_8_0_51_yan_3" />
         <option name="HTTP_PORT" value="8089" />
+        <option name="JNDI_PORT" value="1097" />
       </server-settings>
       <predefined_log_file enabled="true" id="Tomcat" />
       <predefined_log_file enabled="true" id="Tomcat Catalina" />
@@ -1015,7 +820,7 @@
       <workItem from="1555339388403" duration="24395000" />
       <workItem from="1556005568193" duration="2247000" />
       <workItem from="1556023463835" duration="25104000" />
-      <workItem from="1556157480122" duration="12322000" />
+      <workItem from="1556157480122" duration="54421000" />
     </task>
     <task id="LOCAL-00001" summary="基于dubbo分分布式学习平台完成用户服务、帖子服务，代码上传">
       <created>1555155356623</created>
@@ -1080,7 +885,21 @@
       <option name="project" value="LOCAL" />
       <updated>1556094025640</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary=" 用户章节学习记录增加">
+      <created>1556176433480</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1556176433480</updated>
+    </task>
+    <task id="LOCAL-00011" summary="WU">
+      <created>1556176586195</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1556176586195</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -1092,7 +911,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="228746000" />
+    <option name="totallyTimeSpent" value="270845000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1104,9 +923,9 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="23" width="1242" height="709" extended-state="0" />
+    <frame x="0" y="0" width="1280" height="800" extended-state="0" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49773756" visible="true" weight="0.27666667" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49773756" visible="true" weight="0.2819063" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -1116,8 +935,8 @@
       <window_info id="Web" order="7" sideWeight="0.5022625" side_tool="true" weight="0.23263328" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" sideWeight="0.49919224" weight="0.32876712" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.4983845" weight="0.23014587" />
-      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.49676898" visible="true" weight="0.048622366" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.4983845" weight="0.36301368" />
+      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.49676898" visible="true" weight="0.19726028" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32876712" />
@@ -1198,7 +1017,8 @@
     <MESSAGE value="评论优化，将帖子评论数缓存到redis" />
     <MESSAGE value="完善课程章节接口方法，增加用户私信功能" />
     <MESSAGE value=" 用户章节学习记录增加" />
-    <option name="LAST_COMMIT_MESSAGE" value=" 用户章节学习记录增加" />
+    <MESSAGE value="WU" />
+    <option name="LAST_COMMIT_MESSAGE" value="WU" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1222,74 +1042,14 @@
           <option name="timeStamp" value="9" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/yan-gateway/src/main/java/com/hfut/bs/gateway/user/AuthController.java</url>
-          <line>60</line>
-          <properties />
-          <option name="timeStamp" value="24" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/yan-gateway/src/main/java/com/hfut/bs/gateway/user/AuthController.java</url>
-          <line>61</line>
-          <properties />
-          <option name="timeStamp" value="25" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/yan-gateway/src/main/java/com/hfut/bs/gateway/user/AuthController.java</url>
-          <line>62</line>
-          <properties />
-          <option name="timeStamp" value="26" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/yan-gateway/src/main/java/com/hfut/bs/gateway/user/AuthController.java</url>
+          <url>file://$PROJECT_DIR$/yan-gateway/src/main/java/com/hfut/bs/gateway/user/controller/AuthController.java</url>
           <line>64</line>
-          <properties />
-          <option name="timeStamp" value="27" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/yan-gateway/src/main/java/com/hfut/bs/gateway/user/AuthController.java</url>
-          <line>104</line>
           <properties />
           <option name="timeStamp" value="40" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/yan-gateway/src/main/java/com/hfut/bs/gateway/user/AuthController.java</url>
-          <line>68</line>
-          <properties />
-          <option name="timeStamp" value="45" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/yan-gateway/src/main/java/com/hfut/bs/gateway/user/AuthController.java</url>
-          <line>70</line>
-          <properties />
-          <option name="timeStamp" value="46" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/yan-gateway/src/main/java/com/hfut/bs/gateway/user/AuthController.java</url>
-          <line>69</line>
-          <properties />
-          <option name="timeStamp" value="47" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/yan-user/src/main/java/com/hfut/bs/user/service/AuthUserServiceImpl.java</url>
-          <line>50</line>
-          <properties />
-          <option name="timeStamp" value="48" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/yan-user/src/main/java/com/hfut/bs/user/service/AuthUserServiceImpl.java</url>
-          <line>51</line>
-          <properties />
-          <option name="timeStamp" value="52" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/yan-user/src/main/java/com/hfut/bs/user/service/AuthUserServiceImpl.java</url>
-          <line>49</line>
-          <properties />
-          <option name="timeStamp" value="60" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/yan-gateway/src/main/java/com/hfut/bs/gateway/user/UserController.java</url>
-          <line>58</line>
+          <url>file://$PROJECT_DIR$/yan-gateway/src/main/java/com/hfut/bs/gateway/user/controller/UserController.java</url>
+          <line>74</line>
           <properties />
           <option name="timeStamp" value="65" />
         </line-breakpoint>
@@ -1300,100 +1060,34 @@
           <option name="timeStamp" value="71" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/yan-gateway/src/main/java/com/hfut/bs/gateway/user/UserController.java</url>
-          <line>61</line>
+          <url>file://$PROJECT_DIR$/yan-gateway/src/main/java/com/hfut/bs/gateway/user/controller/UserController.java</url>
+          <line>77</line>
           <properties />
           <option name="timeStamp" value="76" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/yan-gateway/src/main/java/com/hfut/bs/gateway/user/UserController.java</url>
-          <line>68</line>
+          <url>file://$PROJECT_DIR$/yan-gateway/src/main/java/com/hfut/bs/gateway/user/controller/UserController.java</url>
+          <line>84</line>
           <properties />
           <option name="timeStamp" value="78" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/yan-gateway/src/main/java/com/hfut/bs/gateway/user/UserController.java</url>
-          <line>64</line>
+          <url>file://$PROJECT_DIR$/yan-gateway/src/main/java/com/hfut/bs/gateway/user/controller/UserController.java</url>
+          <line>80</line>
           <properties />
           <option name="timeStamp" value="80" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/yan-gateway/src/main/java/com/hfut/bs/gateway/user/UserController.java</url>
-          <line>62</line>
+          <url>file://$PROJECT_DIR$/yan-gateway/src/main/java/com/hfut/bs/gateway/user/controller/UserController.java</url>
+          <line>78</line>
           <properties />
           <option name="timeStamp" value="82" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/yan-gateway/src/main/java/com/hfut/bs/gateway/user/UserController.java</url>
-          <line>66</line>
+          <url>file://$PROJECT_DIR$/yan-gateway/src/main/java/com/hfut/bs/gateway/user/controller/UserController.java</url>
+          <line>82</line>
           <properties />
           <option name="timeStamp" value="83" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/yan-common/src/main/java/com/hfut/bs/common/storage/QiniuStorage.java</url>
-          <line>15</line>
-          <properties />
-          <option name="timeStamp" value="84" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/yan-common/src/main/java/com/hfut/bs/common/storage/QiniuStorage.java</url>
-          <line>16</line>
-          <properties />
-          <option name="timeStamp" value="85" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/yan-common/src/main/java/com/hfut/bs/common/storage/QiniuWrapper.java</url>
-          <line>75</line>
-          <properties />
-          <option name="timeStamp" value="86" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/yan-common/src/main/java/com/hfut/bs/common/storage/QiniuWrapper.java</url>
-          <line>39</line>
-          <properties />
-          <option name="timeStamp" value="87" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/yan-common/src/main/java/com/hfut/bs/common/storage/QiniuWrapper.java</url>
-          <line>45</line>
-          <properties />
-          <option name="timeStamp" value="88" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/yan-common/src/main/java/com/hfut/bs/common/storage/QiniuWrapper.java</url>
-          <line>77</line>
-          <properties />
-          <option name="timeStamp" value="89" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/yan-common/src/main/java/com/hfut/bs/common/storage/QiniuStorage.java</url>
-          <line>17</line>
-          <properties />
-          <option name="timeStamp" value="91" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/yan-gateway/src/main/java/com/hfut/bs/gateway/user/AuthController.java</url>
-          <line>76</line>
-          <properties />
-          <option name="timeStamp" value="98" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/yan-gateway/src/main/java/com/hfut/bs/gateway/user/AuthController.java</url>
-          <line>80</line>
-          <properties />
-          <option name="timeStamp" value="99" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/yan-gateway/src/main/java/com/hfut/bs/gateway/user/AuthController.java</url>
-          <line>83</line>
-          <properties />
-          <option name="timeStamp" value="100" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/yan-gateway/src/main/java/com/hfut/bs/gateway/user/AuthController.java</url>
-          <line>84</line>
-          <properties />
-          <option name="timeStamp" value="101" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/yan-post/src/main/java/com/hfut/bs/post/rabbitmq/CommentLikeHandler.java</url>
@@ -1408,28 +1102,16 @@
           <option name="timeStamp" value="111" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/yan-gateway/src/main/java/com/hfut/bs/gateway/user/AuthController.java</url>
-          <line>81</line>
-          <properties />
-          <option name="timeStamp" value="124" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/yan-gateway/src/main/java/com/hfut/bs/gateway/user/AuthController.java</url>
-          <line>225</line>
+          <url>file://$PROJECT_DIR$/yan-gateway/src/main/java/com/hfut/bs/gateway/user/controller/AuthController.java</url>
+          <line>185</line>
           <properties />
           <option name="timeStamp" value="125" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/yan-gateway/src/main/java/com/hfut/bs/gateway/user/AuthController.java</url>
-          <line>226</line>
+          <url>file://$PROJECT_DIR$/yan-gateway/src/main/java/com/hfut/bs/gateway/user/controller/AuthController.java</url>
+          <line>186</line>
           <properties />
           <option name="timeStamp" value="126" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/yan-api/src/main/java/com/hfut/bs/user/service/IUserCourseSectionService.java</url>
-          <line>7</line>
-          <properties />
-          <option name="timeStamp" value="130" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/yan-gateway/src/main/java/com/hfut/bs/gateway/ConsumerClient.java</url>
@@ -1443,407 +1125,372 @@
           <properties />
           <option name="timeStamp" value="132" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/yan-course/src/main/java/com/hfut/bs/course/service/ClassifyServiceImpl.java</url>
+          <line>40</line>
+          <properties />
+          <option name="timeStamp" value="231" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/yan-gateway/src/main/java/com/hfut/bs/gateway/user/controller/UserController1.java</url>
+          <line>90</line>
+          <properties />
+          <option name="timeStamp" value="277" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/yan-gateway/src/main/java/com/hfut/bs/gateway/user/controller/UserController1.java</url>
+          <line>81</line>
+          <properties />
+          <option name="timeStamp" value="278" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/yan-gateway/src/main/java/com/hfut/bs/gateway/user/controller/UserController1.java</url>
+          <line>82</line>
+          <properties />
+          <option name="timeStamp" value="283" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/yan-gateway/src/main/java/com/hfut/bs/gateway/user/controller/UserController1.java</url>
+          <line>130</line>
+          <properties />
+          <option name="timeStamp" value="288" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/yan-gateway/src/main/java/com/hfut/bs/gateway/user/controller/UserController1.java</url>
+          <line>128</line>
+          <properties />
+          <option name="timeStamp" value="289" />
+        </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/yan-api/src/main/java/com/hfut/bs/user/service/IAuthUserService.java">
+    <entry file="file://$PROJECT_DIR$/yan-gateway/src/main/java/com/hfut/bs/gateway/course/controller/CourseListController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="189">
-          <caret line="30" column="18" selection-start-line="30" selection-start-column="18" selection-end-line="30" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/yan-common/src/main/java/com/hfut/bs/common/utils/JsonView.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="402">
-          <caret line="80" column="18" selection-start-line="80" selection-start-column="18" selection-end-line="80" selection-end-column="18" />
+        <state relative-caret-position="-82">
+          <caret line="43" selection-start-line="43" selection-end-line="43" />
           <folding>
-            <element signature="e#1589#1590#0" expanded="true" />
-            <element signature="e#1641#1642#0" expanded="true" />
+            <element signature="e#1301#1319#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/yan-gateway/src/main/java/com/hfut/bs/gateway/course/vo/CourseSectionVO.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="22" column="55" selection-start-line="22" selection-start-column="55" selection-end-line="22" selection-end-column="55" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#364#388#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/yan-gateway/src/main/java/com/hfut/bs/gateway/access/LoginInterceptor.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="216">
-          <caret line="58" column="17" lean-forward="true" selection-start-line="58" selection-start-column="17" selection-end-line="58" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$PROJECT_DIR$/../../../apple/Downloads/apache-maven-3.0.5/repository/org/apache/shiro/shiro-core/1.2.2/shiro-core-1.2.2.jar!/org/apache/shiro/subject/Subject.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="196">
-          <caret line="59" column="9" selection-start-line="59" selection-start-column="9" selection-end-line="59" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/yan-gateway/src/main/webapp/WEB-INF/pages/auth/login.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="252">
-          <caret line="44" column="60" selection-start-line="44" selection-start-column="60" selection-end-line="44" selection-end-column="60" />
-          <folding>
-            <element signature="n#style#0;n#form#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/yan-api/src/main/java/com/hfut/bs/user/service/IUserCourseSectionService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="7" column="17" selection-start-line="7" selection-start-column="17" selection-end-line="7" selection-end-column="17" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/yan-user/src/main/java/com/hfut/bs/user/service/UserCourseSectionServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="189">
-          <caret line="16" column="13" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/yan-api/src/main/java/com/hfut/bs/user/service/IUserMessageService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="7" column="9" selection-start-line="7" selection-start-column="9" selection-end-line="7" selection-end-column="9" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/yan-user/src/main/resources/datasource.properties">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="4" column="25" selection-start-line="4" selection-start-column="25" selection-end-line="4" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/yan-user/src/main/java/com/hfut/bs/user/dao/AuthUserMapper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="104">
-          <caret line="14" column="13" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/yan-user/src/main/java/com/hfut/bs/user/dao/UserCourseSectionMapper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="585">
-          <caret line="39" column="109" selection-start-line="39" selection-start-column="109" selection-end-line="39" selection-end-column="109" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/yan-user/src/main/resources/mybatis-config.xml">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/yan-user/src/main/resources/mappers/AuthUserMapper.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" selection-start-line="2" selection-end-line="2" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/yan-user/src/main/resources/mappers/UserCourseSectionMapper.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3135">
-          <caret line="209" column="51" selection-start-line="209" selection-start-column="51" selection-end-line="209" selection-end-column="51" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/yan-post/src/main/resources/applicationContext.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-356" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/yan-post/src/main/resources/datasource.properties">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="8" column="24" lean-forward="true" selection-start-line="8" selection-start-column="24" selection-end-line="8" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/yan-user/src/main/resources/application-provider.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="294">
-          <caret line="22" column="106" selection-start-line="22" selection-start-column="106" selection-end-line="22" selection-end-column="106" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/yan-user/src/main/java/com/hfut/bs/user/service/UserMessageServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="16" column="19" selection-start-line="16" selection-start-column="19" selection-end-line="16" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/yan-user/src/main/java/com/hfut/bs/user/dao/UserMessageMapper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="8" column="17" selection-start-line="8" selection-start-column="17" selection-end-line="8" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/yan-user/src/main/resources/mappers/UserMessageMapper.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="214" column="92" selection-start-line="214" selection-start-column="92" selection-end-line="214" selection-end-column="92" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/yan-user/src/main/resources/applicationContext.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="145">
-          <caret line="27" lean-forward="true" selection-start-line="27" selection-end-line="27" />
-          <folding>
-            <element signature="e#2324#2355#0" expanded="true" />
-            <element signature="e#2396#2415#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/yan-course/src/main/java/com/hfut/bs/course/dao/CourseMapper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="8" column="17" selection-start-line="8" selection-start-column="17" selection-end-line="8" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/yan-course/src/main/resources/mappers/CourseMapper.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="169">
-          <caret line="468" column="23" selection-start-line="468" selection-start-column="23" selection-end-line="468" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/yan-gateway/src/main/java/com/hfut/bs/gateway/ConsumerClient.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="20" column="54" selection-start-line="20" selection-start-column="54" selection-end-line="20" selection-end-column="54" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/yan-course/src/main/java/com/hfut/bs/course/service/CourseSectionServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="15" column="13" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/yan-course/src/main/resources/applicationContext.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="112">
-          <caret line="32" column="32" lean-forward="true" selection-start-line="32" selection-start-column="32" selection-end-line="32" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/yan-post/src/main/resources/application-provider.xml">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/yan-user/src/main/java/com/hfut/bs/user/UserProvider.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="16" column="98" selection-start-line="16" selection-start-column="98" selection-end-line="16" selection-end-column="98" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/yan-course/src/main/resources/application-provider.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="17" column="24" selection-start-line="17" selection-start-column="24" selection-end-line="17" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/yan-api/src/main/java/com/hfut/bs/course/service/ICourseService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="116">
-          <caret line="12" column="17" selection-start-line="12" selection-start-column="17" selection-end-line="12" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/yan-course/src/main/java/com/hfut/bs/course/service/CourseServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1110">
-          <caret line="74" column="34" lean-forward="true" selection-start-line="74" selection-start-column="34" selection-end-line="74" selection-end-column="34" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#2465#2466#0" expanded="true" />
-            <element signature="e#2516#2517#0" expanded="true" />
-            <element signature="e#2583#2584#0" expanded="true" />
-            <element signature="e#2627#2628#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/yan-gateway/src/main/resource/applicationContext.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-149">
-          <caret line="63" column="59" selection-start-line="63" selection-start-column="59" selection-end-line="63" selection-end-column="59" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/yan-gateway/src/main/resource/application-consumer.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="11" column="54" lean-forward="true" selection-start-line="11" selection-start-column="54" selection-end-line="11" selection-end-column="54" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/yan-api/src/main/java/com/hfut/bs/course/service/ICollegeService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="7" column="17" selection-start-line="7" selection-start-column="17" selection-end-line="7" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/yan-course/src/main/java/com/hfut/bs/course/service/CollegeServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="25">
-          <caret line="14" column="26" lean-forward="true" selection-start-line="14" selection-start-column="26" selection-end-line="14" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/yan-post/src/main/java/com/hfut/bs/post/PostProvider.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="161">
-          <caret line="20" column="55" lean-forward="true" selection-start-line="20" selection-start-column="55" selection-end-line="20" selection-end-column="55" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/yan-api/src/main/java/com/hfut/bs/course/service/ISiteCarouseService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="7" column="17" selection-start-line="7" selection-start-column="17" selection-end-line="7" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/yan-course/src/main/java/com/hfut/bs/course/service/SiteCarouseServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="16" column="41" lean-forward="true" selection-start-line="16" selection-start-column="41" selection-end-line="16" selection-end-column="41" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/yan-api/src/main/java/com/hfut/bs/course/service/IClassifyService.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="7" column="17" selection-start-line="7" selection-start-column="17" selection-end-line="7" selection-end-column="17" />
+        <state relative-caret-position="154">
+          <caret line="17" column="35" selection-start-line="17" selection-start-column="35" selection-end-line="17" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/yan-course/src/main/java/com/hfut/bs/course/dao/ClassifyMapper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="177">
+          <caret line="21" column="19" selection-start-line="21" selection-start-column="19" selection-end-line="21" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/yan-course/src/main/resources/mappers/ClassifyMapper.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="192">
+          <caret line="155" column="2" selection-start-line="155" selection-start-column="2" selection-end-line="155" selection-end-column="2" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/yan-course/src/main/java/com/hfut/bs/course/service/ClassifyServiceImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="15" column="25" selection-start-line="15" selection-start-column="25" selection-end-line="15" selection-end-column="25" />
+        <state relative-caret-position="167">
+          <caret line="39" selection-start-line="39" selection-end-line="39" />
+          <folding>
+            <element signature="e#1170#1189#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/yan-course/src/main/java/com/hfut/bs/course/CourseProvider.java">
+    <entry file="file://$PROJECT_DIR$/yan-gateway/src/main/resource/app-servlet.xml">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/yan-gateway/src/main/webapp/static/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="22" selection-start-line="22" selection-end-line="22" />
+        <state relative-caret-position="-597">
+          <caret line="186" column="30" lean-forward="true" selection-start-line="186" selection-start-column="30" selection-end-line="186" selection-end-column="30" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/yan-gateway/src/main/java/com/hfut/bs/gateway/course/controller/CourseController.java">
+    <entry file="file://$PROJECT_DIR$/yan-gateway/src/main/webapp/res/i/logo1.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/yan-gateway/src/main/webapp/res/i/ico1.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/yan-gateway/src/main/webapp/res/i/logo.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/yan-gateway/src/main/webapp/static/list.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="37" column="22" selection-start-line="37" selection-start-column="22" selection-end-line="37" selection-end-column="22" />
+        <state relative-caret-position="175">
+          <caret line="20" column="60" selection-start-line="20" selection-start-column="60" selection-end-line="20" selection-end-column="60" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/yan-gateway/src/main/webapp/res/i/c3.jpg">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/yan-gateway/src/main/webapp/res/i/c2.jpg">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/yan-gateway/src/main/webapp/res/i/c4.jpg">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/yan-gateway/src/main/webapp/res/i/c5.jpg">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/yan-gateway/src/main/webapp/res/i/course.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/yan-gateway/src/main/webapp/res/i/followed.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/yan-gateway/src/main/webapp/res/i/following.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/yan-gateway/src/main/webapp/res/i/main-bg-1.jpg">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/yan-gateway/src/main/webapp/res/i/main-bg-2.jpg">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/yan-gateway/src/main/webapp/res/i/main-bg-3.jpg">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/yan-gateway/src/main/webapp/res/i/ico.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/yan-gateway/src/main/webapp/res/css/reset.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="67">
+          <caret line="69" column="6" selection-start-line="69" selection-start-column="6" selection-end-line="69" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/yan-gateway/src/main/webapp/WEB-INF/pages/video.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="192">
+          <caret line="170" column="58" lean-forward="true" selection-start-line="170" selection-start-column="58" selection-end-line="170" selection-end-column="58" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/yan-gateway/src/main/java/com/hfut/bs/gateway/course/controller/YanController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="303">
+          <caret line="46" column="74" selection-start-line="46" selection-start-column="74" selection-end-line="46" selection-end-column="74" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/yan-gateway/src/main/java/com/hfut/bs/gateway/redis/JedisUtils.java">
+    <entry file="file://$PROJECT_DIR$/yan-api/src/main/java/com/hfut/bs/course/service/ISiteCarouseService.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="114">
-          <caret line="129" selection-start-line="129" selection-end-line="129" />
+        <state relative-caret-position="205">
+          <caret line="19" column="38" selection-start-line="19" selection-start-column="38" selection-end-line="19" selection-end-column="38" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/yan-gateway/src/main/webapp/WEB-INF/web.xml">
+    <entry file="file://$PROJECT_DIR$/yan-course/src/main/java/com/hfut/bs/course/service/SiteCarouseServiceImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="297">
-          <caret line="56" column="23" selection-start-line="56" selection-start-column="23" selection-end-line="56" selection-end-column="23" />
+        <state relative-caret-position="285">
+          <caret line="41" column="51" lean-forward="true" selection-start-line="41" selection-start-column="51" selection-end-line="41" selection-end-column="51" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/yan-gateway/src/main/java/com/hfut/bs/gateway/user/AuthController.java">
+    <entry file="file://$PROJECT_DIR$/yan-gateway/src/main/webapp/WEB-INF/pages/learn.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="19">
-          <caret line="47" column="8" selection-start-line="47" selection-start-column="8" selection-end-line="47" selection-end-column="8" />
+        <state relative-caret-position="97">
+          <caret line="122" column="27" lean-forward="true" selection-start-line="122" selection-start-column="27" selection-end-line="122" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/yan-user/src/main/java/com/hfut/bs/user/domain/UserCourseSection.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/yan-api/src/main/java/com/hfut/bs/user/service/IUserCourseSectionService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="103">
+          <caret line="28" column="134" selection-start-line="28" selection-start-column="134" selection-end-line="28" selection-end-column="134" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/yan-user/src/main/java/com/hfut/bs/user/dao/UserCourseSectionMapper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="182">
+          <caret line="40" column="35" selection-start-line="40" selection-start-column="35" selection-end-line="40" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/yan-user/src/main/resources/mappers/UserCourseSectionMapper.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="100">
+          <caret line="209" column="2" selection-start-line="209" selection-start-column="2" selection-end-line="209" selection-end-column="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/yan-user/src/main/java/com/hfut/bs/user/service/UserCourseSectionServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="117">
+          <caret line="58" selection-start-line="58" selection-end-line="58" />
           <folding>
-            <element signature="e#1717#1718#0" expanded="true" />
-            <element signature="e#1747#1748#0" expanded="true" />
-            <element signature="e#3919#3920#0" expanded="true" />
-            <element signature="e#3949#3950#0" expanded="true" />
+            <element signature="e#2530#2558#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/yan-gateway/src/main/webapp/WEB-INF/pages/index.html">
+    <entry file="file://$PROJECT_DIR$/yan-gateway/src/main/webapp/static/comment.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="390">
-          <caret line="26" column="62" lean-forward="true" selection-start-line="26" selection-start-column="62" selection-end-line="26" selection-end-column="62" />
+        <state relative-caret-position="276">
+          <caret line="245" column="79" lean-forward="true" selection-start-line="245" selection-start-column="79" selection-end-line="245" selection-end-column="79" />
           <folding>
-            <element signature="e#778#829#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/yan-gateway/src/main/webapp/WEB-INF/pages/common/header.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="375">
-          <caret line="25" column="20" lean-forward="true" selection-start-line="25" selection-start-column="20" selection-end-line="25" selection-end-column="20" />
-          <folding>
-            <element signature="n#style#0;n#form#0;n#div#1;n#div#0;n#div#0;n#div#1;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#a#3;n#nav#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/yan-user/src/main/java/com/hfut/bs/user/service/AuthUserServiceImpl.java">
+    <entry file="file://$PROJECT_DIR$/yan-common/src/main/java/com/hfut/bs/common/storage/QiniuStorage.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="271">
-          <caret line="61" column="76" selection-start-line="61" selection-start-column="76" selection-end-line="61" selection-end-column="76" />
+        <state relative-caret-position="194">
+          <caret line="15" selection-start-line="15" selection-end-line="15" />
+          <folding>
+            <element signature="e#1090#1091#0" expanded="true" />
+            <element signature="e#1128#1129#0" expanded="true" />
+            <element signature="e#1183#1184#0" expanded="true" />
+            <element signature="e#1233#1234#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/yan-gateway/src/main/java/com/hfut/bs/gateway/user/UserController.java">
+    <entry file="file://$PROJECT_DIR$/yan-common/src/main/java/com/hfut/bs/common/storage/QiniuWrapper.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-198">
-          <caret line="33" column="34" selection-start-line="33" selection-start-column="34" selection-end-line="33" selection-end-column="34" />
+        <state relative-caret-position="294">
+          <caret line="75" selection-start-line="75" selection-end-line="75" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/yan-gateway/src/main/resource/app-servlet.xml">
+    <entry file="file://$PROJECT_DIR$/yan-gateway/src/main/java/com/hfut/bs/gateway/course/controller/CourseController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-431">
-          <caret line="28" column="26" lean-forward="true" selection-start-line="28" selection-start-column="26" selection-end-line="28" selection-end-column="26" />
+        <state relative-caret-position="1680">
+          <caret line="138" selection-start-line="138" selection-end-line="138" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/yan-gateway/src/main/java/com/hfut/bs/gateway/user/controller/AuthController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="34" column="13" selection-start-line="34" selection-start-column="13" selection-end-line="34" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/yan-gateway/src/main/java/com/hfut/bs/gateway/user/controller/UserController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="29" column="13" selection-start-line="29" selection-start-column="13" selection-end-line="29" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/yan-gateway/src/main/java/com/hfut/bs/gateway/user/controller/UserController1.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="100">
+          <caret line="131" selection-start-line="131" selection-end-line="131" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/yan-gateway/src/main/webapp/res/i/header.jpg">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/yan-gateway/src/main/webapp/WEB-INF/pages/user/info.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="13" column="32" lean-forward="true" selection-start-line="13" selection-start-column="32" selection-end-line="13" selection-end-column="32" />
+          <folding>
+            <element signature="n#style#0;n#div#1;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#img#0;n#div#0;n#form#0;n#div#2;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/yan-gateway/src/main/webapp/WEB-INF/pages/common/res.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="6" lean-forward="true" selection-start-line="6" selection-end-line="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/yan-gateway/src/main/webapp/WEB-INF/pages/common/header.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1333">
+          <caret line="105" column="28" lean-forward="true" selection-start-line="105" selection-start-column="28" selection-end-line="105" selection-end-column="28" />
+          <folding>
+            <element signature="n#style#0;n#a#1;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#a#0;n#div#1;n#div#0;n#div#1;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/yan-gateway/src/main/webapp/WEB-INF/pages/list.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="528">
+          <caret line="97" column="69" selection-start-line="97" selection-start-column="64" selection-end-line="97" selection-end-column="69" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/yan-gateway/src/main/webapp/WEB-INF/pages/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-572">
+          <caret line="267" column="59" selection-start-line="267" selection-start-column="59" selection-end-line="267" selection-end-column="59" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/yan-gateway/src/main/webapp/WEB-INF/pages/auth/login.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="132">
+          <caret line="19" column="47" lean-forward="true" selection-start-line="19" selection-start-column="47" selection-end-line="19" selection-end-column="47" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/yan-gateway/src/main/webapp/WEB-INF/pages/auth/register.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="6" column="41" lean-forward="true" selection-start-line="6" selection-start-column="41" selection-end-line="6" selection-end-column="41" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/yan-course/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="167">
+          <caret line="87" column="44" lean-forward="true" selection-start-line="87" selection-start-column="44" selection-end-line="87" selection-end-column="44" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/yan-gateway/src/main/resource/application.properties">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/yan-gateway/src/main/resource/application-consumer.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="19" column="27" lean-forward="true" selection-start-line="19" selection-start-column="27" selection-end-line="19" selection-end-column="27" />
         </state>
       </provider>
     </entry>

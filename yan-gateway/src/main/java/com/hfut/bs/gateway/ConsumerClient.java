@@ -2,7 +2,7 @@ package com.hfut.bs.gateway;
 
 import com.hfut.bs.course.service.ICourseService;
 import com.hfut.bs.gateway.redis.JedisUtils;
-import com.hfut.bs.gateway.user.AuthController;
+import com.hfut.bs.gateway.user.controller.AuthController;
 import com.hfut.bs.user.model.UserModel;
 import com.hfut.bs.user.service.IAuthUserService;
 import org.springframework.context.support.ClassPathXmlApplicationContext;

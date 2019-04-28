@@ -51,7 +51,7 @@ public class UserCourseSectionServiceImpl implements IUserCourseSectionService {
     }
 
 
-    public TailPage<UserCourseSectionInfoModel> queryPage(UserCourseSectionInfoModel userCourseSectionInfoModel, TailPage page){
+    public TailPage<UserCourseSectionInfoModel> queryPage(UserCourseSectionInfoModel userCourseSectionInfoModel, TailPage<UserCourseSectionInfoModel> page){
         UserCourseSection queryEntity = toCourseSection(userCourseSectionInfoModel);
         Integer itemsTotalCount = userCourseSectionMapper.selectTotalItemsCount(queryEntity);
         List<UserCourseSection> items = userCourseSectionMapper.selectPage(queryEntity,page);
@@ -69,7 +69,7 @@ public class UserCourseSectionServiceImpl implements IUserCourseSectionService {
 
     public void createSelectivity(UserCourseSectionInfoModel userCourseSectionInfoModel){
         UserCourseSection entity = toCourseSection(userCourseSectionInfoModel);
-        userCourseSectionMapper.insert(entity);
+        userCourseSectionMapper.insertSelective(entity);
     }
 
     public void update(UserCourseSectionInfoModel userCourseSectionInfoModel){

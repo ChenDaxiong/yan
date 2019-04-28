@@ -1,28 +1,28 @@
 <div class="f-header">
 	<div class="f-header-box clearfix">
-		<a href="${s.base}"  class="logo" title="在线网校学习平台"></a>
+		<a href="${s.base}"  class="logo" title="yan-考研学习交流平台"></a>
 		<nav class="header-nav">
 			<a href="${s.base}" class="header-nav-item">首 页</a>
 			<a href="${s.base}/course/list.html" class="header-nav-item">课 程</a>
+			<a href="http://opt.ioswift.org" target="_blank" class="header-nav-item" style="width:100px;">后台管理</a>
 			<a href="${s.base}/user/home.html" class="header-nav-item">我的</a>
-			<a href="http://opt.ioswift.org" target="_blank" class="header-nav-item" style="width:100px;">运营CMS</a>
-			<a href="http://m.ioswift.org" target="_blank" class="header-nav-item" style="width:100px;">M站</a>
+			<!--<a href="http://m.ioswift.org" target="_blank" class="header-nav-item" style="width:100px;">M站</a>-->
 		</nav>
 		
 		<nav class="header-nav" style="float:right">
-			<!--<@shiro.guest>-->
+			<@shiro.guest>
 			<a href="#myModal" class="header-nav-item"  data-toggle="modal" onclick="login();"  style="margin-right:0px;font-size:14px;">登录</a>
 			<a href="#myModal" class="header-nav-item" data-toggle="modal" onclick="registe();"  style="margin-left:0px;font-size:14px;">注册</a>
-			<!--</@shiro.guest>-->
+			</@shiro.guest>
 			
-			<!--<@shiro.user>-->
+			<@shiro.user>
 			<a href="${s.base}/user/home.html" class="header-nav-item"  style="margin-left:0px;width:40px;height:40px;" id="userdetail">
 	        	<img id="headerUserHeader" alt="" src='<@shiro.principal property="header"/>' style="width: 35px;height: 35px;border-radius:50%;">
 	        </a>
-	       <!--</@shiro.user>-->
+	       </@shiro.user>
 		</nav>
 		
-		<!--<@shiro.user>-->
+		<@shiro.user>
 		<!-- 登录之后显示用户的基本信息-start -->
 		<div id="userdetailHtml" style="display: none;">
 			<div style="padding:10px;">
@@ -49,7 +49,7 @@
 			</div>
 		</div>
 		<!-- 登录之后显示用户的基本信息-end -->
-		<!--</@shiro.user>-->
+		</@shiro.user>
 	</div>
 </div>
 
@@ -74,13 +74,13 @@
                           <input id="usernameHeader1"  type="text" class="form-control"  name="username" placeholder="用户名">
                       </div>
                       <div class="form-group help">
-                          <input id="passwordHeader1"  type="password" class="form-control"  name="password"  placeholder="密码">
+                          <input id="passwordHeader1"  type="password" class="form-control"  name="password"  placeholder="密　码">
                       </div>
-                      <!--<div class="form-group">-->
-						<!--<input id="identiryCodeHeader1" class="form-control"  name="identiryCode" maxlength="6" class="input-text" type="text" style="width: 120px;float:left;" placeholder="请输入验证码"/>-->
-						<!--<img  id="indeityImgHead1"  onclick="reloadIndityImg('indeityImgHead1');" src="${s.base}/tools/identiry/code.html" style="width:80px;height:33px;float:left;margin-left:10px;float:left;border-radius:5px;"/>-->
-					  	<!--<span id="loginError" style="margin-left:10px;height:33px;line-height:33px;color:red;display:none;">错误信息</span>-->
-					  <!--</div>-->
+                      <div class="form-group">
+						<input id="identiryCodeHeader1" class="form-control"  name="identiryCode" maxlength="6" class="input-text" type="text" style="width: 120px;float:left;" placeholder="请输入验证码"/>
+						<img  id="indeityImgHead1"  onclick="reloadIndityImg('indeityImgHead1');" src="${s.base}/tools/identiry/code.html" style="width:80px;height:33px;float:left;margin-left:10px;float:left;border-radius:5px;"/>
+					  	<span id="loginError" style="margin-left:10px;height:33px;line-height:33px;color:red;display:none;">错误信息</span>
+					  </div>
                       <div class="form-group">
                           <label>
                            <input type="checkbox" value="1" id="checkbox1" name="rememberMe">
@@ -97,13 +97,13 @@
                            <input id="usernameHeader2"  name="username" type="text" class="form-control"   placeholder="用户名">
                        </div>
                        <div class="form-group help">
-                           <input id="passwordHeader2"  name="password"  type="password" class="form-control"  placeholder="密码">
+                           <input id="passwordHeader2"  name="password"  type="password" class="form-control"  placeholder="密　码">
                        </div>
-                       <!--<div class="form-group">-->
-							<!--<input id="identiryCodeHeader2" class="form-control"  name="identiryCode" maxlength="6" class="input-text" type="text" style="width: 120px;float:left;" placeholder="请输入验证码"/>-->
-							<!--<img  onclick="reloadIndityImg('indeityImgHead2');" id="indeityImgHead2"  src="${s.base}/tools/identiry/code.html" style="width:80px;height:33px;float:left;margin-left:10px;float:left;border-radius:5px;"/>-->
-					  		<!--<span id="registerError" style="margin-left:10px;height:33px;line-height:33px;color:red;display:none;">错误信息</span>-->
-					  <!--</div>-->
+                       <div class="form-group">
+							<input id="identiryCodeHeader2" class="form-control"  name="identiryCode" maxlength="6" class="input-text" type="text" style="width: 120px;float:left;" placeholder="请输入验证码"/>
+							<img  onclick="reloadIndityImg('indeityImgHead2');" id="indeityImgHead2"  src="${s.base}/tools/identiry/code.html" style="width:80px;height:33px;float:left;margin-left:10px;float:left;border-radius:5px;"/>
+					  		<span id="registerError" style="margin-left:10px;height:33px;line-height:33px;color:red;display:none;">错误信息</span>
+					  </div>
                        <a href="javascript:void(0)">
                       	<div class="header-login-btn" onclick="doAjaxRegister()">注 册</div>
                        </a>
@@ -112,7 +112,7 @@
         </div>
     </div>
 </div>
-<!--</@shiro.guest>-->
+</@shiro.guest>
 
 <script type="text/javascript">
 	$(function(){
@@ -187,7 +187,7 @@
 		}
 	});
 	
-	// <@shiro.guest>
+	<@shiro.guest>
 	//登录注册实现 
 	function login(){
 		$('#loginTitle').css('color','#337Ab7');
@@ -225,12 +225,12 @@
 		}
 		
 		//验证码不能为空
-		// var code = $('#identiryCodeHeader1').val();
-		// if(oc.isEmpty(code)){
-		// 	$('#loginError').show();
-		// 	$('#loginError').html("请输入验证码");
-		// 	return;
-		// }
+		var code = $('#identiryCodeHeader1').val();
+		if(oc.isEmpty(code)){
+			$('#loginError').show();
+			$('#loginError').html("请输入验证码");
+			return;
+		}
 		
 		//登录
 		$('#loginForm').ajaxSubmit({
@@ -241,10 +241,11 @@
 					window.location.reload();
 				} else if(resp.errcode == 1) {
 					$('#loginError').show();
-					$('#loginError').html("用户名或密码错误");
+					$('#loginError').html("用户名密码错");
 				}else if(resp.errcode == 2){
 					$('#loginError').show();
-					$('#loginError').html("用户名或密码不能为空");
+					$('#loginError').html("验证码输入错误！");
+					reloadIndityImg('indeityImgHead1');
 				}
 			},
 			error : function(xhr) {
@@ -272,12 +273,12 @@
 		}
 		
 		//验证码不能为空
-		// var code = $('#identiryCodeHeader2').val();
-		// if(oc.isEmpty(code)){
-		// 	$('#registerError').show();
-		// 	$('#registerError').html("请输入验证码");
-		// 	return;
-		// }
+		var code = $('#identiryCodeHeader2').val();
+		if(oc.isEmpty(code)){
+			$('#registerError').show();
+			$('#registerError').html("请输入验证码");
+			return;
+		}
 		
 		//注册
 		$('#registeForm').ajaxSubmit({
@@ -289,19 +290,18 @@
 				} else if(resp.errcode == 1) {
 					$('#registerError').show();
 					$('#registerError').html("用户名已被注册，请更换！");
+				}else if(resp.errcode == 2){
+					alert(1);
+					$('#registerError').show();
+					$('#registerError').html("验证码输入错误！");
+					reloadIndityImg('indeityImgHeader2');
 				}
-				// }else if(resp.errcode == 2){
-				// 	alert(1);
-				// 	$('#registerError').show();
-				// 	$('#registerError').html("验证码输入错误！");
-				// 	reloadIndityImg('indeityImgHeader2');
-				// }
 			},
 			error : function(xhr) {
 			}
 		});
 	}
-	// </@shiro.guest>
+	</@shiro.guest>
 </script>
 
 

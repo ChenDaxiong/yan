@@ -1,6 +1,7 @@
 package com.hfut.bs.user.service;
 
 import com.hfut.bs.common.page.TailPage;
+import com.hfut.bs.course.model.CourseSectionInfoModel;
 import com.hfut.bs.user.model.UserCourseSectionInfoModel;
 
 import java.util.List;
@@ -25,7 +26,7 @@ public interface IUserCourseSectionService {
     /**
      *分页获取
      **/
-    public TailPage<UserCourseSectionInfoModel> queryPage(UserCourseSectionInfoModel queryEntity , TailPage page);
+    public TailPage<UserCourseSectionInfoModel> queryPage(UserCourseSectionInfoModel queryEntity , TailPage<UserCourseSectionInfoModel> page);
 
     /**
      *创建

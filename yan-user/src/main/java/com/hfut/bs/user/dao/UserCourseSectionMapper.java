@@ -2,6 +2,7 @@ package com.hfut.bs.user.dao;
 
 import com.hfut.bs.common.page.TailPage;
 import com.hfut.bs.user.domain.UserCourseSection;
+import com.hfut.bs.user.model.UserCourseSectionInfoModel;
 import org.apache.ibatis.annotations.Param;
 
 import java.util.List;
@@ -37,6 +38,6 @@ public interface UserCourseSectionMapper {
     /**
      *分页获取
      **/
-    public List<UserCourseSection> selectPage(@Param("param1") UserCourseSection queryEntity , @Param("param2") TailPage page);
+    public List<UserCourseSection> selectPage(@Param("param1") UserCourseSection queryEntity , @Param("param2") TailPage<UserCourseSectionInfoModel> page);
 
 }

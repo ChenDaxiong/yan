@@ -404,13 +404,13 @@
   <select id="getHomepageTeachers"  resultMap="BaseResultMap">
     SELECT
     <include refid="Base_Column_List" />
-    FROM t_auth_user
+    FROM auth_user_t
     ORDER BY weight DESC
     LIMIT 5
   </select>
 
   <update id="deleteLogic" parameterType="java.lang.Integer" flushCache="true">
-		UPDATE t_auth_user
+		UPDATE auth_user_t
 		SET del = 1
 		WHERE id = #{id, jdbcType=INTEGER}
 	</update>

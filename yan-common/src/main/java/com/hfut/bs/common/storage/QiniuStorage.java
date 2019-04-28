@@ -57,6 +57,10 @@ public class QiniuStorage {
 	public static String getUrl(String key){
 		return QiniuWrapper.getUrl(key);
 	}
+
+	public static String getSiteCarouselUrl(String key){
+		return QiniuWrapper.getSiteCarouselUrl(key);
+	}
 	
 	/**
 	 * 获取有有效期的图片链接

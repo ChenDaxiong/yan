@@ -19,15 +19,15 @@
 
 
 	<!--拦截器配置-->
-	<mvc:interceptors>
-		<mvc:interceptor>
-			<!-- 拦截所有的请求，这个必须写在前面，也就是写在【不拦截】的上面 -->
-			<mvc:mapping path="/**"/>
-			<!-- 但是排除下面这些，也就是不拦截请求 -->
-			<!--<mvc:exclude-mapping path="/login.html" />-->
-			<bean class="com.hfut.bs.gateway.access.LoginInterceptor"/>
-		</mvc:interceptor>
-	</mvc:interceptors>
+	<!--<mvc:interceptors>-->
+		<!--<mvc:interceptor>-->
+			<!--&lt;!&ndash; 拦截所有的请求，这个必须写在前面，也就是写在【不拦截】的上面 &ndash;&gt;-->
+			<!--<mvc:mapping path="/**"/>-->
+			<!--&lt;!&ndash; 但是排除下面这些，也就是不拦截请求 &ndash;&gt;-->
+			<!--&lt;!&ndash;<mvc:exclude-mapping path="/login.html" />&ndash;&gt;-->
+			<!--<bean class="com.hfut.bs.gateway.access.LoginInterceptor"/>-->
+		<!--</mvc:interceptor>-->
+	<!--</mvc:interceptors>-->
 
 	<!-- 静态文件 -->
 	<mvc:resources mapping="/res/**"  location="/res/"  />
@@ -35,16 +35,11 @@
 	 <!--<mvc:resources mapping="/images/**"  location="/WEB-INF/images/"  cache-period="3600"/>-->
 
 	<!-- 针对 Responsebody 转码 -->
-	<mvc:annotation-driven>
-		<mvc:message-converters register-defaults="true">
-			<bean class="com.hfut.bs.gateway.utils.UTF8HttpMessageConverter" />
-		</mvc:message-converters>
-	</mvc:annotation-driven>
-
-	<bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
-		<property name="maxUploadSize" value="10000000"/>
-	</bean>
-
+	<!--<mvc:annotation-driven>-->
+		<!--<mvc:message-converters register-defaults="true">-->
+			<!--<bean class="com.hfut.bs.gateway.utils.UTF8HttpMessageConverter" />-->
+		<!--</mvc:message-converters>-->
+	<!--</mvc:annotation-driven>-->
 
 	<!-- 启用spring mvc 注解 -->
 	<context:annotation-config />
@@ -56,16 +51,47 @@
 	<!-- 完成请求和注解POJO的映射 -->
 	<bean class="org.springframework.web.servlet.mvc.annotation.AnnotationMethodHandlerAdapter"/>
 
-	<bean id="viewResolver" class="org.springframework.web.servlet.view.freemarker.FreeMarkerViewResolver">
-		<property name="prefix" value="/WEB-INF/pages/"/>
-		<property name="suffix" value=".html"/>
-		<property name="cache" value="true"/>
-		<property name="contentType" value="text/html; charset=UTF-8"/>
-		<property name="requestContextAttribute" value="request"/>
-	</bean>
+	<!--<bean id="viewResolver" class="org.springframework.web.servlet.view.freemarker.FreeMarkerViewResolver">-->
+		<!--<property name="prefix" value="/WEB-INF/pages/"/>-->
+		<!--<property name="suffix" value=".html"/>-->
+		<!--<property name="cache" value="true"/>-->
+		<!--<property name="contentType" value="text/html; charset=UTF-8"/>-->
+		<!--<property name="requestContextAttribute" value="request"/>-->
+	<!--</bean>-->
 
-	<!--freemarker配置  -->
-	<bean id="freemarkerConfig" class="org.springframework.web.servlet.view.freemarker.FreeMarkerConfigurer">
+	<!--&lt;!&ndash;freemarker配置  &ndash;&gt;-->
+	<!--<bean id="freemarkerConfig" class="com.hfut.bs.gateway.user.shiro.ShiroFreeMarkerConfigurer">-->
+		<!--<property name="templateLoaderPath" value=""/>-->
+		<!--<property name="freemarkerSettings">-->
+			<!--<props>-->
+				<!--<prop key="tag_syntax">auto_detect</prop>-->
+				<!--<prop key="template_update_delay">1</prop>-->
+				<!--<prop key="defaultEncoding">UTF-8</prop>-->
+				<!--<prop key="url_escaping_charset">UTF-8</prop>-->
+				<!--<prop key="locale">zh_CN</prop>-->
+				<!--<prop key="boolean_format">true,false</prop>-->
+				<!--<prop key="datetime_format">yyyy-MM-dd HH:mm:ss</prop>-->
+				<!--<prop key="date_format">yyyy-MM-dd</prop>-->
+				<!--<prop key="time_format">HH:mm:ss</prop>-->
+				<!--<prop key="number_format">0.######</prop>-->
+				<!--<prop key="whitespace_stripping">true</prop>-->
+				<!--<prop key="auto_import">/WEB-INF/ftl/spring.ftl as s</prop>-->
+			<!--</props>-->
+		<!--</property>-->
+	<!--</bean>-->
+
+
+
+	<!--<bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver" >-->
+		<!--<property name="maxUploadSize" value="10000000" />-->
+	<!--</bean>-->
+
+	<!-- 静态文件 -->
+	<mvc:resources mapping="/res/**"  location="/res/"  cache-period="3600"/>
+	<mvc:resources mapping="/static/**"  location="/static/"  cache-period="3600"/>
+	<!-- <mvc:resources mapping="/images/**"  location="/WEB-INF/images/"  cache-period="3600"/> -->
+
+	<bean id="freemarkerConfig" class="com.hfut.bs.gateway.user.shiro.ShiroFreeMarkerConfigurer">
 		<property name="templateLoaderPath" value=""/>
 		<property name="freemarkerSettings">
 			<props>
@@ -84,9 +110,16 @@
 			</props>
 		</property>
 	</bean>
+	<bean id="viewResolver" class="org.springframework.web.servlet.view.freemarker.FreeMarkerViewResolver">
+		<property name="prefix" value="/WEB-INF/pages/" />
+		<property name="suffix" value=".html" />
+		<property name="cache" value="true" />
+		<property name="contentType" value="text/html; charset=UTF-8" />
+		<property name="requestContextAttribute" value="request" />
+	</bean>
 
+	<bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver" >
+		<property name="maxUploadSize" value="10000000" />
+	</bean>
 
-	<!--　　-->
-	<!-- 对转向页面的路径解析。prefix：前缀， suffix：后缀 -->
-	<!--<bean class="org.springframework.web.servlet.view.InternalResourceViewResolver" p:prefix="/" p:suffix=".html" />-->
 </beans>

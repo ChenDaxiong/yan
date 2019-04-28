@@ -25,13 +25,14 @@
 
 	<import resource="application-redis.xml"/>
 	<import resource="application-consumer.xml"/>
+	<import resource="shiro.xml"/>
     	
-    	<!-- 针对 Responsebody 转码 -->
-    	<!--<mvc:annotation-driven>-->
-			<!--<mvc:message-converters register-defaults="true">-->
-				<!--<bean class="com.online.college.common.web.UTF8HttpMessageConverter" />-->
-			<!--</mvc:message-converters>-->
-		<!--</mvc:annotation-driven>-->
+    	 <!--针对 Responsebody 转码 -->
+    	<mvc:annotation-driven>
+			<mvc:message-converters register-defaults="true">
+				<bean class="com.hfut.bs.gateway.utils.UTF8HttpMessageConverter" />
+			</mvc:message-converters>
+		</mvc:annotation-driven>
 		
 		<!-- 加载jdbc 和 app配置文件 -->
 		<bean class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer" lazy-init="true">
@@ -100,10 +101,8 @@
 			<!--<aop:pointcut expression="execution (* com.online.college.*.service.*.*(..))"  id="services" />-->
 			<!--<aop:advisor advice-ref="txAdvice" pointcut-ref="services" />-->
 		<!--</aop:config>-->
-	    
-	    <bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver" />
-		 
-		<!-- 引入shiro -->
-        <!--<import resource="shiro.xml" />-->
-		 
+
+	<bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver" />
+
 </beans>
+

@@ -10,6 +10,7 @@ import com.hfut.bs.course.service.ICourseService;
 import com.hfut.bs.gateway.access.NeedLogin;
 import com.hfut.bs.gateway.access.UserContext;
 import com.hfut.bs.gateway.course.vo.CourseSectionVO;
+import com.hfut.bs.gateway.utils.SessionContext;
 import com.hfut.bs.user.model.UserCourseSectionInfoModel;
 import com.hfut.bs.user.model.UserInfoModel;
 import com.hfut.bs.user.model.UserModel;
@@ -118,17 +119,22 @@ public class CourseController {
 		
 		//学习记录
 		UserCourseSectionInfoModel userCourseSection = new UserCourseSectionInfoModel();
-		userCourseSection.setUserId(UserContext.getUserId());
+		userCourseSection.setUserId(SessionContext.getUserId());
 		userCourseSection.setCourseId(courseSection.getCourseId());
 		userCourseSection.setSectionId(courseSection.getId());
 		UserCourseSectionInfoModel result = userCourseSectionService.queryLatest(userCourseSection);
 		// 根据UserId获取User的信息
-		UserInfoModel user = authUserService.getById(UserContext.getUserId());
+		UserInfoModel user = authUserService.getById(SessionContext.getUserId());
 		if(null == result){//如果没有，插入
 			userCourseSection.setCreateTime(new Date());
 			userCourseSection.setCreateUser(user.getUsername());
 			userCourseSection.setUpdateTime(new Date());
 			userCourseSection.setUpdateUser(user.getUsername());
+			if (userCourseSection.getStatus() != null && !Integer.valueOf(0).equals(userCourseSection.getStatus())){
+				userCourseSection.setStatus(0);
+			}else {
+				userCourseSection.setStatus(1);
+			}
 			
 			userCourseSectionService.createSelectivity(userCourseSection);
 		}else{
@@ -174,7 +180,7 @@ public class CourseController {
 		Iterator<CourseSectionInfoModel> it = courseSectionService.queryAll(queryEntity).iterator();
 		while(it.hasNext()){
 			CourseSectionInfoModel item = it.next();
-			if(Long.valueOf(0).equals(item.getParentId())){//章
+			if(Integer.valueOf(0).equals(item.getParentId())){//章
 				CourseSectionVO vo = new CourseSectionVO();
 				BeanUtils.copyProperties(item, vo);
 				tmpMap.put(vo.getId(), vo);

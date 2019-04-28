@@ -1,4 +1,4 @@
-package com.hfut.bs.gateway.user;
+package com.hfut.bs.gateway.user.controller;
 
 import com.alibaba.dubbo.rpc.RpcContext;
 import com.hfut.bs.common.redis.keys.AuthUserKey;
@@ -30,8 +30,8 @@ import org.springframework.web.servlet.ModelAndView;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-@RequestMapping("/auth/")
-@Controller
+//@RequestMapping("/auth/")
+//@Controller
 public class AuthController {
 
      @Autowired
@@ -43,46 +43,11 @@ public class AuthController {
      @Autowired
     CookieUtil cookieUtil;
 
-    @RequestMapping(value="index")
-    public String index(HttpServletRequest request, HttpServletResponse response){
-        return "index";
-    }
 
 
     @RequestMapping("to_login")
     public ModelAndView to_login(){
         return new ModelAndView("auth/login");
-    }
-
-
-//    @RequestMapping("register")
-//    @ResponseBody
-    public Result register(UserInfoModel userInfoModel) {
-        UserModel user = authUserService.getByUsername(userInfoModel.getUsername());
-        if (user != null) {
-            return Result.error(CodeMsg.USERNAME_IS_EXISTED);
-        }
-        String dbSalt = CommonUtil.getUID();
-        String dbPassword = MD5Utils.formPassToDbPass(userInfoModel.getPassword(), dbSalt);
-        userInfoModel.setSalt(dbSalt);
-        userInfoModel.setPassword(dbPassword);
-        authUserService.createSelectivity(userInfoModel);
-        return Result.success("注册成功");
-    }
-
-//
-//    @RequestMapping("login")
-//    @ResponseBody
-    public Result do_login(UserInfoModel userInfoModel,HttpServletResponse response) {
-        if (StringUtils.isEmpty(userInfoModel.getPassword()) || StringUtils.isEmpty(userInfoModel.getUsername())) {
-            //  用户名和密码不能为空
-            return Result.error(CodeMsg.LOGIN_PARAMETER_EMPTY);
-        }
-        RpcContext.getContext().setResponse(response);
-        UserInfoModel user = authUserService.getByUsernameAndPassword(userInfoModel);
-        // 将登陆的用户cookie种到客户端浏览器
-        addCookie(response, user);
-        return Result.success(user);
     }
 
 
@@ -96,9 +61,6 @@ public class AuthController {
         return Result.error(CodeMsg.USERINFO_UPDATE_FAILED);
     }
 
-
-
-
     @RequestMapping("checkUsername")
     @ResponseBody
     public ResponseVo checkUsername(String username){
@@ -110,8 +72,8 @@ public class AuthController {
     }
 
     @RequestMapping("hello")
-    public String testFreemarker(){
-        return "hello";
+    public ModelAndView testFreemarker(){
+        return new ModelAndView("index");
     }
 
     /**

@@ -5,6 +5,7 @@ import lombok.Data;
 import javax.servlet.http.HttpServletResponse;
 import java.io.Serializable;
 import java.util.Date;
+import java.util.Set;
 
 @Data
 public class UserInfoModel implements Serializable {
@@ -68,6 +69,14 @@ public class UserInfoModel implements Serializable {
     private String updateUser;
 
     private Boolean del;
+
+    public Integer getUserId(){
+        return id;
+    }
+
+    public Set<String> getPermissions(){
+        return null;
+    }
 
 
 

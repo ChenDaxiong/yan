@@ -45,18 +45,18 @@
 						<li><label>姓名</label> 
 							<input name="realname"  value="${authUser.realname!}" type="text"  class="input-text2">
 						</li>
-						<li><label>性别</label> 
+						<li><label>性别</label>
 							<select class="input-select" name="gender">
-								<option value="1" <#if authUser.gender?? && authUser.gender == 1> selected="selected"</#if> >男</option>
-								<option value="0" <#if authUser.gender?? && authUser.gender == 0> selected="selected"</#if> >女</option>
+								<option value="1" <#if authUser.gender?? && authUser.gender == true> selected="selected"</#if> >男</option>
+								<option value="0" <#if authUser.gender?? && authUser.gender == false> selected="selected"</#if> >女</option>
 							</select>
 						</li>
 						<li><label>学校</label> 
 							<input name="collegeName"  value="${authUser.collegeName!}" type="text"  class="input-text2">
 						</li>
-						<li><label>资格证书</label> 
-							<input name="certNo"  value="${authUser.certNo!}" type="text"  class="input-text2">
-						</li>
+						<!--<li><label>资格证书</label> -->
+							<!--<input name="certNo"  value="${authUser.certNo!}" type="text"  class="input-text2">-->
+						<!--</li>-->
 						<li><label>学历</label> 
 							<select class="input-select" name="education">
 								<option value="本科" <#if authUser.education?? && authUser.education == '本科'> selected="selected"</#if>>本科</option>
@@ -69,10 +69,9 @@
 						<li><label>qq</label>
 							<input name="qq"  value="${authUser.qq!}"  type="text"  class="input-text2">
 						</li>
-						<li><label>个性签名</label>
-							<input name="sign"  value="${authUser.sign!}"  type="text"  class="input-text2">
-						</li>
-						
+						<!--<li><label>个性签名</label>-->
+							<!--<input name="sign"  value="${authUser.sign!}"  type="text"  class="input-text2">-->
+						<!--</li>-->
 						<li class="clearfix" style="margin-top: 50px;padding-left: 170px;">
 							<div class="btn" onclick="infoSubmit();">保存</div>
 						</li>

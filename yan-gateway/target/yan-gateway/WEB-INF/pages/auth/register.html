@@ -6,7 +6,7 @@
 	    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1">
 		<meta name="keywords" content="">
 		<meta name="description" content="">
-		<title>在线网校学习平台</title>
+		<title>yan-考研学习交流平台</title>
 		<#include "../common/res.html">
 	</head>
 
@@ -22,10 +22,10 @@
 						<li><label>密码</label> 
 							<input maxlength="20" id="password" name="password" type="password" class="input-text" placeholder="请输入密码" autocomplete="off" />
 						</li>
-						<!--<li><label>验证码</label> -->
-						<!--<input id="identiryCode" name="identiryCode" maxlength="6" class="input-text" type="text" style="width: 150px;" placeholder="请输入验证码"/>-->
-						<!--<a class="vali-base"><img  onclick="reloadIndityImg('indeityImgRegister');" id="indeityImgRegister"  src="${s.base}/tools/identiry/code.html" style="width:80px;height:40px;float:left;margin-left:10px;"/></a>-->
-						<!--</li>-->
+						<li><label>验证码</label> 
+						<input id="identiryCode" name="identiryCode" maxlength="6" class="input-text" type="text" style="width: 150px;" placeholder="请输入验证码"/>
+						<a class="vali-base"><img  onclick="reloadIndityImg('indeityImgRegister');" id="indeityImgRegister"  src="${s.base}/tools/identiry/code.html" style="width:80px;height:40px;float:left;margin-left:10px;"/></a>
+						</li>
 						<li id="errorMsg" class="clearfix" style="display: none;color:red;">用户名密码不能为空</li>
 						<li class="clearfix" style="margin-top: 30px;">
 							<input type="button" value="注册保存" class="btn" onclick="doSubmit();">
@@ -58,12 +58,12 @@
 			}
 			
 			//验证码不能为空
-			// var code = $('#identiryCode').val();
-			// if(oc.isEmpty(code)){
-			// 	$('#errorMsg').show();
-			// 	$('#errorMsg').html("请输入验证码");
-			// 	return;
-			// }
+			var code = $('#identiryCode').val();
+			if(oc.isEmpty(code)){
+				$('#errorMsg').show();
+				$('#errorMsg').html("请输入验证码");
+				return;
+			}
 			
 			//提交注册
 			$('#registerForm').ajaxSubmit({

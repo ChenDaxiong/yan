@@ -15,6 +15,14 @@
 <script type="text/javascript">
 CONTEXT_PATH = '${s.base}';
 
+<@shiro.guest>
+SHIRO_LOGIN = false;
+</@shiro.guest>
+
+<@shiro.user>
+SHIRO_LOGIN = true;//是否已经登录 
+</@shiro.user>
+
 $(function(){  
     // 设置jQuery Ajax全局的参数  
     $.ajaxSetup({  

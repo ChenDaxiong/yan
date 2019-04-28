@@ -6,7 +6,7 @@
 	    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1">
 		<meta name="keywords" content="">
 		<meta name="description" content="">
-		<title>在线网校学习平台</title>
+		<title>yan-考研学习交流平台</title>
 		<#include "./common/res.html">
 	</head>
 
@@ -65,15 +65,15 @@
 					<a href="${s.base}/course/learn/${item.id}.html" target="_black">
 						<div class="course-card-container"  <#if n %5 == 0>style="margin-right: 0px;" </#if> >
 							<#if n %5 == 0>
-							<div class="course-card-top green-bg">
+							<div class="course-card-top blue-bg">
 							<#elseif n %4 == 0>
-							<div class="course-card-top pink-bg">
+							<div class="course-card-top blue-bg">
 							<#elseif n %3 == 0>
-							<div class="course-card-top purple-bg">
+							<div class="course-card-top blue-bg">
 							<#elseif n %2 == 0>
-							<div class="course-card-top gray-bg">
+							<div class="course-card-top blue-bg">
 							<#else>
-							<div class="course-card-top brown-bg">
+							<div class="course-card-top blue-bg">
 							</#if>
 								<span>${item.subClassifyName!}</span>
 							</div>
@@ -95,7 +95,7 @@
 									</div>
 									<#else>
 									<div class="course-card-info">${item.studyCount!}人在学</div>
-									<div class="course-card-price">￥${item.price!}</div>
+									<!--<div class="course-card-price">￥${item.price!}</div>-->
 									</#if>
 								</div>
 							</div>

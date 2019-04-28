@@ -29,4 +29,19 @@ public class UserCourseSectionInfoModel implements Serializable {
     private String updateUser;
 
     private Boolean del;
+
+    /**
+     * 用户名
+     */
+    private String username;
+
+    /**
+     * 课程名
+     */
+    private String courseName;
+
+    /**
+     * 章节名
+     */
+    private String sectionName;
 }

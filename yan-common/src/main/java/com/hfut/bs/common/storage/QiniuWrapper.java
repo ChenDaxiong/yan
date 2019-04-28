@@ -119,6 +119,13 @@ public class QiniuWrapper {
 		}
 		return null;
 	}
+
+	public static String getSiteCarouselUrl(String key){
+		if(org.apache.commons.lang.StringUtils.isNotEmpty(key)){
+			return auth.privateDownloadUrl("http://"+getCDN()+key);
+		}
+		return null;
+	}
 	
 	/**
 	 * @param key

@@ -44,17 +44,19 @@ public class CourseServiceImpl implements ICourseService{
     }
 
     @Override
-    public TailPage<CourseInfoModel> queryPage(CourseInfoModel queryEntity , TailPage page){
+    public TailPage<CourseInfoModel> queryPage(CourseInfoModel queryEntity , TailPage<CourseInfoModel> page){
         Course course = toCourse(queryEntity);
         Integer itemsTotalCount = courseMapper.selectTotalItemsCount(course);
         List<Course> items = courseMapper.selectPage(course,page);
+        List<CourseInfoModel> resultList = new ArrayList<CourseInfoModel>();
         if(CollectionUtils.isNotEmpty(items)){
             for(Course item : items){
                 prepareCoursePicture(item);
+                resultList.add(toCourseInfoModel(item));
             }
         }
         page.setItemsTotalCount(itemsTotalCount);
-        page.setItems(items);
+        page.setItems(resultList);
         return page;
     }
 

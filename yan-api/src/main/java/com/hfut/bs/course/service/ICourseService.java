@@ -25,7 +25,7 @@ public interface ICourseService {
     /**
      *分页获取
      **/
-    TailPage<CourseInfoModel> queryPage(CourseInfoModel queryEntity , TailPage page);
+    TailPage<CourseInfoModel> queryPage(CourseInfoModel queryEntity , TailPage<CourseInfoModel> page);
 
     /**
      *创建

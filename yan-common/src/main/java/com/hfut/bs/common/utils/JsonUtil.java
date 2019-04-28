@@ -1,8 +1,17 @@
 package com.hfut.bs.common.utils;
 
 import com.alibaba.fastjson.JSON;
+import org.codehaus.jackson.map.ObjectMapper;
+
+import java.io.IOException;
 
 public class JsonUtil {
+
+
+    private static ObjectMapper mapper;
+    static{
+        mapper=new ObjectMapper();
+    }
 
     public static <T> String beanToString(T value) {
         if (value == null) {
@@ -34,6 +43,11 @@ public class JsonUtil {
         } else {
             return JSON.toJavaObject(JSON.parseObject(str), clazz);
         }
+    }
+
+    public static String toJson(Object obj) throws IOException {
+        String json = mapper.writeValueAsString(obj);
+        return json;
     }
 
 }

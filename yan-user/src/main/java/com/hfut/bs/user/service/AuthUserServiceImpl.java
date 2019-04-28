@@ -58,8 +58,8 @@ public class AuthUserServiceImpl implements IAuthUserService {
         return toUserInfoModel(authUser);
     }
 
-    @Override
-public UserInfoModel getByUsernameAndPassword(UserInfoModel userInfoModel) {
+
+public UserInfoModel getByUsernameAndPassword2(UserInfoModel userInfoModel) {
     // 先根据ID查出user，再根据
     AuthUser user = authUserMapper.getByUsername(userInfoModel.getUsername());
     if (user == null) {
@@ -75,6 +75,24 @@ public UserInfoModel getByUsernameAndPassword(UserInfoModel userInfoModel) {
     }
     return toUserInfoModel(user);
 }
+
+    @Override
+    public UserInfoModel getByUsernameAndPassword(UserInfoModel userInfoModel) {
+        // 先根据ID查出user，再根据
+        AuthUser user = authUserMapper.getByUsername(userInfoModel.getUsername());
+        if (user == null) {
+            throw new GlobalException(CodeMsg.USER_NOT_EXIST);
+        }
+        // 获取数据库中用户的MD5盐值
+//        String salt = user.getSalt();
+//        // 根据salt和md5Password推出dbPassword
+//        String dbPassword = MD5Utils.formPassToDbPass(userInfoModel.getPassword(), salt);
+        if (!userInfoModel.getPassword().equals(user.getPassword())) {
+            // 密码错误
+            throw new GlobalException(CodeMsg.PASSWORD_ERROR);
+        }
+        return toUserInfoModel(user);
+    }
 
     /**
      * 在redis中缓存cookie和往客户端浏览器种cookie
@@ -202,6 +220,7 @@ public UserInfoModel getByUsernameAndPassword(UserInfoModel userInfoModel) {
         userInfoModel.setIp(authUser.getIp());
         userInfoModel.setDel(authUser.getDel());
         userInfoModel.setLoginTime(authUser.getLoginTime());
+        userInfoModel.setQq(authUser.getQq());
         return userInfoModel;
 
     }

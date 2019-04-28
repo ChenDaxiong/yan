@@ -6,7 +6,7 @@
 	    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1">
 		<meta name="keywords" content="">
 		<meta name="description" content="">
-		<title>在线网校学习平台</title>
+		<title>yan-考研学习交流平台</title>
 		<#include "./common/res.html">
 	</head>
 
@@ -30,20 +30,20 @@
 								<div class="meta">学习人数</div>
 								<div class="meta-value">${(course.studyCount)!}</div>
 							</div>
-							<div class="static-item">
-								<div class="meta">难度级别</div>
-								<div class="meta-value">
-									<#if course?? && course.level??>
-										<#if course.level == 1>
-										初级
-										<#elseif course.level == 2>
-										中级
-										<#else>
-										高级
-										</#if>
-									</#if>
-								</div>
-							</div>
+							<!--<div class="static-item">-->
+								<!--<div class="meta">难度级别</div>-->
+								<!--<div class="meta-value">-->
+									<!--<#if course?? && course.level??>-->
+										<!--<#if course.level == 1>-->
+										<!--初级-->
+										<!--<#elseif course.level == 2>-->
+										<!--中级-->
+										<!--<#else>-->
+										<!--高级-->
+										<!--</#if>-->
+									<!--</#if>-->
+								<!--</div>-->
+							<!--</div>-->
 							<div class="static-item" style="border:none;">
 								<div class="meta">课程时长</div>
 								<div class="meta-value">${(course.time)!}</div>
@@ -128,12 +128,12 @@
 				</div>
 				</#if>
 				
-				<h4 class="mt-50">推荐课程</h4>
-				<#if recomdCourseList?? && recomdCourseList?size gt 0 >
-				<#list recomdCourseList as item>
-				<a href="${s.base}/course/learn/${item.id}.html" target="_black" class="mb-5" title="${item.name!}"><li class="ellipsis oc-color-hover">${item.name!}</li></a>
-				</#list>
-				</#if>
+				<!--<h4 class="mt-50">推荐课程</h4>-->
+				<!--<#if recomdCourseList?? && recomdCourseList?size gt 0 >-->
+				<!--<#list recomdCourseList as item>-->
+				<!--<a href="${s.base}/course/learn/${item.id}.html" target="_black" class="mb-5" title="${item.name!}"><li class="ellipsis oc-color-hover">${item.name!}</li></a>-->
+				<!--</#list>-->
+				<!--</#if>-->
 			</div>
 			
 		</div>

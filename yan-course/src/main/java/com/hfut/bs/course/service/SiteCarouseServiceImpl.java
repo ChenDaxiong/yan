@@ -39,7 +39,7 @@ public class SiteCarouseServiceImpl implements ISiteCarouseService {
         List<SiteCarouseInfoModel> resultList = new ArrayList<SiteCarouseInfoModel>();
         //处理为七牛图片链接
         for (SiteCarousel item : siteCarouselList) {
-            item.setPicture(QiniuStorage.getUrl(item.getPicture()));
+            item.setPicture(QiniuStorage.getSiteCarouselUrl(item.getPicture()));
             resultList.add(toCarouseInfoModel(item));
         }
         return resultList;

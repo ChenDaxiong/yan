@@ -35,12 +35,12 @@ public class CourseListController {
 	 * @param page 分页
 	 */
 	@RequestMapping("/list")
-	public ModelAndView list(String c, String sort, TailPage page){
+	public ModelAndView list(String c, String sort, TailPage<CourseInfoModel> page){
 		ModelAndView mv = new ModelAndView("list");
 		String curCode = "-1";//当前方向code
 		String curSubCode = "-2";//当前分类code
 		
-		//加载所有课程分类
+		//加载所有课程分类,子分类
 		Map<String, ConstsClassifyVO> classifyMap = queryAllClassifyMap();
 		//所有一级分类
 		List<ConstsClassifyVO> classifysList = new ArrayList<ConstsClassifyVO>();
@@ -92,8 +92,8 @@ public class CourseListController {
 		
 		//分页参数
 		queryEntity.setOnsale(1);
-		page = this.courseService.queryPage(queryEntity, page);
-		mv.addObject("page", page);
+		TailPage<CourseInfoModel> result = courseService.queryPage(queryEntity, page);
+		mv.addObject("page", result);
 		return mv;
 	}
 

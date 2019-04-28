@@ -1,17 +1,115 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--web项目启动时，容器会率先读取web.xml中的文件配置，这一部分没有没有出错且完成之后，项目才能被启动起来-->
 <web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd" id="WebApp_ID" version="3.0">
-  <display-name>SpringMVC</display-name>
+  <display-name>yan</display-name>
 
 <!--&lt;!&ndash;不设置监听器则无法加载spring的主配置 ->ApplicationContext.xml&ndash;&gt;-->
   <!--<listener>&lt;!&ndash;RequestContextListener类负责监听web容器的启动和关闭&ndash;&gt;-->
     <!--<listener-class>org.springframework.web.context.request.RequestContextListener</listener-class>-->
   <!--</listener>-->
 
-  <listener><!--将web容器和spring容器进行整合-->
-    <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
-  </listener>
+  <!--<listener>&lt;!&ndash;将web容器和spring容器进行整合&ndash;&gt;-->
+    <!--<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>-->
+  <!--</listener>-->
 
+
+  <!--&lt;!&ndash; spring begin    &ndash;&gt;-->
+  <!--<context-param>-->
+    <!--<param-name>contextClass</param-name>-->
+    <!--<param-value>org.springframework.web.context.support.XmlWebApplicationContext</param-value>-->
+  <!--</context-param>-->
+  <!--<context-param>-->
+    <!--<param-name>contextConfigLocation</param-name>-->
+    <!--<param-value>classpath:applicationContext.xml</param-value>-->
+  <!--</context-param>-->
+
+  <!--&lt;!&ndash; jsessionid filter &ndash;&gt;-->
+  <!--<filter>-->
+    <!--<filter-name>jsessionidFilter</filter-name>-->
+    <!--<filter-class>com.hfut.bs.gateway.filter.DisableUrlSessionFilter</filter-class>-->
+  <!--</filter>-->
+  <!--<filter-mapping>-->
+    <!--<filter-name>jsessionidFilter</filter-name>-->
+    <!--<url-pattern>/*</url-pattern>-->
+  <!--</filter-mapping>-->
+
+
+  <!--&lt;!&ndash; 编码过滤器 &ndash;&gt;-->
+  <!--<filter>-->
+    <!--<filter-name>encode</filter-name>-->
+    <!--<filter-class>org.springframework.web.filter.CharacterEncodingFilter</filter-class>-->
+    <!--<async-supported>true</async-supported> &lt;!&ndash; 异步 &ndash;&gt;-->
+    <!--<init-param>-->
+      <!--<param-name>encoding</param-name>-->
+      <!--<param-value>UTF-8</param-value>-->
+    <!--</init-param>-->
+  <!--</filter>-->
+
+  <!--<filter-mapping>-->
+    <!--<filter-name>encode</filter-name>-->
+    <!--<url-pattern>/*</url-pattern>-->
+  <!--</filter-mapping>-->
+
+  <!--&lt;!&ndash; 配置dispatcherServlet &ndash;&gt;-->
+  <!--<servlet>-->
+    <!--<servlet-name>springMvc</servlet-name>-->
+    <!--<servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>-->
+    <!--<init-param>-->
+      <!--<param-name>contextConfigLocation</param-name>-->
+      <!--<param-value>classpath:app-servlet.xml</param-value>-->
+    <!--</init-param>-->
+    <!--<load-on-startup>1</load-on-startup>-->
+  <!--</servlet>-->
+
+  <!--<servlet-mapping>-->
+    <!--<servlet-name>springMvc</servlet-name>-->
+    <!--&lt;!&ndash;通过该url找到Servlet，/相当与项目名称，一定要加上&ndash;&gt;-->
+    <!--<url-pattern>*.html</url-pattern>-->
+  <!--</servlet-mapping>-->
+
+  <!--&lt;!&ndash; ShiroFilter start &ndash;&gt;-->
+  <!--<filter>-->
+    <!--<filter-name>shiroFilter</filter-name>-->
+    <!--<filter-class>org.springframework.web.filter.DelegatingFilterProxy</filter-class>-->
+    <!--<init-param>-->
+      <!--<param-name>targetFilterLifecycle</param-name>-->
+      <!--<param-value>true</param-value>-->
+    <!--</init-param>-->
+  <!--</filter>-->
+  <!--<filter-mapping>-->
+    <!--<filter-name>shiroFilter</filter-name>-->
+    <!--<url-pattern>/*</url-pattern>-->
+    <!--<dispatcher>REQUEST</dispatcher>-->
+    <!--<dispatcher>FORWARD</dispatcher>-->
+  <!--</filter-mapping>-->
+  <!--&lt;!&ndash; ShiroFilter end &ndash;&gt;-->
+
+
+  <!---->
+  <!--<welcome-file-list>-->
+    <!--<welcome-file>index.html</welcome-file>-->
+  <!--</welcome-file-list>-->
+
+  <!--<session-config>-->
+    <!--<session-timeout>120</session-timeout>-->
+  <!--</session-config>-->
+
+  <!--<welcome-file-list>-->
+    <!--<welcome-file>index.html</welcome-file>-->
+  <!--</welcome-file-list>-->
+
+  <!--<error-page>-->
+    <!--<error-code>404</error-code>-->
+    <!--<location>/error/404.html</location>-->
+  <!--</error-page>-->
+  <!--<error-page>-->
+    <!--<error-code>500</error-code>-->
+    <!--<location>/error/500.html</location>-->
+  <!--</error-page>-->
+  <!--<error-page>-->
+    <!--<error-code>405</error-code>-->
+    <!--<location>/error/405.html</location>-->
+  <!--</error-page>-->
 
   <!-- spring begin    -->
   <context-param>
@@ -23,26 +121,36 @@
     <param-value>classpath:applicationContext.xml</param-value>
   </context-param>
 
-
-  <!-- 编码过滤器 -->
+  <!-- jsessionid filter -->
   <filter>
-    <filter-name>encode</filter-name>
+    <filter-name>jsessionidFilter</filter-name>
+    <filter-class>com.hfut.bs.gateway.filter.DisableUrlSessionFilter</filter-class>
+  </filter>
+  <filter-mapping>
+    <filter-name>jsessionidFilter</filter-name>
+    <url-pattern>/*</url-pattern>
+  </filter-mapping>
+
+  <!-- Character Encoding filter -->
+  <filter>
+    <filter-name>encodingFilter</filter-name>
     <filter-class>org.springframework.web.filter.CharacterEncodingFilter</filter-class>
-    <async-supported>true</async-supported> <!-- 异步 -->
     <init-param>
       <param-name>encoding</param-name>
       <param-value>UTF-8</param-value>
     </init-param>
+    <init-param>
+      <param-name>forceEncoding</param-name>
+      <param-value>true</param-value>
+    </init-param>
   </filter>
-
   <filter-mapping>
-    <filter-name>encode</filter-name>
-    <url-pattern>/*</url-pattern>
+    <filter-name>encodingFilter</filter-name>
+    <url-pattern>*</url-pattern>
   </filter-mapping>
 
-  <!-- 配置dispatcherServlet -->
   <servlet>
-    <servlet-name>springMvc</servlet-name>
+    <servlet-name>app-servlet</servlet-name>
     <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
     <init-param>
       <param-name>contextConfigLocation</param-name>
@@ -52,16 +160,50 @@
   </servlet>
 
   <servlet-mapping>
-    <servlet-name>springMvc</servlet-name>
-    <!--通过该url找到Servlet，/相当与项目名称，一定要加上-->
+    <servlet-name>app-servlet</servlet-name>
     <url-pattern>*.html</url-pattern>
   </servlet-mapping>
 
+  <!-- ShiroFilter start -->
+  <filter>
+    <filter-name>shiroFilter</filter-name>
+    <filter-class>org.springframework.web.filter.DelegatingFilterProxy</filter-class>
+    <init-param>
+      <param-name>targetFilterLifecycle</param-name>
+      <param-value>true</param-value>
+    </init-param>
+  </filter>
+  <filter-mapping>
+    <filter-name>shiroFilter</filter-name>
+    <url-pattern>/*</url-pattern>
+    <dispatcher>REQUEST</dispatcher>
+    <dispatcher>FORWARD</dispatcher>
+  </filter-mapping>
+  <!-- ShiroFilter end -->
 
-  
+  <listener>
+    <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+  </listener>
+
+  <session-config>
+    <session-timeout>120</session-timeout>
+  </session-config>
+
   <welcome-file-list>
     <welcome-file>index.html</welcome-file>
   </welcome-file-list>
 
+  <error-page>
+    <error-code>404</error-code>
+    <location>/error/404.html</location>
+  </error-page>
+  <error-page>
+    <error-code>500</error-code>
+    <location>/error/500.html</location>
+  </error-page>
+  <error-page>
+    <error-code>405</error-code>
+    <location>/error/405.html</location>
+  </error-page>
 
 </web-app>
